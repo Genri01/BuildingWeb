@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import Main from './routes/index';
+import React, { useEffect } from 'react'; 
 import { isMobile } from 'react-device-detect';
 import { useDispatch, useSelector } from 'react-redux';
 import { change_page, setMobileMod } from './redux/actions/app';
 import { pages, app } from './redux/selectors';
-import HeaderMenu from './components/HeaderMenu';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
@@ -24,15 +23,14 @@ function App() {
   
   return (
     <div className="App">
-      <HeaderMenu 
+      <Header 
         mobile={mobile}  
         page={page} 
         onClick={(e) => {  
           localStorage.setItem('page',e.target.id);
           dispatch(change_page(e.target.id));
         }}   
-      />
-      {/* <Main mobile={mobile} /> */}
+      /> 
     </div>
   );
 }

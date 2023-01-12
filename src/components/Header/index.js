@@ -1,22 +1,22 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';  
-import { useNavigate,useLocation } from 'react-router-dom';  
-import { change_page } from '../../redux/actions/app';  
-
+import { Link, useNavigate,useLocation } from 'react-router-dom'; 
+import { header } from '../../redux/selectors';
+import { change_page } from '../../redux/actions/app'; 
+import { Button, Space } from 'antd';
 import BackgroundVideo from '../BackgroundVideo';
-import TopLine from '../TopLine'; 
+import TopLine from '../TopLine';
+
+import images from '../../assets/images';
 import './style.css';
 
-function Header(props) { 
-
-  const { page, mobile } = props;
+function Header(props) {
+  const { statuy, cart, Logo_black }= images;
+  const { userName, page, mobile, isAuth} = props;
  
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  useEffect(() => {   
-    dispatch(change_page(localStorage.getItem('page')));  
-  },[page]); 
+ 
 
   const {hash, key} = useLocation();
 

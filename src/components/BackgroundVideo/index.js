@@ -1,8 +1,33 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from "react"; 
 import { Menu, Button } from 'antd';
 import images from '../../assets/images';
 import './style.css';
+ 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
 
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+  
 function BackgroundVideo(props) { 
 
   const { videoSource } = props;
@@ -13,7 +38,7 @@ function BackgroundVideo(props) {
     console.log('click ', e);
     setCurrent(e.key);
   };
-
+ 
   const items = [
     {
       label: 'Residentional',
@@ -100,7 +125,7 @@ function BackgroundVideo(props) {
               <h1>Let us proffessionally do your project</h1>
             </div>
             <div className="bottomHeaderSubTitle">
-              <p>Butter is residentional / commercial remodeling company</p>
+              <div>Butter is residentional / commercial remodeling company</div>
             </div> 
             <div className="bottomHeaderButtonContainer">
               <Button className="bottonTitle" type="primary">CONTACT NOW</Button>  

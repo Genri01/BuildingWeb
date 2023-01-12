@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect } from 'react';
+import Main from './routes/index';
 import { isMobile } from 'react-device-detect';
 import { useDispatch, useSelector } from 'react-redux';
 import { change_page, setMobileMod } from './redux/actions/app';
@@ -30,7 +31,8 @@ function App() {
           localStorage.setItem('page',e.target.id);
           dispatch(change_page(e.target.id));
         }}   
-      /> 
+      />
+      <Main mobile={mobile} />
     </div>
   );
 }

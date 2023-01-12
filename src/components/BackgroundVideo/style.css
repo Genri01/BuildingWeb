@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%; 
   flex-direction: column;
+  overflow: hidden; 
 }
 
 .backgroundVideo {
@@ -134,13 +135,12 @@
 }
   
 .headerBottomTitleContainer {
-  display: flex;
-  align-items: center;
+  display: flex; 
   justify-content: center;
   width: 60%;
   height: 70%; 
   flex-direction: column; 
-  padding: 290px 0px;
+  padding: 250px 100px;
 }
  
 .headerBottomClearContainer {
@@ -154,8 +154,7 @@
   color: #FFFFFF;
   text-align: left;
   font-size: 1.8vw;
-  line-height: 2.1em;
-  padding-left: 90px; 
+  line-height: 2.1em; 
   word-wrap: break-word;
   font-family: 'DM Serif Display',Georgia,"Times New Roman",serif;
 }
@@ -176,6 +175,5 @@
   width: 100%;
   height: 100px;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 180px;
+  justify-content: flex-start; 
 }

@@ -1,15 +1,9 @@
 .headerWrapper {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: column; 
   width: 100%;
   height: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  min-width: 740px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); 
 }
 /* 
 .mobileHeaderWrapper {

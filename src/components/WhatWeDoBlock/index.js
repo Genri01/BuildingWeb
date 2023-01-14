@@ -3,9 +3,10 @@ import images from '../../assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay } from "swiper";
 
 import WhatWeDoCard from '../WhatWeDoCard'; 
+import Title from '../Title'; 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,7 +21,7 @@ export default function WhatWeDoBlock(props) {
   const [mySwiper, setMySwiper] = useState('');
 
   useEffect(() => {
-    setMySwiper(document.querySelector(`.mySwiper`).swiper); 
+    setMySwiper(document.querySelector(`.whatWeDoSwiper`).swiper); 
   },[mySwiper])
 
  
@@ -63,15 +64,12 @@ export default function WhatWeDoBlock(props) {
  
   return (
     <div className={`whatWeDoWrapper ${customclass === undefined ? '' : customclass}`}>
-      <div className='whatWeDoTitleContainer'>
-        <div className='whatWeDoTitle'>What we do</div>
-        <div className='whatWeDoTitleLine'></div>
-      </div>
+      <Title text="What we do" under top="90px" /> 
       <div className='sliderContainer'>
         <div className='wrapperArrow' onClick={(e) => moveLeft(mySwiper)}>
           <img src={arrowl} alt="s"  width={40} height={40}/>
         </div>
-        <div className='swiper_container'> 
+        <div className='whatWeDoSwiperContainer'> 
           <Swiper
             loop={true}
             centeredSlides={true}
@@ -80,7 +78,7 @@ export default function WhatWeDoBlock(props) {
               disableOnInteraction: false,
             }} 
             modules={[Autoplay]}
-            className="mySwiper" 
+            className="whatWeDoSwiper" 
             slidesPerView={3}  
             onSwiper={() => {}} 
             spaceBetween={10}

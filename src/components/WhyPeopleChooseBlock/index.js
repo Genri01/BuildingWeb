@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"; 
-import { Menu, Button } from 'antd';
+import React from "react";  
 import images from '../../assets/images';
 import WhyPeopleChooseItem from '../WhyPeopleChooseItem'
+import Title from '../Title';
 import './style.css';
  
 function WhyPeopleChooseBlock(props) { 
@@ -14,11 +14,8 @@ function WhyPeopleChooseBlock(props) {
         <div className="whyPeopleChooseTopContainer">
           <video autoPlay loop muted className="whyPeopleChooseVideo">
             <source src={videoSource}  type="video/mp4" />
-          </video>  
-          <div className='whyPeopleChooseTitleContainer'>
-            <div className='whyPeopleChooseTitle'>Why People Choose</div>
-            <div className='whyPeopleChooseTitleLine'></div>
-          </div>
+          </video> 
+          <Title text="Why People Choose" under color="#fff" />  
         </div> 
         <div className="whyPeopleChooseBottomContainer">
           <div className="whyPeopleChooseInfoContainer">

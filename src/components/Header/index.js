@@ -1,9 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';  
-import { Link, useNavigate,useLocation } from 'react-router-dom'; 
-import { header } from '../../redux/selectors';
+import { Link, useNavigate,useLocation } from 'react-router-dom';  
 import { change_page } from '../../redux/actions/app'; 
-import { Button, Space } from 'antd';
 import BackgroundVideo from '../BackgroundVideo';
 import TopLine from '../TopLine';
 
@@ -16,7 +14,11 @@ function Header(props) {
  
   const navigate = useNavigate();
   const dispatch = useDispatch();
- 
+
+  useEffect(() => {   
+    dispatch(change_page(localStorage.getItem('page'))); 
+    // dispatch(setPopupMainMsg(''));
+  },[page]); 
 
   const {hash, key} = useLocation();
 

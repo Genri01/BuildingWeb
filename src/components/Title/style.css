@@ -1,0 +1,61 @@
+
+
+.titleWrapper {
+  display: flex;
+  width: 100%;
+  height: 100px; 
+  justify-content: space-evenly;
+  align-items: center;  
+  flex-direction: column; 
+  z-index: 2;
+}
+ 
+.textTitle { 
+  display: block; 
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 1.20;
+  letter-spacing: 0em;
+  color: #222222;
+}
+ 
+.underLine {  
+  height: 3px;
+  border-style: solid;
+  border-bottom-width: 3px;
+  border-color: #d52124;
+  width: 80px;
+  margin: 0px auto;
+}
+/*  
+.titleWrapper {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.titleContainer {
+  display: flex;
+  width: auto;
+  height: auto;
+} 
+
+.titleText {
+  font-weight: 600 ;
+  font-family: 'Roboto', sans-serif ;
+} 
+
+.underline {
+  display: flex;
+  height: 2px;
+  width: 40px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  margin-top: 30px;
+}
+ */

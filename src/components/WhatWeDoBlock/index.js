@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import images from '../../assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
+import WhatWeDoCard from '../WhatWeDoCard'; 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,10 +20,10 @@ export default function WhatWeDoBlock(props) {
   const [mySwiper, setMySwiper] = useState('');
 
   useEffect(() => {
-    // setMySwiper(document.querySelector(`.mySwiper`).swiper); 
+    setMySwiper(document.querySelector(`.mySwiper`).swiper); 
   },[mySwiper])
 
-
+ 
   function moveLeft(mySwiper) {
     mySwiper.slidePrev();
   }
@@ -28,51 +33,32 @@ export default function WhatWeDoBlock(props) {
   }
 
   const {
-    view_1,
-    view_2,
-    view_3,
-    view_4,
-    view_5,
-    view_6,
-    view_7,
-    view_8,
-    view_9,
-    view_10,
+    view_1, 
     arrowr,
     arrowl,
   } = images;
 
   const sliderWalk = [
     {
-      img: view_1,
-    },
+      img: 'https://get-flooring.com/wp-content/uploads/2020/09/carpet2.jpg',
+      title: 'Bathroom remodel'
+    }, 
     {
-      img: view_2,
-    },
+      img: 'https://get-flooring.com/wp-content/uploads/2020/09/fireplace.jpg',
+      title: 'Kitchens somodel'
+    }, 
     {
-      img: view_3,
-    },
+      img: 'https://get-flooring.com/wp-content/uploads/2020/09/refinishing-hardwood.jpg',
+      title: 'Basment remodel'
+    }, 
     {
-      img: view_4,
-    },
+      img: 'https://get-flooring.com/wp-content/uploads/2020/09/backspash.jpg',
+      title: 'Roofing'
+    }, 
     {
-      img: view_5,
-    },
-    {
-      img: view_6,
-    },
-    {
-      img: view_7,
-    },
-    {
-      img: view_8,
-    },
-    {
-      img: view_9,
-    },
-    {
-      img: view_10,
-    },
+      img: 'https://get-flooring.com/wp-content/uploads/2020/08/tile-1.jpg',
+      title: 'Tile instalation'
+    }, 
 ]
  
   return (
@@ -81,28 +67,37 @@ export default function WhatWeDoBlock(props) {
         <div className='whatWeDoTitle'>What we do</div>
         <div className='whatWeDoTitleLine'></div>
       </div>
-
-      <div className='wrapperArrow' onClick={(e) => moveLeft(mySwiper)}>
-        <img src={arrowl} alt="s"  width={40} height={40}/>
-      </div>
-      <div className='swiper_container'> 
-        {/* <Swiper
-          spaceBetween={10}
-          slidesPerView={5} 
-          onSwiper={() => {}}
-          className={`mySwiper`}
-        >
-          { 
-            sliderWalk.map((el,id) => (
-            <SwiperSlide key={id}>
-              <CardsMonument img={el.img} price="345" title="sdfdfdsd" />
-            </SwiperSlide>
-            ))
-          }  
-        </Swiper> */}
-      </div>
-      <div className='wrapperArrow' onClick={(e) => moveRight(mySwiper)}>
-        <img src={arrowr} alt="arrowr" width={40} height={40} />
+      <div className='sliderContainer'>
+        <div className='wrapperArrow' onClick={(e) => moveLeft(mySwiper)}>
+          <img src={arrowl} alt="s"  width={40} height={40}/>
+        </div>
+        <div className='swiper_container'> 
+          <Swiper
+            loop={true}
+            centeredSlides={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }} 
+            modules={[Autoplay]}
+            className="mySwiper" 
+            slidesPerView={3}  
+            onSwiper={() => {}} 
+            spaceBetween={10}
+       
+          >
+            { 
+              sliderWalk.map((el,id) => (
+              <SwiperSlide key={id}>
+                <WhatWeDoCard img={el.img} title={el.title} />
+              </SwiperSlide>
+              ))
+            }  
+          </Swiper>
+        </div>
+        <div className='wrapperArrow' onClick={(e) => moveRight(mySwiper)}>
+          <img src={arrowr} alt="arrowr" width={40} height={40} />
+        </div> 
       </div>
     </div>
   );

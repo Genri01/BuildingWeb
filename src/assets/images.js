@@ -32,7 +32,11 @@ import paypal1 from './images/paypal1.svg';
 import facebook from './images/facebook.svg';
 import email from './images/email.svg';
 import Logo_black from './images/Logo_black.png'; 
-
+import price from './images/price.svg';  
+import reliable from './images/reliable.svg';  
+import quality from './images/quality.svg';  
+import service from './images/service.svg';  
+ 
 export default {
   statuy,
   logo,
@@ -67,5 +71,9 @@ export default {
   Logo_black,
   paypal,
   paypal1,
-  email
+  email,
+  price,
+  reliable,
+  quality,
+  service
 }

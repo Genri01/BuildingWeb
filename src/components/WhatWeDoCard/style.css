@@ -1,0 +1,77 @@
+
+    .CardsItemWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 350px;
+      height: 330px;
+      border: 1px solid #807b7b;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 4px;
+    }
+
+    .CardsItemTop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85%;
+      width: 100%; 
+      box-sizing: border-box;
+      position: relative;
+      border-radius: 5px;
+    }
+
+    .CardsItemTop img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .owerlay {
+      display: flex;
+      width: 100%;
+      height: 100%; 
+      background-color: #33333300;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      position:absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      cursor: pointer;
+      transition-property: background-color;
+      transition-duration: 1.2s;
+      
+    }
+
+    .owerlay:hover {  
+      background-color: #33333394; 
+    } 
+
+    .owerlay:hover .owerlay_txt{  
+      opacity: 1; 
+    } 
+ 
+    .owerlay_txt {
+      color: white;
+      font-size: 2em;
+      font-weight: 800;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: .2s;
+    }
+
+    .CardsItemBottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 15%;
+      width: 100%; 
+      box-sizing: border-box;
+      text-align: center;
+    }
+  

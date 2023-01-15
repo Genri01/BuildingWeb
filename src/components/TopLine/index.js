@@ -6,15 +6,14 @@ import './style.css';
 
 function TopLine(props) { 
 
-  const { linkTitle, btnTxt } = props;
-  
+  const { linkTitle, btnTxt, mobile } = props; 
   return ( 
     <div className='topHeader'> 
-      <div className='referallink'>
+      <div style={{ fontSize: mobile ? '10px' : '13px' }} className='referallink'>
         <Link to={"/"}>{ linkTitle }</Link>
       </div>
       <Space wrap> 
-        <Button type="text">{ btnTxt }</Button> 
+        <Button type="text" className={mobile ? 'mobileBtn' : ''}>{ btnTxt }</Button> 
       </Space>
     </div>
   );

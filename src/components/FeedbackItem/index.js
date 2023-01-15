@@ -3,8 +3,8 @@ import images from '../../assets/images';
 import './style.css';
 
 function FeedbackItem(props) {
-    const { name, subname, feed, cool, mobile } = props;
-    const {star,starfill,profile } = images;
+    const { name, feed, cool, mobile } = props;
+    const { star, starfill } = images;
 
     let starCount = cool < 5 ? Number(cool) : 5;
     let starArr = [];
@@ -15,23 +15,22 @@ function FeedbackItem(props) {
     }
     for (let index = 0; index < starCount; index++) {
       starArr.push(starfill);
-    }
-
+    } 
 
     return (
-        <div className={`${mobile ? 'mobileFeedbackItemWrapper' : 'feedbackItemWrapper'}`}> 
-          <div className='feedbackItemNameWrapper'>
-            <div className='feedbackItemSubName'>{subname}</div>
-          </div> 
-          <div className='feedbackItemName'>{name}</div> 
-          <div className='feedbackItemStarWrapper'>
-            <div className='starWrapper'>
-              {
-                starArr.map((item,num) => <img key={num} className='star' src={item} alt="star" />)
-              }
-            </div>
+      <div className={`${mobile ? 'mobileFeedbackItemWrapper' : 'feedbackItemWrapper'}`}> 
+        <div className='feedbackItemNameWrapper'>
+          <div className='feedbackItemSubName'>{feed}</div>
+        </div> 
+        <div className='feedbackItemName'>{name}</div> 
+        <div className='feedbackItemStarWrapper'>
+          <div className='starWrapper'>
+            {
+              starArr.map((item,num) => <img key={num} className='star' src={item} alt="star" />)
+            }
           </div>
         </div>
+      </div>
     );
 }
 

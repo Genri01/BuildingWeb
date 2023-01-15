@@ -36,6 +36,7 @@ import price from './images/price.svg';
 import reliable from './images/reliable.svg';  
 import quality from './images/quality.svg';  
 import service from './images/service.svg';  
+import awards from './images/awards.jpeg';  
  
 export default {
   statuy,
@@ -75,5 +76,6 @@ export default {
   price,
   reliable,
   quality,
-  service
+  service,
+  awards
 }

@@ -30,7 +30,7 @@ function useWindowDimensions() {
   
 function BackgroundVideo(props) { 
 
-  const { videoSource } = props;
+  const { videoSource, mobile } = props;
   const { Logo_black }= images;
 
   const [current, setCurrent] = useState('mail');

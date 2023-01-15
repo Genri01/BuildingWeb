@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import './style.css';
-
+import React from 'react';
 import WhatWeDoBlock from '../../components/WhatWeDoBlock'
 import WhyPeopleChooseBlock from '../../components/WhyPeopleChooseBlock'
 import WhatPeopleSay from '../../components/WhatPeopleSay'
-import Footer from '../../components/Footer';
-import { useSelector, useDispatch } from 'react-redux';
- 
+import AwardsBlock from '../../components/AwardsBlock';  
+import Footer from '../../components/Footer'; 
 
+import './style.css';
+  
 function MainScreen(props) {
-
+ 
   const { mobile } = props;
  
-  const dispatch = useDispatch();
-
     return (
-      <div className="main_screen" >  
-        <WhatWeDoBlock customclass="mobileArrow" />
-        <WhyPeopleChooseBlock videoSource="https://static.videezy.com/system/resources/previews/000/053/131/original/Untitled00001099.mp4" />
+      <div className="main_screen" > 
+        <WhatWeDoBlock customclass="mobileArrow" mobile={mobile} />
+        <WhyPeopleChooseBlock videoSource="https://static.videezy.com/system/resources/previews/000/053/131/original/Untitled00001099.mp4" mobile={mobile} />
         <WhatPeopleSay mobile={mobile} />
+        <AwardsBlock mobile={mobile} /> 
         <Footer mobile={mobile} /> 
       </div>
     );

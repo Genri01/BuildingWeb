@@ -1,0 +1,72 @@
+
+.workOrderItem {
+  display: flex;
+  width: calc(33.333333333333336% - 56px);
+  min-height: 300px;
+  background: #F2EFE9;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  border-radius: 30px;
+  margin: 16px 12px;
+  padding-top: 41px;
+  box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
+}
+  
+.mobileWorkOrderItem {
+  display: flex;
+  width: 90%;
+  min-height: 300px;
+  background: #F2EFE9;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  padding-top: 41px;
+  border-radius: 30px;
+  margin: 16px 8px;
+  box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
+}
+
+.workOrderItemImg {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #fbc149;
+  font-size: 27px;
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+
+.workOrderItemTitle {
+  font-weight: 500;
+  line-height: 27px;
+  color: #303030;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-family: sans-serif;
+}
+
+.workOrderItemSubTitle {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px;
+
+  font-family: 'Cormorant',Arial,sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+    line-height: 20px;
+    color: #303030;
+  word-wrap: break-word;
+}

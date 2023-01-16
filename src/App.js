@@ -20,8 +20,7 @@ function App() {
     dispatch(change_page(localStorage.getItem('page')));
     dispatch(setMobileMod(isMobile));
   },[]);
-
-  
+ 
   return (
     <div className="App">
       <Header 

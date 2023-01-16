@@ -15,7 +15,7 @@ function WhyPeopleChooseBlock(props) {
           <video autoPlay loop muted className="whyPeopleChooseVideo">
             <source src={videoSource}  type="video/mp4" />
           </video> 
-          <Title text="Why People Choose" under color="#fff" />  
+          <Title text="Why our customers choose us" under color="#fff" />  
         </div> 
         <div className="whyPeopleChooseBottomContainer">
           <div className="whyPeopleChooseInfoContainer">

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"; 
+import { useDispatch } from "react-redux"; 
 import { Menu, Button } from 'antd';
 import images from '../../assets/images';
+import { change_page } from '../../redux/actions/app';
 import './style.css';
  
 function getWindowDimensions() {
@@ -30,13 +32,16 @@ function useWindowDimensions() {
   
 function BackgroundVideo(props) { 
 
-  const { videoSource, mobile } = props;
+  const { videoSource, page, mobile } = props;
   const { Logo_black }= images;
 
-  const [current, setCurrent] = useState('mail');
-  const onClick = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
+ const dispatch = useDispatch();
+
+
+
+  const onClick = (e) => { 
+    // localStorage.setItem('page',e.key)
+     dispatch(change_page(e.key))
   };
  
   const items = [
@@ -46,23 +51,23 @@ function BackgroundVideo(props) {
       children: [ 
         {
           label: 'Bathroom remodel',
-          key: 'setting:1',
+          key: 'bathroom',
         },
         {
           label: 'Kitchen remodel',
-          key: 'setting:2',
+          key: 'kitchen',
         }, 
         {
           label: 'Basment remodel',
-          key: 'setting:3',
+          key: 'basment',
         },
         {
           label: 'Roofing',
-          key: 'setting:4',
+          key: 'roofing',
         }, 
         {
           label: 'Tile installation',
-          key: 'setting:5',
+          key: 'tile',
         } 
       ],
     },
@@ -107,25 +112,25 @@ function BackgroundVideo(props) {
   ];
 
     return (
-      <div className='backgroundWrapper'>  
+      <div style={{ height: page === 'main' ? '700px' : 'auto' }} className='backgroundWrapper'>  
         <video autoPlay loop muted className="backgroundVideo">
           <source src={videoSource}  type="video/mp4" />
         </video>  
         <div className="backgroundTopContainer">
-          <div className='backgroundLableContainer'> 
+          <div className='backgroundLableContainer' onClick={() => {   dispatch(change_page('main'))}}> 
             <img src={Logo_black} alt="profile" width="380" height="93" />
           </div> 
           <div className="backgroundCatigories"> 
-            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+            <Menu onClick={onClick} selectedKeys={[page]} mode="horizontal" items={items} />
           </div> 
         </div> 
-        <div className="backgroundBottomContainer">
+        <div style={{ display: page !== 'main' && page !== 'contraction' ? 'none' : 'flex' }} className="backgroundBottomContainer">
           <div className="headerBottomTitleContainer"> 
             <div className="bottomHeaderTitle">
-              <h1>Let us proffessionally do your project</h1>
+              <h1>{`${ page === 'contraction' ? 'Contraction' : 'Let us proffessionally do your project' }`}</h1>
             </div>
             <div className="bottomHeaderSubTitle">
-              <div>Butter is residentional / commercial remodeling company</div>
+              <div>{`${ page === 'contraction' ? 'Our commercial constraction services includes:' : 'Butter is residentional / commercial remodeling company' }`}</div>
             </div> 
             <div className="bottomHeaderButtonContainer">
               <Button className="bottonTitle" type="primary">CONTACT NOW</Button>  

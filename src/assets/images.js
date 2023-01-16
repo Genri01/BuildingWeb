@@ -36,8 +36,19 @@ import price from './images/price.svg';
 import reliable from './images/reliable.svg';  
 import quality from './images/quality.svg';  
 import service from './images/service.svg';  
-import awards from './images/awards.jpeg';  
- 
+import awards from './images/awards.jpeg';
+
+import building from './images/building.jpeg';  
+import flooring from './images/flooring.jpeg';  
+import concrete from './images/concrete.jpeg';  
+import door from './images/door.jpeg';  
+import roofing from './images/roofing.jpeg';  
+import steel from './images/steel.jpeg';  
+import structural from './images/structural.jpeg';  
+import electrical from './images/elecrical.jpeg';  
+import ofice from './images/ofice.jpeg';  
+
+  
 export default {
   statuy,
   logo,
@@ -77,5 +88,14 @@ export default {
   reliable,
   quality,
   service,
-  awards
+  awards,
+  building,
+  flooring,
+  concrete,
+  door,
+  electrical,
+  roofing,
+  steel,
+  structural,
+  ofice
 }

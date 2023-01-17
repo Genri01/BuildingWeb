@@ -1,7 +1,8 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; 
-import MainScreen from '../Screens/MainScreen/index'; 
+import { Routes, Route } from 'react-router-dom';
 import CommercialScreen from '../Screens/CommercialScreen/index'; 
+import MainScreen from '../Screens/MainScreen/index'; 
+import RemodelScreen from '../Screens/RemodelScreen/index'; 
 
 const Main = (props) => {
  
@@ -10,7 +11,9 @@ const Main = (props) => {
   return (
     <main>
       <Routes>
-        <Route exact path='/' element={<CommercialScreen mobile={mobile} />}/> 
+        <Route exact path='/' element={<RemodelScreen mobile={mobile} />}/>
+        {/* <Route exact path='/' element={<MainScreen mobile={mobile} />}/> */}
+        <Route path='/commercial' element={<CommercialScreen mobile={mobile} />}/>  
       </Routes>
     </main>
   )

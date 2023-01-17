@@ -1,0 +1,39 @@
+ .cartContainerWrapper {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+   flex-direction: column;
+ }
+
+ .mobileCommercialWrapper {
+  display: flex;
+  flex-direction: column;
+   width: 100%;
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+ }
+ 
+ .cartContainerTitleWraper {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+
+.cartContainerItemWraper {
+  display: flex;
+  width: 70%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+ 

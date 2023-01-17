@@ -26,7 +26,7 @@ const imgArr = [
             {/* <div style={{borderColor:'white',zIndex: 9}} className="underlineTextMonument"></div> */}
             <div style={{zIndex: 9}} className="mobilePlusRightBlock">
               {
-              imgArr.map((item,i) => (<img key={i} style={{margin: "0px 40px"}} src={item} alt={`${i}img`} />))
+                 imgArr.map((item,i) => (<img key={i} style={{margin: "0px 40px"}} src={item} alt={`${i}img`} />))
               }
             </div>
           </>

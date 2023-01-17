@@ -1,0 +1,44 @@
+ 
+ .twoBtnContainerWrapper {
+  display: flex;
+  width: 100%;
+  height: auto; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+.textButtonText {
+  font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-style: normal;
+    font-weight: 400;
+}
+ 
+ .twoBtnContainer {
+    display: flex;
+    width: 500px;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    flex-direction: column;
+ }
+   
+.texttwoBtn { 
+  background-color: #640e0f;
+  color: #FFFFFF;
+  border-radius: 0px; 
+  height: 50px;
+  padding: 4px 45px;
+}
+
+.texttwoBtn:hover {
+    color: #d52024 !important;
+    background-color: rgb(0 0 0 / 4%) !important;
+    border: 2px solid #640e0f;
+    font-weight: 600;
+    padding: 4px 41px;
+}
+ 

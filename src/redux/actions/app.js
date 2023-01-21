@@ -13,3 +13,10 @@ export function change_page(page) {
     payload: page
   }
 }
+
+export function change_link(link) { 
+  return {
+    type: ActionTypes.APP_HEADER_ACTIVE_LINK,
+    payload: link
+  }
+}

@@ -4,17 +4,18 @@ import { useDispatch } from 'react-redux';
 import './style.css';
 
 export default function CommercialCart(props) { 
-  const { img, title, mobile } = props;
+  const { img, title, mobile, owerlay } = props;
  
   return (
     <div className={`${mobile ? 'mobileWorkOrderItem' : 'commercialItem'}`}>
       <div className='commercialItemImg'><img src={img} alt="imgCommercial" /></div>
-      <div className='commercialTitleContainer'>
+      {(owerlay && <><div className='commercialTitleContainer'>
         <div className='commercialItemTitle'>
           {title}
         </div> 
       </div> 
-      <div className='owerlayImg'/>
+      <div className='owerlayImg'/></>
+      )}
     </div>
   );
 }

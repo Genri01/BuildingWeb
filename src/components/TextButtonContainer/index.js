@@ -7,7 +7,7 @@ import './style.css';
 
 export default function TextButtonContainer(props) {
   const { mobile, text, textbtn, nobtn } = props;
- 
+  const br = text.split('<br/>'); 
   return (
     <div className={`${mobile ? 'mobileTextButtonWrapper' : "textButtonContainerWrapper"}`}>
       {
@@ -16,8 +16,8 @@ export default function TextButtonContainer(props) {
         </> :  
         <>
           <div className='textButtonTextContainer'>
-            <div className='textButtonText'>
-              {text} 
+            <div className='textButtonText'  > 
+              { br.map((item,k)=>(<React.Fragment key={k}>{item}<br/></React.Fragment>)) } 
             </div>
           </div>
           {(!nobtn && <div className="textButtonContainer">  

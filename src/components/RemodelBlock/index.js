@@ -6,51 +6,13 @@ import TextButtonContainer from '../TextButtonContainer';
 import CartContainer from '../CartContainer';
 import TwoBtnContainer from '../TwoBtnContainer';
 import Amentities from '../Amentities';
-import images from '../../assets/images';
+import WeDoBlock from '../WeDoBlock';
+
 import './style.css';
 
 export default function RemodelBlock(props) {
-  const { mobile } = props;
-  const { building, flooring, concrete, door, electrical, roofing, steel, structural, ofice } = images;
-  const ordedr_work = [
-    {
-      title: 'Building improvements & Renovations',
-      img: building
-    },
-    {
-      title: 'Commercial Roofing',
-      img: roofing 
-    },
-    {
-      title: 'Commercial Flooring',
-      img: flooring
-    },
-    {
-      title: 'Structural Repair',
-      img: structural
-    },
-    {
-      title: 'Concrete Work',
-      img: concrete 
-    },
-    {
-      title: 'Electrical & Plumbing & HVAC',
-      img: electrical 
-    },
-    {
-      title: 'Office Build Outs',
-      img: ofice
-    },
-    {
-      title: 'Steel Framing',
-      img: steel 
-    },
-    {
-      title: 'Door & Window Install & Repair',
-      img: door
-    },
-    
-  ]
+  const { mobile, titleText, amentities, titlecart, textone, texttwo, cartsItem, wedoblock } = props;
+ 
   return (
     <div className={`${mobile ? 'mobileRemodalWrapper' : "remodalWrapper"}`}>
       {
@@ -59,90 +21,15 @@ export default function RemodelBlock(props) {
         </> :
         <>  
           <TextButtonContainer
-            text={`
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-              Do you dream about
-            `}
-            textbtn="Scedule your free consultat"
+            text = { titleText }
+            textbtn = "Scedule your free consultat"
           />
+          {( wedoblock && <WeDoBlock /> )}
           <CartContainer
-            text="Bathroom design ideas that may fitsyour home:"
-            carts={[
-            {
-              title: 'Building improvements & Renovations',
-              img: building
-            },
-            {
-              title: 'Commercial Roofing',
-              img: roofing 
-            },
-            {
-              title: 'Commercial Flooring',
-              img: flooring
-            },
-            {
-              title: 'Structural Repair',
-              img: structural
-            },
-            {
-              title: 'Concrete Work',
-              img: concrete 
-            },
-            {
-              title: 'Electrical & Plumbing & HVAC',
-              img: electrical 
-            } 
-          ]} />
-          <Amentities />
-          <TwoBtnContainer textone="faq" texttwo="faq" />
+            text={titlecart}
+            carts={cartsItem} />
+          {( amentities && <Amentities /> )} 
+          <TwoBtnContainer textone={textone} texttwo={texttwo} />
         </>
       }
     </div>

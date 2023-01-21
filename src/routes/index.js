@@ -11,9 +11,9 @@ const Main = (props) => {
   return (
     <main>
       <Routes>
-        <Route exact path='/' element={<RemodelScreen mobile={mobile} />}/>
-        {/* <Route exact path='/' element={<MainScreen mobile={mobile} />}/> */}
-        <Route path='/commercial' element={<CommercialScreen mobile={mobile} />}/>  
+        <Route exact path='/' element={<MainScreen mobile={mobile} />}/>
+        <Route path='/residentional/:remodal' element={<RemodelScreen mobile={mobile} />}/> 
+        <Route path='/commercial' element={<CommercialScreen mobile={mobile} />}/>   
       </Routes>
     </main>
   )

@@ -58,7 +58,7 @@ export default function CommercialBlock(props) {
           <div className='commercialTitleWraper'></div>
           <div className='commercialItemWraper'>
             {
-              ordedr_work.map((item, i) => (<CommercialCart key={i} img={item.img} title={item.title} />))
+              ordedr_work.map((item, i) => (<CommercialCart owerlay={true} key={i} img={item.img} title={item.title} />))
             } 
           </div>
           <div className="commercialBtnContainer">  

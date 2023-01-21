@@ -48,7 +48,37 @@ import structural from './images/structural.jpeg';
 import electrical from './images/elecrical.jpeg';  
 import ofice from './images/ofice.jpeg';  
 
-  
+import roofing_1 from './images/roofing_1.jpeg'
+import roofing_2 from './images/roofing_2.jpeg'
+import roofing_3 from './images/roofing_3.jpeg'
+import roofing_4 from './images/roofing_4.jpeg'
+import roofing_5 from './images/roofing_5.jpeg'
+import roofing_6 from './images/roofing_6.jpeg'
+import bathroom_1 from './images/bathroom_1.jpeg'
+import bathroom_2 from './images/bathroom_2.jpeg'
+import bathroom_3 from './images/bathroom_3.jpeg'
+import bathroom_4 from './images/bathroom_4.jpeg'
+import bathroom_5 from './images/bathroom_5.jpeg'
+import bathroom_6 from './images/bathroom_6.jpeg'
+import tile_1 from './images/tile_1.jpeg'
+import tile_2 from './images/tile_2.jpeg'
+import tile_3 from './images/tile_3.jpeg'
+import tile_4 from './images/tile_4.jpeg'
+import tile_5 from './images/tile_5.jpeg'
+import tile_6 from './images/tile_6.jpeg'
+import kitchen_1 from './images/kitchen_1.jpeg'
+import kitchen_2 from './images/kitchen_2.jpeg'
+import kitchen_3 from './images/kitchen_3.jpeg'
+import kitchen_4 from './images/kitchen_4.jpeg'
+import kitchen_5 from './images/kitchen_5.jpeg'
+import kitchen_6 from './images/kitchen_6.jpeg'
+import basement_1 from './images/basement_1.jpeg'
+import basement_2 from './images/basement_2.jpeg'
+import basement_3 from './images/basement_3.jpeg'
+import basement_4 from './images/basement_4.jpeg'
+import basement_5 from './images/basement_5.jpeg'
+import basement_6 from './images/basement_6.jpeg'
+ 
 export default {
   statuy,
   logo,
@@ -97,5 +127,36 @@ export default {
   roofing,
   steel,
   structural,
-  ofice
+  ofice, 
+  roofing_1,
+  roofing_2,
+  roofing_3,
+  roofing_4,
+  roofing_5,
+  roofing_6,
+  bathroom_1,
+  bathroom_2,
+  bathroom_3,
+  bathroom_4,
+  bathroom_5,
+  bathroom_6,
+  tile_1,
+  tile_2,
+  tile_3,
+  tile_4,
+  tile_5,
+  tile_6,
+  kitchen_1,
+  kitchen_2,
+  kitchen_3,
+  kitchen_4,
+  kitchen_5,
+  kitchen_6,
+  basement_1,
+  basement_2,
+  basement_3,
+  basement_4,
+  basement_5,
+  basement_6
+
 }

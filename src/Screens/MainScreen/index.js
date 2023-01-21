@@ -14,7 +14,7 @@ function MainScreen(props) {
     return (
       <div className="main_screen" > 
         <WhatWeDoBlock customclass="mobileArrow" mobile={mobile} />
-        <WhyPeopleChooseBlock videoSource="https://static.videezy.com/system/resources/previews/000/053/131/original/Untitled00001099.mp4" mobile={mobile} />
+        <WhyPeopleChooseBlock videoSource="https://static.videezy.com/system/resources/previews/000/034/673/original/MT029.mp4" mobile={mobile} />
         <WhatPeopleSay mobile={mobile} />
         <AwardsBlock mobile={mobile} /> 
         <Footer mobile={mobile} /> 

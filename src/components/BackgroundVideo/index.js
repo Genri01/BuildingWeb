@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"; 
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from "react-redux"; 
+import { useDispatch, useSelector } from "react-redux"; 
+import { pages } from '../../redux/selectors';
 import { Menu, Button } from 'antd';
 import images from '../../assets/images';
-import { change_page } from '../../redux/actions/app';
+import { change_page, change_link } from '../../redux/actions/app';
 import './style.css';
  
 function getWindowDimensions() {
@@ -30,19 +31,38 @@ function useWindowDimensions() {
 
   return windowDimensions;
 }
-  
+   
 function BackgroundVideo(props) { 
 
-  const { videoSource, page, mobile } = props;
+  // const { page, mobile } = props;
   const { Logo_black }= images;
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
  
-  const onClick = (e) => { 
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
+  
+  const page = useSelector(pages.page); 
+  const activeLink = useSelector(pages.activeLink); 
+ 
+  const onClick = (e) => {  
     // localStorage.setItem('page',e.key)
-     dispatch(change_page(e.key));
-     navigate(e.key)
+   
+
+    if(e.key === 'bathroom' ||
+    e.key === 'kitchen' ||
+    e.key === 'roofing' ||
+    e.key === 'basment' ||
+    e.key === 'tile' ) {
+      navigate(`residentional/${e.key}`)
+    } else if(e.key === 'butkovprocess' ||
+    e.key === 'financingoptions' ||
+    e.key === 'rewiews' ||
+    e.key === 'blog' ||
+    e.key === 'faq' ) {
+      navigate(`moreinfo/${e.key}`)
+    } else {
+    navigate(`${e.key}`)
+    }
+    dispatch(change_page(e.key));
   };
  
   const items = [
@@ -114,7 +134,7 @@ function BackgroundVideo(props) {
 
  let menupagetitle = 'Let us proffessionally do your project';
  let menupagesubtitle = 'Butter is residentional / commercial remodeling company';
- let hidenheader = 'flex';
+ let hidenheader = 'flex'; 
 
 switch (page) { 
   
@@ -122,26 +142,31 @@ switch (page) {
     menupagetitle = 'Bathroom Remodel';
     menupagesubtitle = '';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/049/168/original/27-05-2020104.mp4`)); 
     break;
   case 'kitchen':
     menupagetitle = 'Kitchen Remodel';
     menupagesubtitle = '';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/037/504/original/C069.mp4`)); 
     break;
   case 'roofing':
     menupagetitle = 'Roofing';
     menupagesubtitle = '';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/050/888/original/MVI_7139-Rain-Roof.mp4`)); 
     break;
   case 'basment':
     menupagetitle = 'Basment Remodel';
     menupagesubtitle = '';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/021/226/original/A106_09021627_C022.mp4`));  
     break;
   case 'tile':
     menupagetitle = 'Tile Installation';
     menupagesubtitle = '';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/056/106/original/demolition-hammer-breaking-the-tiled-wallM.mp4`)); 
     break;
   case 'commercial':
     menupagetitle = 'Commercial';
@@ -182,16 +207,14 @@ switch (page) {
   default:
     break;
 }
- 
-
- console.log(page)
+  
   return (
     <div style={{ height: page === 'main' ? '700px' : 'auto' }} className='backgroundWrapper'>  
       <video autoPlay loop muted className="backgroundVideo">
-        <source src={videoSource}  type="video/mp4" />
+        <source src={activeLink}  type="video/mp4" />
       </video>  
       <div className="backgroundTopContainer">
-        <div className='backgroundLableContainer' onClick={() => {   dispatch(change_page('main')); navigate('/')}}> 
+        <div className='backgroundLableContainer' onClick={() => { localStorage.setItem('page','/');  dispatch(change_page('/')); navigate('/')}}> 
           <img src={Logo_black} alt="profile" width="380" height="93" />
         </div> 
         <div className="backgroundCatigories"> 

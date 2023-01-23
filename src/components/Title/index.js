@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 
 function Title(props) {
-    const { text, color, size, margin ,under, z, top, background } = props;
+    const { text, color, size, margin ,under, z, top, background, center } = props;
     return ( 
       <div className='titleWrapper' style={{ paddingTop: top === undefined ? '0px' : top, backgroundColor: background === undefined ? 'transparent' : background, }}>
         <div
@@ -11,6 +11,7 @@ function Title(props) {
           color: color === undefined ? '#333' : color,
           margin: margin === undefined ? '0px' : margin, 
           zIndex: z === undefined ? '0' : z,
+          textAlign: center === undefined ? 'none' : 'center' 
         }} 
         className='textTitle'>{text}</div>
         { under && <div className="underLine" /> } 

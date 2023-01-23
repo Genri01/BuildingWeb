@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Button } from 'antd';
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
+import { setInsert,linkpage } from '../../redux/actions/cart';
 import { useDispatch } from 'react-redux';
 import './style.css'
 

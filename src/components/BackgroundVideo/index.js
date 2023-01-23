@@ -194,9 +194,9 @@ switch (page) {
     hidenheader = 'none';
     break;
   case 'contact':
-    menupagetitle = '';
+    menupagetitle = 'Contact Us';
     menupagesubtitle = '';
-    hidenheader = 'none'; 
+    hidenheader = 'flex'; 
     break;
   case 'login':
     menupagetitle = '';

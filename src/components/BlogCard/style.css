@@ -1,0 +1,58 @@
+  .BlogCardWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 55%);
+    border-radius: 5px;
+    margin: 10px; 
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .BlogCardImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; 
+  }
+
+  .BlogCardImgContainer img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .BlogCardTxtContainer {
+    display: flex;
+    width: 100%; 
+    height: 20%;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+  }
+ 
+  .BlogCardTxt {
+    color: #54595f;
+    font-size: 21px; 
+    font-family: Lato-Black,Sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .BlogCardBtnContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 15%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }

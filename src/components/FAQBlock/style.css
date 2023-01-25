@@ -1,0 +1,52 @@
+ .faqWrapper {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   /* align-items: center; */
+   /* justify-content: center; */
+   box-sizing: border-box;
+   padding-top: 50px;
+   padding-left: 50px;
+   padding-right: 50px;
+   background-color: white;
+   flex-direction: column;
+ }
+
+ .mobileFaqWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+ }
+ 
+ .listContainer {
+    display: block; 
+    height: 400px;
+ }
+
+ .listContainer svg {
+    color: #e61f26;
+    font-size: 15px;
+ }
+
+ .listContainer .ant-collapse {
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5714285714285714;
+    background-color: white;
+    border: none;
+    border-bottom: 0;
+    border-radius: 0px;
+ }
+
+ .listContainer .ant-collapse-content-box p {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65em;
+    font-style: normal;
+    font-weight: 400;
+ }

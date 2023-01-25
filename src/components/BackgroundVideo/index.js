@@ -173,15 +173,20 @@ switch (page) {
     menupagesubtitle = 'Our commercial constraction services includes:';
     hidenheader = 'flex';
     break;
+  case 'faq':
+    menupagetitle = 'More Info';
+    menupagesubtitle = 'FAQ';
+    hidenheader = 'flex';
+    break;
   case 'butkovprocess':
-    menupagetitle = '';
-    menupagesubtitle = '';
-    hidenheader = 'none';
+    menupagetitle = 'More Info';
+    menupagesubtitle = 'Butkov\'s process';
+    hidenheader = 'flex';
     break;
   case 'financingoptions':
-    menupagetitle = '';
-    menupagesubtitle = '';
-    hidenheader = 'none';
+    menupagetitle = 'More Info';
+    menupagesubtitle = 'Financing options';
+    hidenheader = 'flex';
     break;
   case 'rewiews':
     menupagetitle = '';
@@ -189,9 +194,10 @@ switch (page) {
     hidenheader = 'none';
     break;
   case 'blog':
-    menupagetitle = 'Commercial';
+    menupagetitle = 'Blog';
     menupagesubtitle = ''; 
-    hidenheader = 'none';
+    hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/013/979/original/keys_web-blog-social.mp4`)); 
     break;
   case 'contact':
     menupagetitle = 'Contact Us';

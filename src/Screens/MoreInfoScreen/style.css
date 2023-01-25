@@ -17,12 +17,3 @@
   flex-direction: column;
   padding-top: 300px;
 }
-
-.BlogContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}

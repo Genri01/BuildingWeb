@@ -1,13 +1,11 @@
-import { combineReducers } from 'redux';
-import header from './header'
+import { combineReducers } from 'redux'; 
 import app from './app'
-import cart from './cart'
+import questions from './questions'
 import pages from './pages'
 
-const rootReducer = combineReducers({
-  header,
+const rootReducer = combineReducers({ 
   app,
-  cart,
+  questions,
   pages
 });
 

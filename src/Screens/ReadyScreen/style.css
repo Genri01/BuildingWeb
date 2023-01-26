@@ -1,0 +1,98 @@
+.ready_screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+ 
+.inputsContainerSpace {
+  display: flex;
+  width: 100%; 
+  padding: 50px;
+  box-sizing: border-box;
+}
+ 
+.inputContainerItem {
+  display: block;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 20%;
+  box-sizing: border-box;
+}
+
+.questionItem {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 50px;
+}
+
+.checkBoxContainer {
+  display: flex;
+  width: 100%;
+  height: 480px;
+  flex-direction: column;
+  padding-left: 400px;
+}
+
+.checkBoxContainerTitle {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  font-style: normal; 
+}
+
+.question {
+  font-weight: 600; 
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5; 
+  font-style: normal; 
+}
+
+.textExample {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  font-weight: 600; 
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; 
+  font-style: italic; 
+  word-wrap: break-word;
+  padding-left: 50px;
+}
+
+.readyButtonContainer {
+  display: flex;
+  width: 20%;
+  height: 200px;
+  align-items: center;
+  justify-content: center; 
+}
+
+.readyImgContainer { 
+  width: 100px; 
+  display: flex;
+}
+
+.readyAntitiesContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #363636cc;
+}

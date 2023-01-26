@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"; 
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux"; 
-import { pages } from '../../redux/selectors';
 import { Menu, Button } from 'antd';
+import { useDispatch, useSelector } from "react-redux"; 
+import { pages } from '../../redux/selectors'; 
 import images from '../../assets/images';
-import { change_page, change_link } from '../../redux/actions/app';
+import { change_page, change_link, modalMiniQuestion } from '../../redux/actions/app';
 import './style.css';
  
 function getWindowDimensions() {
@@ -205,9 +205,9 @@ switch (page) {
     hidenheader = 'flex'; 
     break;
   case 'login':
-    menupagetitle = '';
+    menupagetitle = 'Login';
     menupagesubtitle = '';
-    hidenheader = 'none';
+    hidenheader = 'flex';
     break;
 
   default:
@@ -238,7 +238,7 @@ switch (page) {
             <div>{menupagesubtitle}</div>
           </div> 
           <div className="bottomHeaderButtonContainer">
-            <Button className="bottonTitle" type="primary">CONTACT NOW</Button>  
+            <Button onClick={() => { dispatch(modalMiniQuestion(true)); }} className="bottonTitle" type="primary">CONTACT NOW</Button>  
           </div>
         </div>
         <div className="headerBottomClearContainer" />

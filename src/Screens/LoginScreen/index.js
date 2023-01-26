@@ -6,7 +6,7 @@ import AwardsBlock from '../../components/AwardsBlock';
 
 import './style.css';
   
-function MainScreen(props) {
+function LoginScreen(props) {
  
   const { mobile } = props;
  
@@ -20,4 +20,4 @@ function MainScreen(props) {
     );
 }
 
-export default MainScreen;
+export default LoginScreen;

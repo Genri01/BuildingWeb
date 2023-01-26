@@ -20,3 +20,17 @@ export function change_link(link) {
     payload: link
   }
 }
+
+export function modalFullQuestion(show) { 
+  return {
+    type: ActionTypes.APP_MODAL_FULL_QUESTION_SHOW,
+    payload: show
+  }
+}
+
+export function modalMiniQuestion(show) { 
+  return {
+    type: ActionTypes.APP_MODAL_MINI_QUESTION_SHOW,
+    payload: show
+  }
+}

@@ -78,6 +78,14 @@ import basement_3 from './images/basement_3.jpeg'
 import basement_4 from './images/basement_4.jpeg'
 import basement_5 from './images/basement_5.jpeg'
 import basement_6 from './images/basement_6.jpeg'
+
+import ant_0 from './images/ant_0.svg'
+import ant_6 from './images/ant_6.png'
+import ant_5 from './images/ant_5.png'
+import ant_4 from './images/ant_4.png'
+import ant_2 from './images/ant_2.png'
+import ant_3 from './images/ant_3.png' 
+import ant_1 from './images/ant_1.png'
  
 export default {
   statuy,
@@ -157,6 +165,13 @@ export default {
   basement_3,
   basement_4,
   basement_5,
-  basement_6
+  basement_6,
+  ant_0,
+  ant_1,
+  ant_2,
+  ant_3,
+  ant_4,
+  ant_5,
+  ant_6, 
 
 }

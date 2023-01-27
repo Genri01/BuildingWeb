@@ -43,7 +43,7 @@ export default function FAQBlock(props) {
     
   ];  
   return (
-    <div className={`${mobile ? 'mobileFaqWrapper' : "faqWrapper"}`}>
+    <div id={'faq'} className={`${mobile ? 'mobileFaqWrapper' : "faqWrapper"}`}>
       {
         mobile ?
         <> 

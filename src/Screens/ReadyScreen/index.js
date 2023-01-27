@@ -54,17 +54,13 @@ function ReadyScreen(props) {
    
   const checkbox = [
     'Bathroom Remodeling',
-    'Commercial Roofing',
-    'Decks',
-    'Doors & Windows',
-    'Gutters',
+    'Kitchen Remodeling',
+    'Basement Remodeling',
     'Roof Installation & Repair',
-    'Shower Remodeling',
     'Siding Installation & Repair',
-    'Soffit & Fascia',
-    'Storm Damage Repair',
-    'Tile Installation & Repair',
-    'Other', 
+    'Tile Installation',
+    'Shower Remodeling',
+    'GuHers', 
   ]
    
   const imgAnty = [ant_0, ant_1, ant_2, ant_3, ant_4, ant_5, ant_6]

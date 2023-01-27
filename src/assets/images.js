@@ -86,6 +86,12 @@ import ant_4 from './images/ant_4.png'
 import ant_2 from './images/ant_2.png'
 import ant_3 from './images/ant_3.png' 
 import ant_1 from './images/ant_1.png'
+
+import test_0 from './images/test_0.webp'
+import test_1 from './images/test_1.webp'
+import test_2 from './images/test_2.webp'
+import test_3 from './images/test_3.webp' 
+import test_4 from './images/test_4.webp' 
  
 export default {
   statuy,
@@ -172,6 +178,10 @@ export default {
   ant_3,
   ant_4,
   ant_5,
-  ant_6, 
-
+  ant_6,
+  test_0,
+  test_1,
+  test_2,
+  test_3,
+  test_4, 
 }

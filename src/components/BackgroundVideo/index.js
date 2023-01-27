@@ -189,9 +189,9 @@ switch (page) {
     hidenheader = 'flex';
     break;
   case 'rewiews':
-    menupagetitle = '';
-    menupagesubtitle = '';
-    hidenheader = 'none';
+    menupagetitle = 'Testimonials';
+    menupagesubtitle = 'Get to know us through the experiences of our clients.';
+    hidenheader = 'flex';
     break;
   case 'blog':
     menupagetitle = 'Blog';

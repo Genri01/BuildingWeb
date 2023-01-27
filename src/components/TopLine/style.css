@@ -12,7 +12,7 @@
 
 .topHeader .ant-btn{
   color: white;
-  background-color: rgba(0, 0, 0, 0.06);
+  /* background-color: rgba(0, 0, 0, 0.06); */
 }
 
 .topHeader .ant-btn:hover { 

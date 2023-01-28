@@ -14,8 +14,7 @@ export default function MoreInfoScreen(props) {
   const {state, hash} = useLocation()
   const id = state?.id;
 
-  useEffect(()=>{
-    console.log(state,hash)
+  useEffect(()=>{ 
     if(id){ 
         const targetElement = document.getElementById(id) 
         targetElement?.scrollIntoView({behavior: 'smooth'})

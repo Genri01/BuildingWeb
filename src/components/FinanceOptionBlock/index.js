@@ -12,7 +12,7 @@ import Title from '../Title';
 import './style.css';
 
 export default function FinanceOptionBlock(props) {
-  const { mobile } = props; 
+  const { mobile, id } = props; 
 
   const itemsCard = [
     {
@@ -61,7 +61,7 @@ export default function FinanceOptionBlock(props) {
         </> :
         <>  
           <Title text="Financing options" />
-          <div className='subCenterText'>
+          <div id={id} className='subCenterText'>
             From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
           </div>
             

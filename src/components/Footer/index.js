@@ -38,7 +38,7 @@ function Footer(props) {
           </div>
           <div className="footer_desription_section_center">
             <div className={`${mobile ? 'mobile-footer_txt' : 'footer_titleTxt'}`}>Important Links</div>
-            <Link to={"/#answer"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Terms&condditions</div></Link>
+            <Link to={"/moreinfo/#faq"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Terms&condditions</div></Link>
             <Link to={"/#about"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Privacy Policy</div></Link>
             {/* <Link to={"/police"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Services</div></Link> */}
             <Link to={"/police"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>FAQ</div></Link>

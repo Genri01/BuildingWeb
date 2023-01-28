@@ -13,7 +13,7 @@ import { Collapse } from 'antd';
 import './style.css';
 
 export default function FAQBlock(props) {
-  const { mobile } = props;
+  const { mobile, id } = props;
   const { Panel } = Collapse;
   const collapseItems = [
     {
@@ -43,7 +43,7 @@ export default function FAQBlock(props) {
     
   ];  
   return (
-    <div id={'faq'} className={`${mobile ? 'mobileFaqWrapper' : "faqWrapper"}`}>
+    <div id={id} className={`${mobile ? 'mobileFaqWrapper' : "faqWrapper"}`}>
       {
         mobile ?
         <> 

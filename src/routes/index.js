@@ -23,7 +23,7 @@ const Main = (props) => {
         <Route path='/moreinfo/blog' element={<BlogScreen mobile={mobile} />}/> 
         <Route path='/moreinfo/rewiews' element={<TestimonialsScreen mobile={mobile} />}/> 
         <Route path='/contact' element={<ContactScreen mobile={mobile} />}/> 
-        <Route path='/moreinfo/:item' element={<MoreInfoScreen mobile={mobile} />}/>  
+        <Route path='/:moreinfo/:item' element={<MoreInfoScreen mobile={mobile} />}/>  
         <Route path='/readytoearn' element={<ReadyScreen mobile={mobile} />}/>  
         <Route path='/login' element={<LoginScreen mobile={mobile} />}/>  
       </Routes>

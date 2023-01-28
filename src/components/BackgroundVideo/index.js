@@ -58,7 +58,7 @@ function BackgroundVideo(props) {
     e.key === 'rewiews' ||
     e.key === 'blog' ||
     e.key === 'faq' ) {
-      navigate(`moreinfo/${e.key}`)
+      navigate(`moreinfo/${e.key}`,{ state: { id: e.key} })
     } else {
     navigate(`${e.key}`)
     }

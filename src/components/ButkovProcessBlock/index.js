@@ -12,7 +12,7 @@ import Title from '../Title';
 import './style.css';
 
 export default function ButkovProcessBlock(props) {
-  const { mobile } = props; 
+  const { mobile, id } = props; 
 
   const itemsCard = [
     {
@@ -54,7 +54,7 @@ export default function ButkovProcessBlock(props) {
 
 
   return (
-    <div className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
+    <div id={id} className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
       {
         mobile ?
         <> 

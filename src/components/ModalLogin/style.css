@@ -57,8 +57,8 @@
   padding-right: 0px;
 }
 
-.modalLoginContainer .ant-form-item .ant-form-item-control-input-content {
-  align-self: end;
+.modalLoginContainer [class^="ant-form"] [class^="ant-form"], [class*=" ant-form"] [class^="ant-form"] {
+  align-self: end !important;
 }
 
 .modalLoginContainer .ant-input {

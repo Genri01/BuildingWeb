@@ -1,0 +1,63 @@
+
+
+.planCardWrapper { 
+  display: flex;
+  align-items: center; 
+  width: 35%;
+  background-color: #f1f0f0;
+  padding: 30px;
+  font-size: 15px;
+  border: 1px solid #e5e4e4;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.planCardTitle {
+  display: flex;
+  align-items: center; 
+  width: 100%; 
+  line-height: 28px;
+  color: #ef3f34;
+  font-weight: bold;
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.planCardSubName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  font-size: 22px;
+  line-height: 24px;
+  color: #4361ad;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+
+.planCardOneCol {
+  display: flex;
+  align-items: center; 
+  width: 100%; 
+  font-size: 15px;
+  line-height: 24px; 
+  padding-bottom: 10px;
+}
+
+.planCardTwoCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  color: #0d0d0d;
+  font-size: 13px;
+  font-weight: normal; 
+  line-height: 22px; 
+}
+
+.mobilePlanCardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+}

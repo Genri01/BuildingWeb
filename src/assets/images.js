@@ -92,7 +92,10 @@ import test_1 from './images/test_1.webp'
 import test_2 from './images/test_2.webp'
 import test_3 from './images/test_3.webp' 
 import test_4 from './images/test_4.webp' 
- 
+
+import sinchrony from './images/sinchrony.jpeg' 
+
+
 export default {
   statuy,
   logo,
@@ -184,4 +187,5 @@ export default {
   test_2,
   test_3,
   test_4, 
+  sinchrony
 }

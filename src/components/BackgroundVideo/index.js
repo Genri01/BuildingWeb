@@ -4,7 +4,7 @@ import { Menu, Button } from 'antd';
 import { useDispatch, useSelector } from "react-redux"; 
 import { pages } from '../../redux/selectors'; 
 import images from '../../assets/images';
-import { change_page, change_link, modalMiniQuestion } from '../../redux/actions/app';
+import { change_page, change_link, modalMiniQuestion, modalLogin } from '../../redux/actions/app';
 import './style.css';
  
 function getWindowDimensions() {
@@ -45,8 +45,7 @@ function BackgroundVideo(props) {
  
   const onClick = (e) => {  
     // localStorage.setItem('page',e.key)
-   
-
+    
     if(e.key === 'bathroom' ||
     e.key === 'kitchen' ||
     e.key === 'roofing' ||
@@ -59,6 +58,8 @@ function BackgroundVideo(props) {
     e.key === 'blog' ||
     e.key === 'faq' ) {
       navigate(`moreinfo/${e.key}`,{ state: { id: e.key} })
+    } else if(e.key === 'login') { 
+      dispatch(modalLogin(true))
     } else {
     navigate(`${e.key}`)
     }
@@ -172,37 +173,43 @@ switch (page) {
     menupagetitle = 'Commercial';
     menupagesubtitle = 'Our commercial constraction services includes:';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/006/903/original/Scientists4.mp4`)); 
     break;
   case 'faq':
     menupagetitle = 'More Info';
     menupagesubtitle = 'FAQ';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/018/914/original/ICON-VERSION9.mp4`));
     break;
   case 'butkovprocess':
     menupagetitle = 'More Info';
     menupagesubtitle = 'Butkov\'s process';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/018/914/original/ICON-VERSION9.mp4`));
     break;
   case 'financingoptions':
     menupagetitle = 'More Info';
     menupagesubtitle = 'Financing options';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/018/914/original/ICON-VERSION9.mp4`));
     break;
   case 'rewiews':
     menupagetitle = 'Testimonials';
     menupagesubtitle = 'Get to know us through the experiences of our clients.';
     hidenheader = 'flex';
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/018/914/original/ICON-VERSION9.mp4`));
     break;
   case 'blog':
     menupagetitle = 'Blog';
     menupagesubtitle = ''; 
     hidenheader = 'flex';
-    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/013/979/original/keys_web-blog-social.mp4`)); 
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/013/979/original/keys_web-blog-social.mp4`));  
     break;
   case 'contact':
     menupagetitle = 'Contact Us';
     menupagesubtitle = '';
     hidenheader = 'flex'; 
+    dispatch(change_link(`https://static.videezy.com/system/resources/previews/000/018/367/original/ICON-VERSION4.mp4`));
     break;
   case 'login':
     menupagetitle = 'Login';

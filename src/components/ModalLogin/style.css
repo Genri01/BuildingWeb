@@ -1,0 +1,73 @@
+
+.modalMini .ant-modal-footer {
+  display: none !important;
+}
+
+.modalMini .ant-form {
+  width: 100%;
+}
+
+.modalLoginContainer {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.locationInput {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  list-style: none;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  background-color: #ffffff;
+  background-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.locationInput::placeholder {
+  text-overflow: ellipsis;
+  color: #bfbfbf;
+}
+
+.error_input{border:2px solid #e4292b!important}
+
+.modalLoginContainer .ant-form-item .ant-form-item-label >label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  height: 25px;
+  color: rgb(139 3 8);
+  font-size: 21px;
+  padding-right: 0px;
+}
+
+.modalLoginContainer .ant-form-item .ant-form-item-control-input-content {
+  align-self: end;
+}
+
+.modalLoginContainer .ant-input {
+  width: 300px;
+}
+
+.btnContainerLogin {
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  justify-content: center;
+}

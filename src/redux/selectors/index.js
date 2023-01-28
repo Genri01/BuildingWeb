@@ -2,7 +2,8 @@
 export const app = {
   mobile: (state) => state.app.mobile,
   app_modal_question_full_show: (state) => state.app.app_modal_question_full_show,
-  app_modal_question_mini_show: (state) => state.app.app_modal_question_mini_show 
+  app_modal_question_mini_show: (state) => state.app.app_modal_question_mini_show,
+  app_modal_login_show: (state) => state.app.app_modal_login_show 
 }
 
 export const pages = {

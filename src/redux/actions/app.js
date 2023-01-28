@@ -34,3 +34,10 @@ export function modalMiniQuestion(show) {
     payload: show
   }
 }
+
+export function modalLogin(show) { 
+  return {
+    type: ActionTypes.APP_MODAL_LOGIN_SHOW,
+    payload: show
+  }
+}

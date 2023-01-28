@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer'; 
 import ModalQuestionFull from './components/ModalQuestionFull'; 
 import ModalQuestionMini from './components/ModalQuestionMini'; 
+import ModalLogin from './components/ModalLogin'; 
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
   const mobile = useSelector(app.mobile); 
   const app_modal_question_full_show = useSelector(app.app_modal_question_full_show); 
   const app_modal_question_mini_show = useSelector(app.app_modal_question_mini_show); 
+  const app_modal_login_show = useSelector(app.app_modal_login_show); 
 
   useEffect(() => { 
     dispatch(setMobileMod(isMobile));
@@ -44,6 +46,7 @@ function App() {
       <Footer mobile={mobile} />  
       <ModalQuestionFull show={app_modal_question_full_show} />
       <ModalQuestionMini show={app_modal_question_mini_show} />
+      <ModalLogin show={app_modal_login_show} />
     </div>
   );
 }

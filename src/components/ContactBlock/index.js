@@ -27,6 +27,22 @@ export default function ContactBlock(props) {
               `}</div>
             </div> 
             <div className='areaContainer'>
+            <div className='formContainer'>
+              <Title center={true} text="Enter your details to contact you" />
+              <div className='formItemContainer'>
+                <Form form={form}  labelCol={{ span: 3 }} wrapperCol={{ span: 22 }}> 
+                  <Form.Item label="*">
+                    <Input placeholder="Name" />
+                  </Form.Item>
+                  <Form.Item label="*">
+                    <Input placeholder="Email" />
+                  </Form.Item>
+                  <Form.Item label="*">
+                    <Input placeholder="Phone" />
+                  </Form.Item> 
+                </Form>
+              </div> 
+            </div> 
               <ContactUsForm /> 
             </div> 
           </div>
@@ -47,23 +63,7 @@ export default function ContactBlock(props) {
                 ]} /> 
                 <ZoomControl /> 
               </Map>
-            </YMaps>  
-            <div className='formContainer'>
-              <Title center={true} text="Enter your details to contact you" />
-              <div className='formItemContainer'>
-                <Form form={form}  labelCol={{ span: 3 }} wrapperCol={{ span: 22 }}> 
-                  <Form.Item label="*">
-                    <Input placeholder="Name" />
-                  </Form.Item>
-                  <Form.Item label="*">
-                    <Input placeholder="Email" />
-                  </Form.Item>
-                  <Form.Item label="*">
-                    <Input placeholder="Phone" />
-                  </Form.Item> 
-                </Form>
-              </div> 
-            </div> 
+            </YMaps>   
           </div> 
         </>
       }

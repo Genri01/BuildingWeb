@@ -84,14 +84,14 @@ export default function FinanceOptionBlock(props) {
   ]
 
   return (
-    <div className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
+    <div id={id} className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
       {
         mobile ?
         <> 
         </> :
         <>   
           <Title text="Financing options" />
-          <div id={id} className='subCenterText'>
+          <div className='subCenterText'>
             From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
           </div>
           <div className='textFinance'>

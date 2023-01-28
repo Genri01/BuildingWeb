@@ -57,7 +57,7 @@
   padding-right: 0px;
 }
 
-.modalLoginContainer [class^="ant-form"] [class^="ant-form"], [class*=" ant-form"] [class^="ant-form"] {
+.modalLoginContainer [class^="ant-form"] [class^="ant-form"], [class*=" ant-form"] {
   align-self: end !important;
 }
 

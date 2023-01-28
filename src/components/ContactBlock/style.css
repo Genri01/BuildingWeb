@@ -80,7 +80,7 @@
   margin-top: 50px;
 }
 
-.ant-form-item .ant-form-item-label >label {
+.modalMiniformContainer .ant-form-item .ant-form-item-label >label {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -89,8 +89,9 @@
     color: rgb(230 31 38);
     font-size: 23px;
     padding-right: 2px;
+    padding-bottom: 20px;
 }
 
-.ant-form-item .ant-form-item-label >label::after {
+.modalMiniformContainer .ant-form-item .ant-form-item-label >label::after {
     display: none;
 }

@@ -1,5 +1,6 @@
  import { setTel, setEmail } from '../redux/actions/questions' 
- 
+ import { useState, useEffect } from 'react'; 
+
 function validateEmail(email) {
   var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return pattern.test(email);
@@ -320,10 +321,38 @@ const maskTelephone = {
   "ZM": "+260-99-999-9999", 
   "ZW": "+263-9-999999" 
 } 
+ 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
 
-export {
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+   
+
+
+export { 
   validateEmail,
   changeTelephone,
   changeEmail,
+  useWindowDimensions,
   maskTelephone
 }

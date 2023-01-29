@@ -2,10 +2,13 @@
   display:flex;flex-direction:column;width:100%;background-color:#333;align-items:center;justify-content:center;
 }
 .footer_up {
-  display:flex;flex-direction:row;width:100%;background-color:#363636;align-items:flex-start;justify-content:space-evenly;padding-top:50px;z-index:0
+  display:flex;flex-direction:row;width:100%;background-color:#363636;align-items:flex-start;justify-content:space-evenly;z-index:0
 }
   .footer_down {
     display:flex;flex-direction:row;width:100%;background-color:#363636;padding-bottom:60px;padding-top: 40px;align-items:center;justify-content:space-evenly;z-index:1
+  }
+  .mobileFooter_down {
+    display:flex;flex-direction:row;width:100%;background-color:#363636;padding:10px 0px;align-items:center;justify-content:space-evenly;z-index:1
   }
   .visa_container img{
     margin-left: 10px; 
@@ -32,8 +35,7 @@
   .footer_down::before{
     /* content:"";display:block;width:80%;height:1px;background:#212729;margin:50px auto */
   }
-  .footer_desription_section_right{
-    padding-top: 40px;
+  .footer_desription_section_right{ 
     align-self:flex-start
   } 
   .footer_desription_section_left a, .footer_desription_section_right a, .footer_desription_section_center a {
@@ -43,8 +45,8 @@
     -webkit-tap-highlight-color: transparent;
   }
   .footer_desription_section_center{
-    padding-top: 40px;
-    align-self:flex-start
+    display: flex;
+    padding-top: 40px; 
   }
   .footer_desription_section_left{
     padding-top: 40px;
@@ -66,7 +68,7 @@
   } 
 
   .mobile-footer_txt{
-    cursor:pointer;user-select:none;text-decoration: none;margin:0 5px 10px 0;font-family:'Montserrat-Bold';font-size:11px;font-weight:500;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:.79px;color:#9f9f9f;color:#999
+    cursor:pointer;text-align:center;text-decoration: none;margin:0 5px 10px 0;font-family:'Montserrat-Bold';font-size:11px;font-weight:500;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:.79px;color:#9f9f9f;color:#999
   }
   .mobile-coperait_txt{
     user-select:none;color:#999;padding:20px 0;font-size: 11px;
@@ -129,8 +131,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; 
   }
 
 
@@ -138,6 +139,15 @@
   width: 350px;
   overflow-wrap: break-word;
 }
+
+.mobileWorkingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
 
 
 

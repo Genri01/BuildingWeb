@@ -42,7 +42,7 @@ function App() {
           dispatch(change_page(e.target.id));
         }}   
       />
-      <Main mobile={mobile} />
+      {/* <Main mobile={mobile} /> */}
       <Footer mobile={mobile} />  
       <ModalQuestionFull show={app_modal_question_full_show} />
       <ModalQuestionMini show={app_modal_question_mini_show} />

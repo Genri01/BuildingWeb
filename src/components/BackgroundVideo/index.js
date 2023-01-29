@@ -7,42 +7,46 @@ import images from '../../assets/images';
 import { change_page, change_link, modalMiniQuestion, modalLogin } from '../../redux/actions/app';
 import './style.css';
  
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
+import { 
+  MenuFoldOutlined,
+  MenuUnfoldOutlined, 
+} from '@ant-design/icons';  
+
+
+function getItem(label, key, icon, children, type) {
   return {
-    width,
-    height
+    key,
+    icon,
+    children,
+    label,
+    type,
   };
 }
 
-function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-}
-   
 function BackgroundVideo(props) { 
 
-  // const { page, mobile } = props;
-  const { Logo_black }= images;
+  const { mobile } = props;
+  const { 
+    Logo_black,
+    login,
+    comercial,
+    residentional,
+    contact,
+    moreinfo, 
+  }= images;
  
   const dispatch = useDispatch();
   const navigate = useNavigate(); 
   
   const page = useSelector(pages.page); 
   const activeLink = useSelector(pages.activeLink); 
- 
+
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+
   const onClick = (e) => {  
     // localStorage.setItem('page',e.key)
     
@@ -67,72 +71,25 @@ function BackgroundVideo(props) {
   };
  
   const items = [
-    {
-      label: 'Residentional',
-      key: 'residentional', 
-      children: [ 
-        {
-          label: 'Bathroom remodel',
-          key: 'bathroom',
-        },
-        {
-          label: 'Kitchen remodel',
-          key: 'kitchen',
-        }, 
-        {
-          label: 'Basment remodel',
-          key: 'basment',
-        },
-        {
-          label: 'Roofing',
-          key: 'roofing',
-        }, 
-        {
-          label: 'Tile installation',
-          key: 'tile',
-        } 
-      ],
-    },
-    {
-      label: 'Commercial',
-      key: 'commercial',  
-    },
-    {
-      label: 'More info',
-      key: 'info',  
-      children: [ 
-        {
-          label: 'FAQ\'s',
-          key: 'faq',
-        },
-        {
-          label: 'Butkov\'s process',
-          key: 'butkovprocess',
-        }, 
-        {
-          label: 'Financing options',
-          key: 'financingoptions',
-        },
-        {
-          label: 'Rewiews',
-          key: 'rewiews',
-        }, 
-        {
-          label: 'Blog',
-          key: 'blog',
-        } 
-      ],
-    },
-    {
-      label: 'Contact',
-      key: 'contact',  
-    },
-    {
-      label: 'Login',
-      key: 'login',  
-    }, 
+    getItem('Residentional', 'residentional', mobile ? <img width={27} height={30} src={residentional} alt="img" /> : <></>, [ 
+      getItem('Bathroom remodel', 'bathroom'),
+      getItem('Kitchen remodel', 'kitchen'),
+      getItem('Basment remodel', 'basment'),
+      getItem('Roofing', 'roofing'),
+      getItem('Tile installation', 'tile')
+    ],),
+    getItem('Commercial', 'commercial', mobile ? <img src={comercial} alt="img" /> : <></> ),
+    getItem('More info', 'info', mobile ? <img width={27} height={30} src={moreinfo} alt="img" /> : <></>,[ 
+      getItem('FAQ\'s', 'faq'),
+      getItem('Butkov\'s process', 'butkovprocess'),
+      getItem('Financing options', 'financingoptions'),
+      getItem('Rewiews', 'rewiews'),
+      getItem('Blog', 'blog'), 
+    ],), 
+    getItem('Contact', 'contact', mobile ? <img width={27} height={30} src={contact} alt="img" /> : <></>),
+    getItem('Login', 'login', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>), 
   ];
-
+    
  let menupagetitle = 'Let us proffessionally do your project';
  let menupagesubtitle = 'Butter is residentional / commercial remodeling company';
  let hidenheader = 'flex'; 
@@ -220,24 +177,47 @@ switch (page) {
   default:
     break;
 }
-  
+ 
   return (
     <div style={{ height: page === 'main' ? '700px' : 'auto' }} className='backgroundWrapper'>  
-      <video autoPlay loop muted className="backgroundVideo">
+      <video autoPlay loop muted className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>
         <source src={activeLink}  type="video/mp4" />
       </video>  
-      <div className="backgroundTopContainer">
-        <div className='backgroundLableContainer' onClick={() => { localStorage.setItem('page','/');  dispatch(change_page('/')); navigate('/')}}> 
+      <div className={`${mobile ? "mobileBackgroundTopContainer" : "backgroundTopContainer"}`}>
+      {
+        mobile && (<Button
+          type="primary"
+          onClick={toggleCollapsed}
+          style={{
+            width: '60px',
+            height: '40px', 
+            marginTop: '10px',
+            marginLeft: '6px'
+          }}
+        >
+          { collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined /> }
+        </Button>)
+      }
+        <div className={`${mobile ? "mobileBackgroundLableContainer" : 'backgroundLableContainer'}`} onClick={() => { localStorage.setItem('page','/');  dispatch(change_page('/')); navigate('/')}}> 
           <img src={Logo_black} alt="profile" width="380" height="93" />
         </div> 
-        <div className="backgroundCatigories"> 
-          <Menu onClick={onClick} selectedKeys={[page]} mode="horizontal" items={items} />
+        <div className={`${mobile ? "mobileBackgroundCatigories" : "backgroundCatigories"}`}> 
+          <Menu
+          onClick={onClick}
+          selectedKeys={[page]}
+          mode={`${mobile ? 'inline' : 'horizontal'}`}
+          items={items}
+          defaultSelectedKeys={['1']}
+          defaultOpenKeys={['sub1']} 
+          theme={`${mobile ? "dark" : 'light'}`} 
+          inlineCollapsed={collapsed} 
+          />
         </div> 
       </div> 
       <div style={{ 
         display: hidenheader  
-      }} className="backgroundBottomContainer">
-        <div className="headerBottomTitleContainer"> 
+      }} className={`${mobile ? "mobileBackgroundBottomContainer" : "backgroundBottomContainer"}`}>
+        <div className={`${mobile ? "mobileHeaderBottomTitleContainer" : "headerBottomTitleContainer"}`}> 
           <div className="bottomHeaderTitle">
             <h1>{menupagetitle}</h1>
           </div>
@@ -248,7 +228,9 @@ switch (page) {
             <Button onClick={() => { dispatch(modalMiniQuestion(true)); }} className="bottonTitle" type="primary">CONTACT NOW</Button>  
           </div>
         </div>
-        <div className="headerBottomClearContainer" />
+        { 
+         !mobile && <div className="headerBottomClearContainer" />
+        }
       </div> 
     </div>
   );

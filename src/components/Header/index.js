@@ -11,8 +11,7 @@ function Header(props) {
  
   const { page, mobile } = props;
   
-  const dispatch = useDispatch(); 
- 
+  const dispatch = useDispatch();  
     return (
       <div className="headerWrapper"> 
         <TopLine mobile={mobile} linkTitle='READY TO EARN $250? LEAVE A REFERRAL TODAY!' btnTxt='GET ON ESTEMATE' /> 

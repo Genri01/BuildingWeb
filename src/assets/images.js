@@ -95,6 +95,11 @@ import test_4 from './images/test_4.webp'
 
 import sinchrony from './images/sinchrony.jpeg' 
 
+import login from './images/login.svg'
+import comercial from './images/comercial.svg'
+import residentional from './images/residentional.svg'
+import contact from './images/contact.svg'
+import moreinfo from './images/moreinfo.svg'
 
 export default {
   statuy,
@@ -187,5 +192,10 @@ export default {
   test_2,
   test_3,
   test_4, 
-  sinchrony
+  sinchrony, 
+  login,
+  comercial,
+  residentional,
+  contact,
+  moreinfo, 
 }

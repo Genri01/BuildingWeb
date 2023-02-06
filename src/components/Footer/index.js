@@ -14,7 +14,7 @@ function Footer(props) {
       <div className="footer_container">
         <div style={{ paddingTop: mobile ? '20px' : '50px' }} className="footer_up"> 
           <div style={{ flexDirection: mobile ? 'column' : 'row', paddingTop: mobile ? '20px' : '40px' }} className="footer_desription_section_left">
-          {
+            {
               mobile && <div className="mobileWorkingContainer">
                 <div className={`${mobile ? 'mobile-footer_txt' : 'footer_titleTxt'}`} >Contact Us</div>
                 <div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt'}`} >869 E Schaumburg rd, #321,</div>
@@ -33,13 +33,13 @@ function Footer(props) {
                     <div style={{ flexDirection: mobile ? 'row' : 'column', alignItems: mobile ? 'center' : 'flex-start', }} className='mobileContainerLi'>
                       <div style={{ width: mobile ? '50%' : '100%' }} className='lineInfoContainer'>
                         <img className="mobile-i-plain" src={phone} alt="phone" />
-                        <div className="he-text"> 
-                          <span className="footer_txt_hover">331-244-7711</span>
+                        <div style={{ width: mobile ? '70%' : 'auto', margin: mobile ? '0' : 'auto' }} className="he-text"> 
+                          <span style={{ width: mobile ? '220px' : 'auto' }} className="footer_txt_hover">612-516-0263</span>
                         </div>
                       </div>
                       <div className='lineInfoContainer'>
                         <img className="mobile-i-plain" src={email} alt="time" />
-                        <div className="he-text"> 
+                        <div style={{ width: mobile ? '70%' : 'auto' }} className="he-text"> 
                             <span className="footer_txt_hover">contact@get-flooring.com</span>
                         </div>
                       </div>

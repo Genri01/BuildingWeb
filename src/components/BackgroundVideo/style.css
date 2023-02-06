@@ -137,6 +137,9 @@
   flex-direction: row;
   margin-left: 100px;
   cursor: pointer;
+  border-radius: 100px;
+  background-color: #f0ffff69;
+  box-shadow: 20px 0px 100px #f0ffffd4;
 }
  
 .backgroundBottomContainer {
@@ -182,6 +185,7 @@
   line-height: 1.6em; 
   word-wrap: break-word;
   font-weight: 500;
+  font-style: oblique;
   font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 }
  
@@ -293,6 +297,7 @@
   position: absolute;
   top: 1%;
   right: 0px;
+
 }
 
 .mobileBackgroundLableContainer img{

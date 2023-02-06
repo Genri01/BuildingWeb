@@ -59,7 +59,7 @@
       color: white;
       font-size: 2em;
       font-weight: 800;
-      opacity: 0;
+      opacity: 1;
       transition-property: opacity;
       transition-duration: .2s;
     }

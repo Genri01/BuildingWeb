@@ -13,13 +13,44 @@ function TestimonialsScreen(props) {
  
   const { mobile } = props;
   const dispatch = useDispatch();
-  const { test_0, test_1, test_2, test_3, test_4 } = images;
+  const { test_0, test_1, test_2, test_3, test_4,  
+    g_0,
+    g_1,
+    g_2,
+    g_3,
+    g_4, 
+    g_5, 
+    h_0,
+    h_1,
+    h_2,
+    h_3,
+    h_4,
+    h_5,
+    y_0,
+    y_1,
+    y_2,
+    y_3,
+    y_4,
+    y_5,
+    n_0,
+    n_1,
+    n_2,
+    n_3,
+    n_4,
+    n_5,
+    q_0,
+    q_1,
+    q_2,
+    q_3,
+    q_4,
+    q_5,
+   } = images;
   
   const testimonItems = [
     {
-      img: test_0,
+      img: test_1,
       title: 'GOOGLE REVIEWS',
-      stars: 4,
+      stars: 5,
       reviews: 45,
       coments: [
         {
@@ -38,12 +69,32 @@ function TestimonialsScreen(props) {
           coment:' "I went into our basement project thinking it would be another major hassle – just like previous projects I’ve done with other companies. However, from the initial strategy sessions where they explored numerous ideas with us (the 3D walk through modeling was awesome), to helping us modify the options to accommodate our budget, through on-time completion, it was anything but that. We enjoyed the process from start to finish, and the FBC team was professional, responsive, and customer-oriented the entire time. I ve recommended them to all of my friends.""',
           name: 'Kandy richer'
         },
+      ],
+      imageArray: [
+        { 
+          img: g_0 
+        },
+        { 
+          img: g_1 
+        },
+        { 
+          img: g_2 
+        },
+        { 
+          img: g_3 
+        },
+        { 
+          img: g_4 
+        },
+        { 
+          img: g_5 
+        } 
       ]
     },
     {
-      img: test_1,
+      img: test_2,
       title: 'HOUZZ REVIEWS',
-      stars: 4,
+      stars: 5,
       reviews: 23,
     coments: [
       {
@@ -62,10 +113,30 @@ function TestimonialsScreen(props) {
         coment:' "We first worked with FBC to finish our basement and hired them again when we needed to convert our 1960 kitchen to something more current. They did not disappoint. Easy to work with, accommodated my husbands requests to do portions of the project himself to save on money and best of all, they stayed on the timeline. They cleaned up their projects and we love the communication through the Builder Trend app. Highly recommend."',
         name: 'Emily B'
       },
+    ],
+    imageArray: [
+      { 
+        img: h_0
+      },
+      { 
+        img: h_1
+      },
+      { 
+        img: h_2
+      },
+      { 
+        img: h_3
+      },
+      { 
+        img: h_4
+      },
+      { 
+        img: h_5 
+      } 
     ]
     },
     {
-      img: test_2,
+      img: test_3,
       title: 'NEXTDOOR RECOMMENDATIONS',
       stars: 5,
       reviews: 32,
@@ -86,12 +157,32 @@ function TestimonialsScreen(props) {
           coment:'They were so easy to work with! Incredibly prompt, efficient and hard working. The detail and quality of work exceeded my expectations. They completed the design exactly as I asked. Elina was a great partner making sure there was clear communication and that I knew exactly what I needed for supplies based on my design interests. We plan to hire them again for another project.',
           name: 'Beth'
         },
+      ],
+      imageArray: [
+        { 
+          img:n_0 
+        },
+        { 
+          img:n_1 
+        },
+        { 
+          img:n_2 
+        },
+        { 
+          img:n_3 
+        },
+        { 
+          img:n_4 
+        },
+        { 
+          img: n_5 
+        } 
       ]
     },
     {
-      img: test_3,
-      title: 'THUMTAK REVIEWS',
-      stars: 4,
+      img: test_0,
+      title: 'GUILD QUALITY',
+      stars: 5,
       reviews: 62,
       coments: [
         {
@@ -110,6 +201,26 @@ function TestimonialsScreen(props) {
           coment:'They were so easy to work with! Incredibly prompt, efficient and hard working. The detail and quality of work exceeded my expectations. They completed the design exactly as I asked. Elina was a great partner making sure there was clear communication and that I knew exactly what I needed for supplies based on my design interests. We plan to hire them again for another project.',
           name: 'Jake R'
         },
+      ],
+      imageArray: [
+        { 
+          img: q_0
+        },
+        { 
+          img: q_1
+        },
+        { 
+          img: q_2
+        },
+        { 
+          img: q_3
+        },
+        { 
+          img: q_4
+        },
+        { 
+          img: q_5 
+        } 
       ]
     },
     {
@@ -134,6 +245,26 @@ function TestimonialsScreen(props) {
           coment:'They were so easy to work with! Incredibly prompt, efficient and hard working. The detail and quality of work exceeded my expectations. They completed the design exactly as I asked. Elina was a great partner making sure there was clear communication and that I knew exactly what I needed for supplies based on my design interests. We plan to hire them again for another project.',
           name: 'Kandy richer'
         },
+      ],
+      imageArray: [
+        { 
+          img: y_0
+        },
+        { 
+          img: y_1 
+        },
+        { 
+          img: y_2
+        },
+        { 
+          img: y_3
+        },
+        { 
+          img: y_4
+        },
+        { 
+          img: y_5 
+        } 
       ]
     } 
   ]

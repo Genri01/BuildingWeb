@@ -41,3 +41,10 @@ export function modalLogin(show) {
     payload: show
   }
 }
+
+export function modalRegistration(show) { 
+  return {
+    type: ActionTypes.APP_MODAL_REGISTER_SHOW,
+    payload: show
+  }
+}

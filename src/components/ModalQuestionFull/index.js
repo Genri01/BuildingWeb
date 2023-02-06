@@ -259,7 +259,7 @@ export default function ModalQuestionFull(props) {
       onOk={() => dispatch(modalFullQuestion(false))}
       onCancel={() => dispatch(modalFullQuestion(false))}
     >
-      <Steps className="steps" current={current} items={items} />
+      {/* <Steps className="steps" current={current} items={items} /> */}
       <div style={contentStyle}>{steps[current].content}</div>
       <div style={{ marginTop: 24 }} >
       {

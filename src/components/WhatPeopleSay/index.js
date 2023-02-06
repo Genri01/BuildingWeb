@@ -53,7 +53,7 @@ SwiperCore.use([EffectFade, Autoplay]);
             { 
               sliderWalk.map((el,id) => (
               <SwiperSlide key={id}>  
-                <FeedbackItem name={el.title} feed={el.name} cool={id} />
+                <FeedbackItem name={el.title} feed={el.name} cool={5} />
               </SwiperSlide>
               ))
             }  

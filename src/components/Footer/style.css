@@ -21,7 +21,7 @@
   }
   .footer_titleTxt{
     font-weight: 700;
-    font-size: 1.90rem;
+    font-size: 0.90rem;
     line-height: 1.4;
     letter-spacing: 0em;
     margin-bottom: 0.5rem;
@@ -96,6 +96,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Roboto', sans-serif !important;
+    margin-top: 20px
   }
   
 .mobile-header-extras li .he-text {

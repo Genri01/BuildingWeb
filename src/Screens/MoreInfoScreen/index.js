@@ -4,6 +4,7 @@ import './style.css';
 import FAQBlock from '../../components/FAQBlock';
 import ButkovProcessBlock from '../../components/ButkovProcessBlock';
 import FinanceOptionBlock from '../../components/FinanceOptionBlock';
+import TextButtonContainer from '../../components/TextButtonContainer';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { app } from '../../redux/selectors'; 
@@ -25,7 +26,11 @@ export default function MoreInfoScreen(props) {
     <div className={`${mobile ? "mobileCommercialBlockScreen" : "commercialBlockscreen"}`} > 
       <FAQBlock id={'faq'}/>  
       <ButkovProcessBlock id={'butkovprocess'} /> 
-      <FinanceOptionBlock id={'financingoptions'} /> 
+      <FinanceOptionBlock id={'financingoptions'} />
+      <TextButtonContainer
+        text = ''
+        textbtn = "Contact us"
+      /> 
     </div>
   );
 }

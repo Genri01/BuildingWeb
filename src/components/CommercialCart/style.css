@@ -56,10 +56,9 @@
   z-index: 2;
 }
 
-.commercialItemImg img{
+.commercialItemImg .ant-image-img{
   display: flex;
-  /* width: 100%; */
-  height: 130%;  
+  width: 500px; 
 }
 
 .commercialTitleContainer {

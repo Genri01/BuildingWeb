@@ -91,7 +91,42 @@ import test_0 from './images/test_0.webp'
 import test_1 from './images/test_1.webp'
 import test_2 from './images/test_2.webp'
 import test_3 from './images/test_3.webp' 
-import test_4 from './images/test_4.webp' 
+import test_4 from './images/test_4.png' 
+
+import g_0 from './images/g_0.jpeg'
+import g_1 from './images/g_1.jpeg'
+import g_2 from './images/g_2.jpeg'
+import g_3 from './images/g_3.jpeg' 
+import g_4 from './images/g_4.jpeg' 
+import g_5 from './images/g_5.jpeg' 
+
+import h_0 from './images/h_0.jpeg'
+import h_1 from './images/h_1.jpeg'
+import h_2 from './images/h_2.jpeg'
+import h_3 from './images/h_3.jpeg' 
+import h_4 from './images/h_4.jpeg' 
+import h_5 from './images/h_5.jpeg' 
+
+import y_0 from './images/y_0.jpeg'
+import y_1 from './images/y_1.jpeg'
+import y_2 from './images/y_2.jpeg'
+import y_3 from './images/y_3.jpeg' 
+import y_4 from './images/y_4.jpeg' 
+import y_5 from './images/y_5.jpeg' 
+
+import n_0 from './images/n_0.jpeg'
+import n_1 from './images/n_1.jpeg'
+import n_2 from './images/n_2.jpeg'
+import n_3 from './images/n_3.jpeg' 
+import n_4 from './images/n_4.jpeg' 
+import n_5 from './images/n_5.jpeg' 
+
+import q_0 from './images/q_0.jpeg'
+import q_1 from './images/q_1.jpeg'
+import q_2 from './images/q_2.jpeg'
+import q_3 from './images/q_3.jpeg' 
+import q_4 from './images/q_4.jpeg' 
+import q_5 from './images/q_5.jpeg' 
 
 import sinchrony from './images/sinchrony.jpeg' 
 
@@ -198,4 +233,34 @@ export default {
   residentional,
   contact,
   moreinfo, 
+  g_0,
+  g_1,
+  g_2,
+  g_3,
+  g_4, 
+  g_5,
+  h_0,
+  h_1,
+  h_2,
+  h_3,
+  h_4,
+  h_5,
+  y_0,
+  y_1,
+  y_2,
+  y_3,
+  y_4,
+  y_5,
+  n_0,
+  n_1,
+  n_2,
+  n_3,
+  n_4,
+  n_5,
+  q_0,
+  q_1,
+  q_2,
+  q_3,
+  q_4,
+  q_5,
 }

@@ -1,7 +1,7 @@
  
 .topHeader {
   width: 100%;
-  height: 60px;
+  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,6 +12,7 @@
 
 .topHeader .ant-btn{
   color: white;
+  font-size: 13px;
   /* background-color: rgba(0, 0, 0, 0.06); */
 }
 
@@ -33,6 +34,7 @@
   line-height: 1.3;
   font-weight: 600;
   color: white; 
+  font-size: 11px;
   text-decoration: none;
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import images from '../../assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 
 // import required modules
 import { Autoplay } from "swiper";
@@ -38,27 +39,32 @@ export default function WhatWeDoBlock(props) {
     arrowr,
     arrowl,
   } = images;
-
+ 
   const sliderWalk = [
     {
       img: 'https://get-flooring.com/wp-content/uploads/2020/09/carpet2.jpg',
-      title: 'Bathroom remodel'
+      title: 'Bathroom remodel', 
+      link: 'bathroom'
     }, 
     {
       img: 'https://get-flooring.com/wp-content/uploads/2020/09/fireplace.jpg',
-      title: 'Kitchens somodel'
+      title: 'Kitchens somodel', 
+      link: 'kitchen'
     }, 
     {
       img: 'https://get-flooring.com/wp-content/uploads/2020/09/refinishing-hardwood.jpg',
-      title: 'Basment remodel'
+      title: 'Basment remodel', 
+      link: 'basment'
     }, 
     {
       img: 'https://get-flooring.com/wp-content/uploads/2020/09/backspash.jpg',
-      title: 'Roofing'
+      title: 'Roofing', 
+      link: 'roofing'
     }, 
     {
       img: 'https://get-flooring.com/wp-content/uploads/2020/08/tile-1.jpg',
-      title: 'Tile instalation'
+      title: 'Tile instalation', 
+      link: 'tile'
     }, 
 ]
  
@@ -81,13 +87,12 @@ export default function WhatWeDoBlock(props) {
             className="whatWeDoSwiper" 
             slidesPerView={3}  
             onSwiper={() => {}} 
-            spaceBetween={10}
-       
+            spaceBetween={10} 
           >
             { 
               sliderWalk.map((el,id) => (
               <SwiperSlide key={id}>
-                <WhatWeDoCard img={el.img} title={el.title} />
+                <WhatWeDoCard img={el.img} title={el.title} link={el.link} /> 
               </SwiperSlide>
               ))
             }  

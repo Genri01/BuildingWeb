@@ -4,7 +4,7 @@ import { Menu, Button } from 'antd';
 import { useDispatch, useSelector } from "react-redux"; 
 import { pages } from '../../redux/selectors'; 
 import images from '../../assets/images';
-import { change_page, change_link, modalMiniQuestion, modalLogin } from '../../redux/actions/app';
+import { change_page, change_link, modalMiniQuestion, modalLogin, modalRegistration } from '../../redux/actions/app';
 import './style.css';
  
 import { 
@@ -64,6 +64,8 @@ function BackgroundVideo(props) {
       navigate(`moreinfo/${e.key}`,{ state: { id: e.key} })
     } else if(e.key === 'login') { 
       dispatch(modalLogin(true))
+    }  else if(e.key === 'registration') { 
+      dispatch(modalRegistration(true))
     } else {
     navigate(`${e.key}`)
     }
@@ -87,7 +89,10 @@ function BackgroundVideo(props) {
       getItem('Blog', 'blog'), 
     ],), 
     getItem('Contact', 'contact', mobile ? <img width={27} height={30} src={contact} alt="img" /> : <></>),
-    getItem('Login', 'login', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>), 
+    getItem('Welcome', 'welcome', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>,[ 
+      getItem('Login', 'login'),
+      getItem('Sign up', 'registration') 
+    ],)
   ];
     
  let menupagetitle = 'Let us proffessionally do your project';
@@ -210,7 +215,7 @@ switch (page) {
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']} 
           theme={`${mobile ? "dark" : 'light'}`} 
-          inlineCollapsed={collapsed} 
+          inlineCollapsed={`${mobile ? collapsed : false}`} 
           />
         </div> 
       </div> 

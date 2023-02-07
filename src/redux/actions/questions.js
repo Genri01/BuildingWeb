@@ -3,19 +3,7 @@ import ActionTypes from '../constants';
 // import { API_URL } from '../../config/index';
 // import axios from 'axios';
  
-export function setModalFullShow(show) {
-  return {
-    type: ActionTypes.APP_MODAL_FULL_QUESTION_SHOW,
-    payload: show
-  }
-}
-
-export function setModalMiniShow(show) {
-  return {
-    type: ActionTypes.APP_MODAL_MINI_QUESTION_SHOW,
-    payload: show
-  }
-}
+ 
 
 export function setFirstName(name) {
   return {

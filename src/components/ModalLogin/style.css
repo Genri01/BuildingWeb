@@ -61,8 +61,12 @@
   align-self: end !important;
 }
 
-.modalLoginContainer .ant-input {
+/* .modalLoginContainer .ant-input {
   width: 300px;
+} */
+
+.modalLoginContainer .passwordInput {
+  width: 250px;
 }
 
 .btnContainerLogin {
@@ -70,4 +74,11 @@
   align-items: center; 
   width: 100%;
   justify-content: center;
+}
+
+.errorText {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 19px;
+  color: #7e1416;
 }

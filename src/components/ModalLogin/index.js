@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
-import { Modal, Input, Form, Button } from 'antd';    
-import ContactUsForm from '../ContactUsForm';
+import { Modal, Input, Form, Button } from 'antd';     
 import { questions } from '../../redux/selectors'; 
 import { modalLogin } from '../../redux/actions/app'; 
+import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons';
 import { setFirstName } from '../../redux/actions/questions'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
-import InputMask from 'react-input-mask';
+import { validateEmail, changeEmail } from '../../helpers/index';  
 import './style.css'; 
 
 export default function ModalLogin(props) {
@@ -16,68 +15,55 @@ export default function ModalLogin(props) {
   const [form] = Form.useForm(); 
   const dispatch = useDispatch(); 
  
-  const byer_email = useSelector(questions.byer_email); 
-  const byer_tel = useSelector(questions.byer_tel); 
+  const byer_email = useSelector(questions.byer_email);  
   const byer_first_name = useSelector(questions.byer_first_name); 
   
-  const [submitDisable, changeSubmit] = useState(true);  
- 
-  const [quality, setQuality] = useState(maskTelephone);
-
-  const [mask, setMask] = useState('');
-  const [errTel, setErrTel] = useState(false);
-  const [errEmail, setErrEmail] = useState(false);
+  const [errorText, changeErrorText] = useState(false);  
+  const [name, changeName] = useState('');  
+  const [password, changePassword] = useState('');  
   
-  useEffect(() => {
-    fetch('https://api.sypexgeo.net/json')
-    .then(response => response.json())
-    .then(data => {
-      if(data.country!= null) {
-        setMask(quality[data.country.iso]);
-      }
-    });
-  },[]);
+  const [errEmail, setErrEmail] = useState(false);
  
-
-  // if(errTel === false) { changeSubmit(false) }
-  // if(errEmail === false) { changeSubmit(false) }
-  // if(byer_first_name !== '') { changeSubmit(false) }
-
-
   return (
     <Modal
       className='modalMini'
       title="Login"
       centered
       open={show} 
-      onCancel={() => dispatch(modalLogin(false))}
+      onCancel={() => {  
+        changeName('')
+        changePassword('') 
+        dispatch(modalLogin(false));
+        changeErrorText(false);
+      }}
     > 
       <div className='modalLoginContainer'>  
         <Form form={form}> 
           <Form.Item label="Login">
             <Input 
               placeholder="Login"  
-              onChange={(e) => { dispatch(setFirstName(e.target.value)) }} 
-              value={byer_first_name} 
-              className={`${byer_first_name === '' ? '' : ''}`} 
+              onChange={(e) => { changeName(e.target.value); changeErrorText(false); }} 
+              value={name}  
               name="name" 
               type="text" 
             />
           </Form.Item>
           <Form.Item label="Password">
-            <Input 
-              placeholder="Password" 
-              onChange={(e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) }} 
-              value={byer_email} 
-              className={`${errEmail ? 'error_input' : ''}`} 
-              name="email" 
-              type="text"
-            />
+            <Input.Password
+              onChange={(e) => { changePassword(e.target.value); changeErrorText(false); }} 
+              value={password}  
+              placeholder="Password"
+              iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+              className='passwordInput'
+            /> 
           </Form.Item> 
         </Form> 
-      </div>  
+      </div> 
+      {
+       errorText ? <div className='errorText'>Email not confirmed</div> : <></>
+      } 
       <div className='btnContainerLogin'>
-        <Button style={{ width: '300px' }} className="textButton" type='primary' >LogIn</Button>
+        <Button onClick={() => { changeErrorText(true) }} disabled={( name !== ''  && password !== '') ? false : true} style={{ width: '300px' }} className="textButton" type='primary' >LogIn</Button>
       </div>
     </Modal>
   );

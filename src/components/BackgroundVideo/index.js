@@ -96,7 +96,7 @@ function BackgroundVideo(props) {
   ];
     
  let menupagetitle = 'Let us proffessionally do your project';
- let menupagesubtitle = 'Butter is residentional / commercial remodeling company';
+ let menupagesubtitle = 'Butkov is residentional / commercial remodeling company';
  let hidenheader = 'flex'; 
 
 switch (page) { 

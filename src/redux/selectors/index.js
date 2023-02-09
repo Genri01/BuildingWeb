@@ -8,8 +8,8 @@ export const app = {
 }
 
 export const pages = {
-  page:(state) => state.pages.page, 
-  activeLink:(state) => state.pages.activeLink,
+  page:(state) => state.pages.page,  
+  pagesArr:(state) => state.pages.pagesArr,  
 }
  
 export const questions = {

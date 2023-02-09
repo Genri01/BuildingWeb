@@ -1,23 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';  
-import { useNavigate,useLocation } from 'react-router-dom';  
-import { change_page } from '../../redux/actions/app'; 
-import BackgroundVideo from '../BackgroundVideo';
+import React from 'react'; 
+import BackgroundVideo from '../BackgroundVideo';  
+
 import TopLine from '../TopLine';
  
-import './style.css';
-
+import './style.css'; 
 function Header(props) {
  
-  const { page, mobile } = props;
-  
-  const dispatch = useDispatch();  
-    return (
-      <div className="headerWrapper"> 
-        <TopLine mobile={mobile} linkTitle='READY TO EARN $250? LEAVE A REFERRAL TODAY!' btnTxt='GET ON ESTEMATE' /> 
-        <BackgroundVideo page={page} mobile={mobile} />  
-      </div>
-    );
+  const { page, mobile, pagesArr, clickMenu } = props; 
+
+  return (
+    <div className="headerWrapper"> 
+      <TopLine mobile={mobile} linkTitle='READY TO EARN $250? LEAVE A REFERRAL TODAY!' btnTxt='GET ON ESTEMATE' /> 
+      <BackgroundVideo page={page} mobile={mobile} pagesArr={pagesArr} clickMenu={clickMenu} />   
+    </div>
+  );
 }
 
 export default Header;

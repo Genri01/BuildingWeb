@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useState } from "react"; 
 import { useNavigate } from 'react-router-dom'
 import { Menu, Button } from 'antd';
-import { useDispatch, useSelector } from "react-redux"; 
-import { pages } from '../../redux/selectors'; 
+import { useDispatch } from "react-redux";  
 import images from '../../assets/images';
-import { change_page, change_link, modalMiniQuestion, modalLogin, modalRegistration } from '../../redux/actions/app';
+import { change_page, modalMiniQuestion, } from '../../redux/actions/app';
 import './style.css';
  
 import { 

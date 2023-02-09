@@ -48,10 +48,6 @@ function App() {
         mobile={mobile}  
         page={statePage} 
         pagesArr={pagesArr}  
-        onClick={(e) => {  
-          localStorage.setItem('page',e.target.id);
-          dispatch(change_page(e.target.id));
-        }}    
         clickMenu={(e) => {  
           localStorage.setItem('page',e.key);
           if(e.key === 'bathroom' ||
@@ -67,14 +63,16 @@ function App() {
           e.key === 'faq' ) {
             navigate(`moreinfo/${e.key}`,{ state: { id: e.key} })
           } else if(e.key === 'login') { 
-            // dispatch(modalLogin(true))
+            dispatch(modalLogin(true))
           }  else if(e.key === 'registration') { 
-            // dispatch(modalRegistration(true))
+            dispatch(modalRegistration(true))
           } else {
             navigate(`${e.key}`)
           }
           dispatch(change_page(e.key));
-          window.location.reload();
+          if(e.key !== 'registration' && e.key !== 'login') {
+            window.location.reload();
+          }
         }} 
       />
       <Main mobile={mobile} />

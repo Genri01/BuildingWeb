@@ -80,7 +80,8 @@ export default function ModalQuestionMini(props) {
               className={`locationInput ${errTel ? 'error_input' : ''}`} 
               name="telephone" 
               mask={`${mask}`} 
-              maskChar={'_'} value={byer_tel} 
+              maskChar={'_'} 
+              value={byer_tel} 
               onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
             />
           </Form.Item> 

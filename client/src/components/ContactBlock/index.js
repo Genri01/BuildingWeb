@@ -1,17 +1,44 @@
-import React, { useState } from 'react'; 
-import { Button, Form, Input, Radio } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'; 
 import { useSelector, useDispatch } from 'react-redux';  
-import ContactUsForm from '../ContactUsForm';
-import images from '../../assets/images';
+import { Form, Input } from 'antd'; 
+import InputMask from 'react-input-mask';
 import { YMaps, Map, Polygon, ZoomControl } from 'react-yandex-maps';
+import ContactUsForm from '../ContactUsForm'; 
 import Title from '../Title';
+
+import { questions } from '../../redux/selectors';  
+import { setFirstName } from '../../redux/actions/questions'; 
+import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+
 import './style.css';
 
+ 
 export default function ContactBlock(props) {
   const { mobile } = props;
   const [form] = Form.useForm(); 
-   
+
+  const dispatch = useDispatch(); 
+ 
+  const byer_email = useSelector(questions.byer_email); 
+  const byer_tel = useSelector(questions.byer_tel); 
+  const byer_first_name = useSelector(questions.byer_first_name); 
+
+  const [quality, setQuality] = useState(maskTelephone);
+
+  const [mask, setMask] = useState('');
+  const [errTel, setErrTel] = useState(false);
+  const [errEmail, setErrEmail] = useState(false);
+
+  useEffect(() => {
+    fetch('https://api.sypexgeo.net/json')
+    .then(response => response.json())
+    .then(data => {
+      if(data.country!= null) {
+        setMask(quality[data.country.iso]);
+      }
+    });
+  },[]);
+  
   return (
     <div className={`${mobile ? 'mobilecontactWrapper' : "contactWrapper"}`}>
       {
@@ -32,13 +59,35 @@ export default function ContactBlock(props) {
               <div className='formItemContainer'>
                 <Form form={form}  labelCol={{ span: 3 }} wrapperCol={{ span: 22 }}> 
                   <Form.Item label="*">
-                    <Input placeholder="Name" />
+                    <Input 
+                      placeholder="Name"  
+                      onChange={(e) => { dispatch(setFirstName(e.target.value)) }} 
+                      value={byer_first_name} 
+                      className={`${byer_first_name === '' ? '' : ''}`} 
+                      name="name" 
+                      type="text" 
+                    />
                   </Form.Item>
                   <Form.Item label="*">
-                    <Input placeholder="Email" />
+                    <Input 
+                      placeholder="Email" 
+                      onChange={(e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) }} 
+                      value={byer_email} 
+                      className={`${errEmail ? 'error_input' : ''}`} 
+                      name="email" 
+                      type="text"
+                    />
                   </Form.Item>
                   <Form.Item label="*">
-                    <Input placeholder="Phone" />
+                    <InputMask  
+                      placeholder="Telephone" 
+                      className={`locationInput ${errTel ? 'error_input' : ''}`} 
+                      name="telephone" 
+                      mask={`${mask}`} 
+                      maskChar={'_'} 
+                      value={byer_tel} 
+                      onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                    />
                   </Form.Item> 
                 </Form>
               </div> 

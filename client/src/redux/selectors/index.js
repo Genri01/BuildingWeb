@@ -20,6 +20,19 @@ export const questions = {
   coment: (state) => state.questions.coment,
   addres_street: (state) => state.questions.addres_street,
   addres_city: (state) => state.questions.addres_city,
-  addres_index: (state) => state.questions.addres_index  
+  addres_index: (state) => state.questions.addres_index,
+  referal_first_name: (state) => state.questions.referal_first_name,
+  referal_tel: (state) => state.questions.referal_tel,
+  referal_email: (state) => state.questions.referal_email,
+  referal_coment: (state) => state.questions.referal_coment,
+  referal_addres_city: (state) => state.questions.referal_addres_city,
+  type_project: (state) => state.questions.type_project,
+  materials: (state) => state.questions.materials,
+  owner: (state) => state.questions.owner,
+  financing: (state) => state.questions.financing,
+  status: (state) => state.questions.status,
+  callback: (state) => state.questions.callback,
+  getcontact: (state) => state.questions.getcontact  
+
 }
  

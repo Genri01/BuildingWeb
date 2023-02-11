@@ -80,7 +80,7 @@
   margin-top: 50px;
 }
 
-.modalMiniformContainer .ant-form-item .ant-form-item-label >label {
+.formItemContainer .ant-form-item .ant-form-item-label >label {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -92,6 +92,7 @@
     padding-bottom: 20px;
 }
 
-.modalMiniformContainer .ant-form-item .ant-form-item-label >label::after {
+.formItemContainer .ant-form-item .ant-form-item-label >label::after {
     display: none;
 }
+ 

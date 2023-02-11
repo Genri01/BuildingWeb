@@ -3,12 +3,24 @@ import ActionTypes from '../constants';
 const initialState = { 
   byer_first_name: '',
   byer_last_name: '',
-  byer_tel: '',
   byer_email: '', 
+  byer_tel: '',
   coment: '',   
   addres_street: '', 
   addres_city: '', 
-  addres_index: '',   
+  addres_index: '', 
+  referal_first_name: '',
+  referal_tel: '',
+  referal_email: '', 
+  referal_coment: '',   
+  referal_addres_city: '',  
+  type_project: [],
+  materials: 'yes',   
+  owner: 'yes',   
+  financing: 'yes',   
+  status: '',   
+  callback: '',   
+  getcontact: '',   
 };
  
 export default function questions(state = initialState, { type, payload }) { 
@@ -54,6 +66,66 @@ export default function questions(state = initialState, { type, payload }) {
       return {
         ...state,
         addres_index: payload
+      };  
+    case ActionTypes.MODAL_REFERAL_FIRST_NAME:
+      return {
+        ...state,
+        referal_first_name: payload
+      }; 
+    case ActionTypes.MODAL_REFERAL_TEL:
+      return {
+        ...state,
+        referal_tel: payload
+      }; 
+    case ActionTypes.MODAL_REFERAL_EMAIL:
+      return {
+        ...state,
+        referal_email: payload
+      }; 
+    case ActionTypes.MODAL_REFERAL_COMENT:
+      return {
+        ...state,
+        referal_coment: payload
+      };   
+    case ActionTypes.MODAL_REFERAL_CITY:
+      return {
+        ...state,
+        referal_addres_city: payload
+      };   
+    case ActionTypes.MODAL_TYPE_PROJECT:  
+      return {
+        ...state,
+        type_project: [...payload]
+      }; 
+    case ActionTypes.MODAL_MATERIALS:
+      return {
+        ...state,
+        materials: payload
+      }; 
+    case ActionTypes.MODAL_OWNER:
+      return {
+        ...state,
+        owner: payload
+      }; 
+    case ActionTypes.MODAL_FINANCING:
+      return {
+        ...state,
+        financing: payload
+      };  
+    case ActionTypes.MODAL_STATUS:
+      return {
+        ...state,
+        status: payload
+      }; 
+    case ActionTypes.MODAL_CALLBACK:
+      return {
+        ...state,
+        callback: payload
+      }; 
+    case ActionTypes.MODAL_GETCONTACT:
+      return {
+        ...state,
+        getcontact: payload
       }; 
    
     default:

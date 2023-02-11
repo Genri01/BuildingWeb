@@ -7,8 +7,8 @@ function validateEmail(email) {
 }
  
 function changeTelephone(value, mask, phone, setErrTel, dispatch) {
-
- dispatch(setTel(value));
+ console.log(phone)
+ dispatch(setTel(value)); 
 
   if ((phone[mask.length-2] !== '_') && (phone[mask.length-2] !== undefined)) {
     setErrTel(false);

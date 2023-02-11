@@ -4,7 +4,21 @@ import { useDispatch, useSelector  } from 'react-redux';
 import ContactUsForm from '../ContactUsForm';
 import { questions, app } from '../../redux/selectors';  
 import { modalFullQuestion } from '../../redux/actions/app'; 
-import { setFirstName } from '../../redux/actions/questions'; 
+import { 
+  setFirstName,
+  setAddres,
+  setCallback,
+  setCity,
+  setComent, 
+  setFinancing,
+  setGetContact,
+  setIndex,
+  setLastName,
+  setMaterials,
+  setOwner, 
+  setStatus, 
+  setTypeProject
+} from '../../redux/actions/questions'; 
 import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
 import './style.css'; 
@@ -20,9 +34,8 @@ export default function ModalQuestionFull(props) {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
  
-  const byer_email = useSelector(questions.byer_email); 
-  const byer_tel = useSelector(questions.byer_tel); 
-  const byer_first_name = useSelector(questions.byer_first_name); 
+  const byer_tel = useSelector(questions.byer_tel);   
+ 
   const app_modal_question_full_show = useSelector(app.app_modal_question_full_show); 
   
   const [submitDisable, changeSubmit] = useState(true);  
@@ -30,13 +43,10 @@ export default function ModalQuestionFull(props) {
   const [quality, setQuality] = useState(maskTelephone);
 
   const [mask, setMask] = useState('');
+
   const [errTel, setErrTel] = useState(true);
   const [errEmail, setErrEmail] = useState(true);
-
-
-
-
-
+ 
   const next = () => {
     setCurrent(current + 1);
   };
@@ -45,18 +55,41 @@ export default function ModalQuestionFull(props) {
     setCurrent(current - 1);
   };
  
-  const onChangeTime = (time, timeString) => {
-    console.log(time, timeString);
-  };
-
-  const handleChange = (value) => {
+  const materialChange = (value) => {
+    dispatch(setMaterials(value));
     console.log(`selected ${value}`);
   };
 
-  const onChange = (checkedValues) => {
+  const typeProjectChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
+    dispatch(setTypeProject(checkedValues));
   };
 
+  const ownerChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+    dispatch(setOwner(checkedValues));
+  };
+
+  const financingChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+    dispatch(setFinancing(checkedValues));
+  };
+
+  const statusChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+    dispatch(setStatus(checkedValues));
+  };
+  
+  const timeCallChange = (time, timeString) => {
+    dispatch(setCallback(timeString));
+    console.log(time, timeString);
+  };
+
+  const getContactChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+    dispatch(setGetContact(checkedValues));
+  };
+ 
   const plainOptions = [
     {
       label: 'Bathroom remodel',
@@ -69,6 +102,18 @@ export default function ModalQuestionFull(props) {
     {
       label: 'Basement remodel',
       value: 'Basement remodel',
+    },
+    {
+      label: 'Roofing',
+      value: 'Roofing',
+    },
+    {
+      label: 'Tile work',
+      value: 'Tile work',
+    },
+    {
+      label: 'Comercial',
+      value: 'Comercial',
     },
   ];
 
@@ -89,51 +134,42 @@ export default function ModalQuestionFull(props) {
 
   const selectOptions = [
     {
-      value: 'Yes',
+      value: 'yes',
       label: 'Yes',
     },
     {
-      value: 'No',
+      value: 'no',
       label: 'No',
     }
   ];
-
-  const options = [
-    {
-      label: 'Roofing',
-      value: 'Roofing',
-    },
-    {
-      label: 'Tile work',
-      value: 'Tile work',
-    },
-    {
-      label: 'Comercial',
-      value: 'Comercial',
-    },
-  ];
-
+ 
   const placeInput = [
     {
-      placeholder: 'First Name', 
+      placeholder: 'First Name',
+      fun: (e) => { dispatch(setFirstName(e.target.value)) }
     }, 
     {
       placeholder: 'Last Name', 
+      fun: (e) => { dispatch(setLastName(e.target.value)) } 
     }, 
     {
       placeholder: 'Email Address', 
+      fun: (e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) } 
     }, 
     {
       placeholder: 'Phone Number', 
+      fun: (e) => { changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) } 
     }, 
   ];
 
   const placeInputs = [
     {
       placeholder: 'City', 
+      fun: (e) => { dispatch(setCity(e.target.value)) } 
     }, 
     {
       placeholder: 'Zip', 
+      fun: (e) => { dispatch(setIndex(e.target.value)) } 
     } 
   ];
   
@@ -143,15 +179,16 @@ export default function ModalQuestionFull(props) {
       content: 
       <>
         <div className='questionColor'>How can we help you?</div>
-        <Checkbox.Group options={plainOptions} defaultValue={['Apple']} onChange={onChange} />
-        <Checkbox.Group options={options} defaultValue={['Pear']} onChange={onChange} />
+        <div className='checkboxContainer'>
+          <Checkbox.Group options={plainOptions} onChange={typeProjectChange} /> 
+        </div> 
         <div className='questionColor'>Have you already purchesed the matirials for this project?</div>
         <Select
           defaultValue="Yes"
           style={{
             width: 320,
           }}
-          onChange={handleChange}
+          onChange={materialChange}
           options={selectOptions}
         />
       </>,
@@ -166,7 +203,7 @@ export default function ModalQuestionFull(props) {
           style={{
             width: 320,
           }}
-          onChange={handleChange}
+          onChange={ownerChange}
           options={selectOptions}
         />
         <div className='questionColor'>Are you interestedd in financing?</div>
@@ -175,7 +212,7 @@ export default function ModalQuestionFull(props) {
           style={{
             width: 320,
           }}
-          onChange={handleChange}
+          onChange={financingChange}
           options={selectOptions}
         />
       </>,
@@ -190,11 +227,11 @@ export default function ModalQuestionFull(props) {
           style={{
             width: 320,
           }}
-          onChange={handleChange}
+          onChange={statusChange}
           options={selectOptions}
         />
         <div className='questionColor'>When would you like us to call you back?</div>
-        <TimePicker style={{ width: 170 }} use12Hours format="h:mm a" onChange={onChangeTime} />
+        <TimePicker style={{ width: 170 }} use12Hours format="h:mm a" onChange={timeCallChange} />
         <div className='questionColor'>Please tell us a little more about your project:</div>
         <TextArea
           style={{
@@ -205,28 +242,47 @@ export default function ModalQuestionFull(props) {
             minRows: 2,
             maxRows: 6,
           }}
+          onChange={(e) => { dispatch(setComent(e.target.value))}}
         />
         <div className='questionColor'>How can we get in touch with you? <span style={{ color: 'red' }}>*</span></div>
-        <Checkbox.Group options={threeOptions} defaultValue={['Apple']} onChange={onChange} />
+        <Checkbox.Group options={threeOptions} onChange={getContactChange} />
         <Space style={{ justifyContent: 'center' }} size={[8, 16]} wrap>
           { 
             placeInput.map((item, key) => (
               <div key={key} className='inputContainerSpan'>
-                <Input placeholder={ item.placeholder } />
+                {
+                  key === 3 ? <InputMask  
+                  placeholder={ item.placeholder } 
+                  className={`locationInput ${errTel ? 'error_input' : ''}`} 
+                  name={ item.name } 
+                  mask={`${mask}`} 
+                  maskChar={'_'} 
+                  value={byer_tel} 
+                  onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                /> : 
+                <Input    
+                  className={
+                    key === 3 ? `locationInput ${errTel ? 'error_input' : ''}` : 
+                    key === 2 ? `${errEmail ? 'error_input' : ''}` :
+                    `locationInput` 
+                    }  onChange={item.fun} placeholder={ item.placeholder }  
+                />
+                }
                 <span style={{ color: 'red' }}>*</span>
               </div>
             ))
           }
+ 
         </Space>
         <div className='questionColor'>Please input your address</div>
         <div className='inputContainerSpan'>
-          <Input  style={{ width: 400 }} placeholder="Street Address" />
+          <Input onChange={(e) => { dispatch(setAddres(e.target.value)) } } style={{ width: 400 }} placeholder="Street Address" />
           <span style={{ color: 'red' }}>*</span> 
         </div>
         <Space style={{ justifyContent: 'center' }} size={[40, 40]} wrap>
           {placeInputs.map((item, key) => ( 
             <div key={key+3} className='inputContainerSpan'>
-              <Input placeholder={ item.placeholder } />
+              <Input onChange={item.fun} placeholder={ item.placeholder } />
               <span style={{ color: 'red'}}>*</span>
             </div>
           ))}
@@ -249,6 +305,16 @@ export default function ModalQuestionFull(props) {
     key: item.title,
     title: item.title,
   }));
+ 
+  useEffect(() => {
+    fetch('https://api.sypexgeo.net/json')
+    .then(response => response.json())
+    .then(data => {
+      if(data.country!= null) {
+        setMask(quality[data.country.iso]);
+      }
+    });
+  },[]);
 
   return (
     <Modal

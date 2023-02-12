@@ -1,8 +1,7 @@
-import ActionTypes from '../constants';
-
-// import { API_URL } from '../../config/index';
-// import axios from 'axios';
+import ActionTypes from '../constants'; 
+import api from '../../http/index';
   
+console.log(api.main_api)
 export function setFirstName(name) {
   return {
     type: ActionTypes.MODAL_BYER_FIRST_NAME,
@@ -152,6 +151,52 @@ export function linkpage(link) {
   }
 }
  
+export async function sendMiniServer(body,dispatch) {
+
+  try {
+    const requestOptions = {
+      method: 'post',
+      headers: { 
+      'Content-Type': 'application/json',
+      },
+      body
+    };  
+    const response = await api.main_api.post('/sendmini',requestOptions)
+    if(response.status === 200) {  
+      console.log(response.data.msg)
+      // dispatch(setPopupMainMsg(response.data.msg))
+    }  
+  } catch (error) {
+    console.log(error)
+    return error.response?.status;
+  }
+}
+ 
+export async function sendFullServer(body,dispatch) {
+console.log(body)
+  try {
+    const requestOptions = {
+      method: 'post',
+      headers: { 
+      'Content-Type': 'application/json',
+      },
+      body
+    };  
+    const response = await api.main_api.post('/sendfull',requestOptions)
+    if(response.status === 200) {  
+      console.log(response.data.msg)
+      // dispatch(setPopupMainMsg(response.data.msg))
+    }  
+  } catch (error) {
+    console.log(error)
+    return error.response?.status;
+  }
+}
+
+
+
+
+
 // export async function sendEmailServer(body,dispatch) {
  
 //   try {
@@ -186,23 +231,5 @@ export function linkpage(link) {
 //   }
 // }
  
-// export async function sendInfoServer(body,dispatch) {
 
-//   try {
-//     const requestOptions = {
-//       method: 'post',
-//       headers: { 
-//       'Content-Type': 'application/json',
-//       },
-//       body
-//     };  
-//     const response = await axios.post(`${API_URL}/sendinfo`, requestOptions)
-//     if(response.status === 200) {  
-//       dispatch(setPopupMainMsg(response.data.msg))
-//     }  
-//   } catch (error) {
-//     console.log(error)
-//     return error.response?.status;
-//   }
-// }
  

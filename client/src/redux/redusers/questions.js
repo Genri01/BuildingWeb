@@ -8,7 +8,7 @@ const initialState = {
   coment: '',   
   addres_street: '', 
   addres_city: '', 
-  addres_index: '', 
+  addres_index: null, 
   referal_first_name: '',
   referal_tel: '',
   referal_email: '', 
@@ -18,7 +18,7 @@ const initialState = {
   materials: 'yes',   
   owner: 'yes',   
   financing: 'yes',   
-  status: '',   
+  status: 'yes',   
   callback: '',   
   getcontact: '',   
 };

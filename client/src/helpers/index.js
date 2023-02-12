@@ -1,4 +1,4 @@
- import { setTel, setEmail } from '../redux/actions/questions' 
+ import { setTel, setEmail, setReferalTel, setReferalEmail } from '../redux/actions/questions' 
  import { useState, useEffect } from 'react'; 
 
 function validateEmail(email) {
@@ -6,21 +6,22 @@ function validateEmail(email) {
   return pattern.test(email);
 }
  
-function changeTelephone(value, mask, phone, setErrTel, dispatch) {
- console.log(phone)
- dispatch(setTel(value)); 
-
+function changeTelephone(ref,value, mask, phone, setErrTel, dispatch) {
+console.log(mask)
+  ref ? dispatch(setReferalTel(value)) : dispatch(setTel(value));
+   
   if ((phone[mask.length-2] !== '_') && (phone[mask.length-2] !== undefined)) {
     setErrTel(false);
   } else {
     setErrTel(true);
   }
-  return true;
- 
+  return true; 
 }
 
-function changeEmail(email,setErrEmail,dispatch,validateEmail) { 
-  dispatch(setEmail(email)); 
+function changeEmail(ref,email,setErrEmail,dispatch,validateEmail) { 
+
+  ref ? dispatch(setReferalEmail(email)) : dispatch(setEmail(email)); 
+
   if (validateEmail(email)) {
     setErrEmail(false);
   } else { 

@@ -86,7 +86,7 @@ export default function ContactBlock(props) {
                       mask={`${mask}`} 
                       maskChar={'_'} 
                       value={byer_tel} 
-                      onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                      onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
                     />
                   </Form.Item> 
                 </Form>

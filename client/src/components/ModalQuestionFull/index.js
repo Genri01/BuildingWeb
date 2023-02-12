@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, message, Steps, theme, Modal, Checkbox, Select, Input, TimePicker, Space } from 'antd';  
+import { Button, message, InputNumber, theme, Modal, Checkbox, Select, Input, TimePicker, Space } from 'antd';  
 import { useDispatch, useSelector  } from 'react-redux'; 
-import ContactUsForm from '../ContactUsForm';
 import { questions, app } from '../../redux/selectors';  
 import { modalFullQuestion } from '../../redux/actions/app'; 
 import { 
@@ -17,7 +16,8 @@ import {
   setMaterials,
   setOwner, 
   setStatus, 
-  setTypeProject
+  setTypeProject,
+  sendFullServer
 } from '../../redux/actions/questions'; 
 import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
@@ -34,8 +34,22 @@ export default function ModalQuestionFull(props) {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
  
-  const byer_tel = useSelector(questions.byer_tel);   
- 
+  const byer_last_name = useSelector(questions.byer_last_name); 
+  const byer_tel = useSelector(questions.byer_tel); 
+  const byer_email = useSelector(questions.byer_email); 
+  const byer_first_name = useSelector(questions.byer_first_name);    
+  const addres_city = useSelector(questions.addres_city);    
+  const addres_index = useSelector(questions.addres_index);    
+  const addres_street = useSelector(questions.addres_street);    
+  const owner = useSelector(questions.owner);    
+  const financing = useSelector(questions.financing);    
+  const status = useSelector(questions.status);    
+  const callback = useSelector(questions.callback);    
+  const coment = useSelector(questions.coment);    
+  const getcontact = useSelector(questions.getcontact);     
+  const type_project = useSelector(questions.type_project);     
+  const materials = useSelector(questions.materials);     
+   
   const app_modal_question_full_show = useSelector(app.app_modal_question_full_show); 
   
   const [submitDisable, changeSubmit] = useState(true);  
@@ -56,37 +70,30 @@ export default function ModalQuestionFull(props) {
   };
  
   const materialChange = (value) => {
-    dispatch(setMaterials(value));
-    console.log(`selected ${value}`);
+    dispatch(setMaterials(value)); 
   };
 
-  const typeProjectChange = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+  const typeProjectChange = (checkedValues) => { 
     dispatch(setTypeProject(checkedValues));
   };
 
-  const ownerChange = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+  const ownerChange = (checkedValues) => { 
     dispatch(setOwner(checkedValues));
   };
 
-  const financingChange = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+  const financingChange = (checkedValues) => { 
     dispatch(setFinancing(checkedValues));
   };
 
-  const statusChange = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+  const statusChange = (checkedValues) => { 
     dispatch(setStatus(checkedValues));
   };
   
   const timeCallChange = (time, timeString) => {
-    dispatch(setCallback(timeString));
-    console.log(time, timeString);
+    dispatch(setCallback({ time, timeString })); 
   };
 
-  const getContactChange = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+  const getContactChange = (checkedValues) => { 
     dispatch(setGetContact(checkedValues));
   };
  
@@ -145,46 +152,47 @@ export default function ModalQuestionFull(props) {
  
   const placeInput = [
     {
+      value: byer_first_name,
       placeholder: 'First Name',
       fun: (e) => { dispatch(setFirstName(e.target.value)) }
     }, 
     {
+      value: byer_last_name, 
       placeholder: 'Last Name', 
       fun: (e) => { dispatch(setLastName(e.target.value)) } 
     }, 
     {
+      value: byer_email,
       placeholder: 'Email Address', 
-      fun: (e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) } 
+      fun: (e) => { changeEmail(false,e.target.value,setErrEmail,dispatch,validateEmail) } 
     }, 
     {
+      value: byer_tel,
       placeholder: 'Phone Number', 
-      fun: (e) => { changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) } 
+      fun: (e) => { changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) } 
     }, 
   ];
-
-  const placeInputs = [
-    {
-      placeholder: 'City', 
-      fun: (e) => { dispatch(setCity(e.target.value)) } 
-    }, 
-    {
-      placeholder: 'Zip', 
-      fun: (e) => { dispatch(setIndex(e.target.value)) } 
-    } 
-  ];
-  
+ 
+  const contentStyle = {
+    lineHeight: '66px',
+    textAlign: 'center',
+    color: token.colorTextTertiary,
+    backgroundColor: token.colorFillAlter,
+    borderRadius: token.borderRadiusLG,
+    border: `1px dashed ${token.colorBorder}`,
+    marginTop: 16,
+  };
+   
   const steps = [
     {
       title: 'One step',
       content: 
       <>
-        <div className='questionColor'>How can we help you?</div>
-        <div className='checkboxContainer'>
-          <Checkbox.Group options={plainOptions} onChange={typeProjectChange} /> 
-        </div> 
+        <div className='questionColor'>How can we help you?</div> 
+          <Checkbox.Group value={type_project} options={plainOptions} onChange={typeProjectChange} />  
         <div className='questionColor'>Have you already purchesed the matirials for this project?</div>
         <Select
-          defaultValue="Yes"
+          value={materials}
           style={{
             width: 320,
           }}
@@ -199,7 +207,7 @@ export default function ModalQuestionFull(props) {
       <>
         <div className='questionColor'>Are you owner or authorized to make property changes?</div> 
         <Select
-          defaultValue="Yes"
+          value={owner}
           style={{
             width: 320,
           }}
@@ -208,7 +216,7 @@ export default function ModalQuestionFull(props) {
         />
         <div className='questionColor'>Are you interestedd in financing?</div>
         <Select
-          defaultValue="Yes"
+          value={financing}
           style={{
             width: 320,
           }}
@@ -223,7 +231,7 @@ export default function ModalQuestionFull(props) {
       <>
         <div className='questionColor'>Choose the appropriate status for this project:</div> 
         <Select
-          defaultValue="Yes"
+          value={status}
           style={{
             width: 320,
           }}
@@ -231,9 +239,10 @@ export default function ModalQuestionFull(props) {
           options={selectOptions}
         />
         <div className='questionColor'>When would you like us to call you back?</div>
-        <TimePicker style={{ width: 170 }} use12Hours format="h:mm a" onChange={timeCallChange} />
+        <TimePicker value={callback.time} style={{ width: 170 }} use12Hours format="h:mm a" onChange={timeCallChange} />
         <div className='questionColor'>Please tell us a little more about your project:</div>
         <TextArea
+          value={coment}
           style={{
             width: 400,
             marginBottom: '20px'
@@ -245,7 +254,7 @@ export default function ModalQuestionFull(props) {
           onChange={(e) => { dispatch(setComent(e.target.value))}}
         />
         <div className='questionColor'>How can we get in touch with you? <span style={{ color: 'red' }}>*</span></div>
-        <Checkbox.Group options={threeOptions} onChange={getContactChange} />
+        <Checkbox.Group value={getcontact} options={threeOptions} onChange={getContactChange} />
         <Space style={{ justifyContent: 'center' }} size={[8, 16]} wrap>
           { 
             placeInput.map((item, key) => (
@@ -258,12 +267,15 @@ export default function ModalQuestionFull(props) {
                   mask={`${mask}`} 
                   maskChar={'_'} 
                   value={byer_tel} 
-                  onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                  onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
                 /> : 
-                <Input    
+                <Input   
+                  value={item.value}
                   className={
                     key === 3 ? `locationInput ${errTel ? 'error_input' : ''}` : 
                     key === 2 ? `${errEmail ? 'error_input' : ''}` :
+                    key === 1 ? `${byer_first_name === '' ? 'error_input' : ''}` :
+                    key === 0 ? `${byer_last_name === '' ? 'error_input' : ''}` :
                     `locationInput` 
                     }  onChange={item.fun} placeholder={ item.placeholder }  
                 />
@@ -276,31 +288,38 @@ export default function ModalQuestionFull(props) {
         </Space>
         <div className='questionColor'>Please input your address</div>
         <div className='inputContainerSpan'>
-          <Input onChange={(e) => { dispatch(setAddres(e.target.value)) } } style={{ width: 400 }} placeholder="Street Address" />
+          <Input 
+            value={addres_street}
+            onChange={(e) => { dispatch(setAddres(e.target.value)) } } 
+            style={{ width: 400 }} 
+            placeholder="Street Address" 
+            className={ `locationInput ${addres_street === '' ? 'error_input' : ''}` }
+          />
           <span style={{ color: 'red' }}>*</span> 
         </div>
-        <Space style={{ justifyContent: 'center' }} size={[40, 40]} wrap>
-          {placeInputs.map((item, key) => ( 
-            <div key={key+3} className='inputContainerSpan'>
-              <Input onChange={item.fun} placeholder={ item.placeholder } />
+        <Space style={{ justifyContent: 'center' }} size={[40, 40]} wrap> 
+            <div className='inputContainerSpan'> 
+              <Input  
+                value={addres_city}  
+                className={`locationInput ${addres_city === '' ? 'error_input' : ''}`}  
+                onChange={(e) => { dispatch(setCity(e.target.value)) }} 
+                placeholder='City' 
+              /> 
               <span style={{ color: 'red'}}>*</span>
-            </div>
-          ))}
+              <InputNumber 
+                min={0}
+                // defaultValue={null}
+                // value={Number(addres_index)}  
+                className={`locationInputNumber ${addres_index === null ? 'error_input' : ''}`}  
+                onChange={(value) => { dispatch(setIndex(value)) }} 
+                placeholder='Zip'  
+              /> 
+              <span style={{ color: 'red'}}>*</span> 
+            </div> 
         </Space> 
       </>,
     },
   ];
-
-  const contentStyle = {
-    lineHeight: '66px',
-    textAlign: 'center',
-    color: token.colorTextTertiary,
-    backgroundColor: token.colorFillAlter,
-    borderRadius: token.borderRadiusLG,
-    border: `1px dashed ${token.colorBorder}`,
-    marginTop: 16,
-  };
- 
   const items = steps.map((item) => ({
     key: item.title,
     title: item.title,
@@ -315,7 +334,7 @@ export default function ModalQuestionFull(props) {
       }
     });
   },[]);
-
+  
   return (
     <Modal
       title="Please follow a few steps"
@@ -324,29 +343,47 @@ export default function ModalQuestionFull(props) {
       okButtonProps={{ disabled:submitDisable, style: { backgroundColor: `${ !submitDisable ?' #640d0fd9' : '' }`, color: `${ !submitDisable ? '#fff' : '' }` } }}
       onOk={() => dispatch(modalFullQuestion(false))}
       onCancel={() => dispatch(modalFullQuestion(false))}
+      footer={<></>}
     >
       {/* <Steps className="steps" current={current} items={items} /> */}
       <div style={contentStyle}>{steps[current].content}</div>
       <div style={{ marginTop: 24 }} >
       {
       current < steps.length - 1 && (
-      <Button style={{ backgroundColor: `#a50f12`, color: `#fff` }} type="primary" onClick={() => next()}>
-      Next
-      </Button>
+      <Button style={{ backgroundColor: `#a50f12`, color: `#fff` }} type="primary" onClick={() => next()}> Next </Button>
       )}
       {
       current === steps.length - 1 && (
-      <Button type="primary" style={{ backgroundColor: `${ !submitDisable ?' #640d0fd9' : '' }`, color: `${ !submitDisable ? '#fff' : '' }` }} disabled={submitDisable} onClick={() => message.success('Processing complete!')}>
-      Submit
-      </Button>
+      <Button 
+        type="primary" 
+        style={{ backgroundColor: `${ !submitDisable ?' #640d0fd9' : '' }`, color: `${ !submitDisable ? '#fff' : '' }` }} 
+        disabled={byer_last_name !== '' && byer_first_name !== '' && addres_city !== '' && addres_index !== '' && addres_street !== '' && addres_street.length > 5 && errTel !== true && errEmail !== true ? false : true} 
+        onClick={async() => { sendFullServer({
+          byer_first_name,
+          byer_tel,
+          byer_email,
+          byer_last_name,
+          addres_city,  
+          addres_index,
+          addres_street,
+          owner,
+          financing,
+          status,
+          callback,  
+          coment, 
+          getcontact,  
+          type_project,    
+          materials, 
+        },dispatch); message.success('Processing complete!') }}
+      > Submit </Button>
       )}
       {
       current > 0 && (
       <Button
-      style={{
-      margin: '0 8px',
-      }}
-      onClick={() => prev()}
+        style={{
+        margin: '0 8px',
+        }}
+        onClick={() => prev()}
       >
       Back
       </Button>

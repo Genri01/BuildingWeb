@@ -25,8 +25,8 @@ export default function ModalQuestionMini(props) {
   const [quality, setQuality] = useState(maskTelephone);
 
   const [mask, setMask] = useState('');
-  const [errTel, setErrTel] = useState(false);
-  const [errEmail, setErrEmail] = useState(false);
+  const [errTel, setErrTel] = useState(true);
+  const [errEmail, setErrEmail] = useState(true);
   
   useEffect(() => {
     fetch('https://api.sypexgeo.net/json')
@@ -38,12 +38,6 @@ export default function ModalQuestionMini(props) {
     });
   },[]);
  
-
-  // if(errTel === false) { changeSubmit(false) }
-  // if(errEmail === false) { changeSubmit(false) }
-  // if(byer_first_name !== '') { changeSubmit(false) }
-
-
   return (
     <Modal
       className='modalMini'
@@ -59,7 +53,7 @@ export default function ModalQuestionMini(props) {
               placeholder="Name"  
               onChange={(e) => { dispatch(setFirstName(e.target.value)) }} 
               value={byer_first_name} 
-              className={`${byer_first_name === '' ? '' : ''}`} 
+              className={`${byer_first_name === '' ? 'error_input' : ''}`} 
               name="name" 
               type="text" 
             />
@@ -67,7 +61,7 @@ export default function ModalQuestionMini(props) {
           <Form.Item label="*">
             <Input 
               placeholder="Email" 
-              onChange={(e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) }} 
+              onChange={(e) => {  changeEmail(false,e.target.value,setErrEmail,dispatch,validateEmail) }} 
               value={byer_email} 
               className={`${errEmail ? 'error_input' : ''}`} 
               name="email" 
@@ -76,18 +70,23 @@ export default function ModalQuestionMini(props) {
           </Form.Item>
           <Form.Item label="*">
             <InputMask  
-              placeholder="Telephone" 
+              placeholder='Phone' 
               className={`locationInput ${errTel ? 'error_input' : ''}`} 
-              name="telephone" 
+              name='phone' 
               mask={`${mask}`} 
               maskChar={'_'} 
               value={byer_tel} 
-              onChange={(e)=>{ changeTelephone(e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+              onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
             />
           </Form.Item> 
         </Form> 
       </div> 
-      <ContactUsForm disabled={{ disabled: submitDisable, style: { backgroundColor: 'rgb(187 28 32)' } }} /> 
+      <ContactUsForm 
+        name = {byer_email}
+        email = {byer_email}
+        phone = {byer_tel}
+        disabled={{ disabled: submitDisable, style: { backgroundColor: 'rgb(187 28 32)' } }} 
+      /> 
     </Modal>
   );
 };

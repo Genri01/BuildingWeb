@@ -63,4 +63,26 @@
   color: #bfbfbf;
 }
 
+
+.locationInputNumber {
+  width: 100%;
+  height: auto; 
+  padding: 0 11px;
+  text-align: start;
+  background-color: transparent; 
+  border-radius: 6px;
+  outline: 0;
+  transition: all 0.2s linear;
+  appearance: textfield;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+
+.locationInputNumber::placeholder {
+  text-overflow: ellipsis;
+  color: #bfbfbf;
+}
+ 
 .error_input{border:2px solid #e4292b!important}

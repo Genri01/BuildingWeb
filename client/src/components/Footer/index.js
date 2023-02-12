@@ -34,7 +34,7 @@ function Footer(props) {
                       <div style={{ width: mobile ? '50%' : '100%' }} className='lineInfoContainer'>
                         <img className="mobile-i-plain" src={phone} alt="phone" />
                         <div style={{ width: mobile ? '70%' : 'auto', margin: mobile ? '0' : 'auto' }} className="he-text"> 
-                          <span style={{ width: mobile ? '220px' : 'auto' }} className="footer_txt_hover">612-516-0263</span>
+                          <span style={{ width: mobile ? '220px' : 'auto' }} className="footer_txt_hover">+1-61-251-602-63</span>
                         </div>
                       </div>
                       <div className='lineInfoContainer'>

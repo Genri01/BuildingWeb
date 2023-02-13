@@ -1,8 +1,9 @@
 
 import React from 'react'; 
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import { useDispatch, useSelector  } from 'react-redux';
 import { setComent, sendMiniServer } from '../../redux/actions/questions'
+import { modalMiniQuestion } from '../../redux/actions/app'
 import { questions } from '../../redux/selectors'; 
 import './style.css';
 
@@ -26,7 +27,11 @@ export default function ContactUsForm(props) {
         <textarea value={coment} onChange={(e) => { dispatch(setComent(e.target.value))}} className='comments' placeholder="" />
       </div>
       <Button 
-        onClick={async() => { sendMiniServer({ name, email, phone, coment },dispatch) }}
+        onClick={async() => {  
+          const result = await sendMiniServer({ name, email, phone, coment },dispatch);
+          message.success(result);
+          dispatch(modalMiniQuestion(false)) 
+        }}
         style={{ width: '240px', height: '40px', backgroundColor: `#a50f12`, color: `#fff`  }} 
         type="primary"
       >Submit</Button>

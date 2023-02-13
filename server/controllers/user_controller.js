@@ -113,76 +113,19 @@ const UserController = {
     })(); 
   },
   sendReferal:(req,res) => {
-  const { body } = req.body; 
-  const {
-    byer_initial_dead,
-    byer_date_birthday,
-    byer_date_dead,
-    install,
-    byer_file,
-    byer_initial,
-    byer_tel,
-    coment,
+  const { 
+    referal_first_name,  
+    referal_email,
+    referal_tel, 
+    referal_addres_city,
+    byer_first_name,
     byer_email,
-    addres_city,
-    addres,
-    addres_index,
-    addres_region,
-    delivery_method,
-    pay_method,
-    buy,
-    width,
-    material, 
-  } = body
-
-  let infobuy = 'Заказали памятники: '
-  var attach = [];
-
-  byer_file.map((item) => {
-    (async () => {
-      attach.push({
-        path: item.img
-      });
-    })();
-    return false;
-  })
-
-  buy.map((item) => {
-    (async () => {
-      attach.push({
-        path: `data:image/png;base64,${item.img64}`
-      });
-      infobuy += `
-      \n\n\n
-      Название: ${item.title},
-      Количество: ${item.count},
-      ID памятника: ${item.id},
-      Цена: ${item.price}
-      \n\n\n
-      `
-    })();
-    return false;
-  })
-
-  let method_delivery = ''
-
-  switch (delivery_method) {
-    case 'transit':
-      method_delivery = 'Доставка транспортной кампанией (оплачивается заказчиком)'
-      break;
-    case 'transitandinstall':
-      method_delivery = 'Доставка и установка'
-      break;
-    case 'maycop':
-      method_delivery = 'Cамовывоз с производства г. Майкоп Промышленная 54а'
-      break;
-    case 'anapa':
-      method_delivery = 'Cамовывоз с производства г. Анапа Чехова 50а'
-      break;
-    default:
-      break;
-  }
-  
+    byer_tel,
+    addres_street,  
+    referal_coment,
+    type_project,
+   } = req.body.body;  
+ 
     (async () => { 
       let transporter = nodemailer.createTransport({
         host: 'smtp.yandex.ru',
@@ -200,23 +143,16 @@ const UserController = {
         // to: `webdev170291@yandex.ru`,
         subject: `!! Информация о заказе !!`,
         html: `
-        Покупатель ${byer_initial.bold()} с номером телефона: ${byer_tel.bold()} и email(почтой): ${byer_email.bold()}
-        заказал для умершего ${byer_initial_dead.bold()} ${install ? ' с Установкой' : ' без Установки'}.
-        Дата рождения умершего: ${byer_date_birthday.bold()} , Дата смерти умершего: ${byer_date_dead.bold()},
-        \n\n\n
-        ${infobuy}
-        \n\n\n
-        Комментарии к заказу:  " ${coment.bold()} ".
-        Регион доставки: ${addres_region.bold()}
-        Город доставки: ${addres_city.bold()}
-        Адрес доставки: ${addres.bold()}
-        Индекс: ${addres_index.bold()}
-        Способ оплаты: ${pay_method === "nal" ? ' Наличными' : ' Безналичным расчётом'}
-        Способ доставки: ${method_delivery},
-        Параметры ПЛИТ: ${width},
-        Материал ПЛИТ: ${material},
-        `,
-        attachments: attach
+        Покупатель ${byer_first_name.bold()} с номером телефона: ${byer_tel.bold()} и email(почтой): ${byer_email.bold()}
+        ,проживайщий по адрессу: ${addres_street.bold()}
+        Отправляет данные по рефералу:
+        Имя реферала - ${referal_first_name}.
+        Почта реферала - ${referal_email}.
+        Телефон реферала - ${referal_tel}.
+        Адрес реферала - ${referal_addres_city}. 
+        Узнал о реферальной программе:  ${referal_coment}.
+        Тип проекта: ${type_project.map((item => item.bold()))} ".
+        `
       })
 
       transporter.verify(function (error, success) {

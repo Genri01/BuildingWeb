@@ -1,7 +1,6 @@
 import ActionTypes from '../constants'; 
 import api from '../../http/index';
-  
-console.log(api.main_api)
+ 
 export function setFirstName(name) {
   return {
     type: ActionTypes.MODAL_BYER_FIRST_NAME,
@@ -163,8 +162,7 @@ export async function sendMiniServer(body,dispatch) {
     };  
     const response = await api.main_api.post('/sendmini',requestOptions)
     if(response.status === 200) {  
-      console.log(response.data.msg)
-      // dispatch(setPopupMainMsg(response.data.msg))
+      return response.data.msg 
     }  
   } catch (error) {
     console.log(error)
@@ -172,8 +170,7 @@ export async function sendMiniServer(body,dispatch) {
   }
 }
  
-export async function sendFullServer(body,dispatch) {
-console.log(body)
+export async function sendFullServer(body,dispatch) { 
   try {
     const requestOptions = {
       method: 'post',
@@ -184,52 +181,31 @@ console.log(body)
     };  
     const response = await api.main_api.post('/sendfull',requestOptions)
     if(response.status === 200) {  
-      console.log(response.data.msg)
-      // dispatch(setPopupMainMsg(response.data.msg))
+      return response.data.msg 
     }  
   } catch (error) {
     console.log(error)
     return error.response?.status;
   }
 }
-
-
-
-
-
-// export async function sendEmailServer(body,dispatch) {
  
-//   try {
-//     const requestOptions = {
-//         method: 'post',
-//         headers: { 
-//         'Content-Type': 'application/json',
-//         },
-//         body
-//       }; 
-//     const response = await axios.post(`${API_URL}/sendmail`, requestOptions)
-
-//     if(response.status === 200) { 
-//       dispatch(setPopupMainMsg(response.data.msg))
-//     }  
-//   } catch (error) {
-//     console.log(error)
-//     return error.response?.status;
-//   }
-// }
- 
-// export async function uploadServer(data,dispatch) { 
-//   try { 
-//     const response = await axios.post(`${API_URL}/uploader`, data)
-
-//     if(response.status === 200) {
-//       dispatch(setFileName(response.data)) 
-//     }  
-//   } catch (error) {
-//     console.log(error)
-//     return error.response?.status;
-//   }
-// }
- 
+export async function sendRegistrServer(body,dispatch) { 
+  try {
+    const requestOptions = {
+      method: 'post',
+      headers: { 
+      'Content-Type': 'application/json',
+      },
+      body
+    };  
+    const response = await api.main_api.post('/sendref',requestOptions)
+    if(response.status === 200) {  
+      return response.data.msg 
+    }  
+  } catch (error) {
+    console.log(error)
+    return error.response?.status;
+  }
+}
 
  

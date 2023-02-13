@@ -293,7 +293,7 @@ export default function ModalQuestionFull(props) {
             onChange={(e) => { dispatch(setAddres(e.target.value)) } } 
             style={{ width: 400 }} 
             placeholder="Street Address" 
-            className={ `locationInput ${addres_street === '' ? 'error_input' : ''}` }
+            className={ `locationInput ${addres_street.length < 6 ? 'error_input' : ''}` }
           />
           <span style={{ color: 'red' }}>*</span> 
         </div>
@@ -357,37 +357,30 @@ export default function ModalQuestionFull(props) {
       <Button 
         type="primary" 
         style={{ backgroundColor: `${ !submitDisable ?' #640d0fd9' : '' }`, color: `${ !submitDisable ? '#fff' : '' }` }} 
-        disabled={byer_last_name !== '' && byer_first_name !== '' && addres_city !== '' && addres_index !== '' && addres_street !== '' && addres_street.length > 5 && errTel !== true && errEmail !== true ? false : true} 
-        onClick={async() => { sendFullServer({
-          byer_first_name,
-          byer_tel,
-          byer_email,
-          byer_last_name,
-          addres_city,  
-          addres_index,
-          addres_street,
-          owner,
-          financing,
-          status,
-          callback,  
-          coment, 
-          getcontact,  
-          type_project,    
-          materials, 
-        },dispatch); message.success('Processing complete!') }}
-      > Submit </Button>
-      )}
-      {
-      current > 0 && (
-      <Button
-        style={{
-        margin: '0 8px',
-        }}
-        onClick={() => prev()}
-      >
-      Back
-      </Button>
-      )}
+        disabled={byer_last_name !== '' && byer_first_name !== '' && addres_city !== '' && addres_index !== '' && addres_street !== '' && addres_street.length >= 5 && errTel !== true && errEmail !== true ? false : true} 
+        onClick={async() => { 
+          const result = await sendFullServer({
+            byer_first_name,
+            byer_tel,
+            byer_email,
+            byer_last_name,
+            addres_city,  
+            addres_index,
+            addres_street,
+            owner,
+            financing,
+            status,
+            callback,  
+            coment, 
+            getcontact,  
+            type_project,    
+            materials, 
+          },dispatch); 
+          message.success(result);
+          dispatch(modalFullQuestion(false)) 
+        }}> Submit </Button>
+      )} 
+      { current > 0 && ( <Button style={{ margin: '0 8px' }} onClick={() => prev()}> Back </Button> ) }
       </div>
     </Modal>
   );

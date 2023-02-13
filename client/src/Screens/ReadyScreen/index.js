@@ -1,8 +1,8 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Input, Space, Checkbox, Button } from 'antd';  
+import { Input, Space, Checkbox, Button, message } from 'antd';  
 import Title from '../../components/Title';
 import images from '../../assets/images';   
-import { questions } from '../../redux/selectors';  
+import { questions } from '../../redux/selectors';   
 import { useDispatch, useSelector  } from 'react-redux'; 
 import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
@@ -23,6 +23,7 @@ import {
   setReferalCity,
   setReferalComent,
   setReferalEmail,
+  sendRegistrServer,
   setReferalFirstName,
   setReferalTel
 } from '../../redux/actions/questions'; 
@@ -235,7 +236,26 @@ function ReadyScreen(props) {
         </div>
         <div className='textExample'>*Credits and payments will be made on referrals once the project is completed. Project must exceed $5,000 to qualify. To be eligible for the bonus, the person you refer must not already be a customer of A to Z Construction Inc.</div>
         <div className='readyButtonContainer'>
-          <Button className="bottonTitle" block type="primary">Send Form</Button>  
+          <Button 
+            onClick={async() => { 
+              const result = await sendRegistrServer({ 
+                referal_first_name,  
+                referal_email,
+                referal_tel, 
+                referal_addres_city,
+                byer_first_name,
+                byer_email,
+                byer_tel,
+                addres_street,  
+                referal_coment,
+                type_project,  
+              },dispatch); 
+              message.success('Form success');   
+            }}
+            className="bottonTitle" 
+            block type="primary"
+            disabled={referal_first_name !== '' && referal_email !== '' && referal_tel !== '' && referal_addres_city !== '' && byer_first_name !== '' && byer_tel !== '' && errTel !== true && errTelRef !== true && errEmailRef !== true && errEmail !== true ? false : true} 
+          >Send Form</Button>  
         </div>
         <div className='readyAntitiesContainer'>
           {

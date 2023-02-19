@@ -4,7 +4,7 @@
   height: 700px;
   background-color: #fffcfcbd;
   /* justify-content: center; */
-  /* align-items: center; */
+  align-items: center;
   flex-direction: column;
 }
  

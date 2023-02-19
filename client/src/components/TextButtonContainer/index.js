@@ -13,22 +13,18 @@ export default function TextButtonContainer(props) {
   const dispatch = useDispatch();
 
   return (
-    <div className={`${mobile ? 'mobileTextButtonWrapper' : "textButtonContainerWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :  
-        <>
-          <div className='textButtonTextContainer'>
-            <div className='textButtonText'  > 
-              { br.map((item,k)=>(<React.Fragment key={k}>{item}<br/></React.Fragment>)) } 
-            </div>
+    <div className="textButtonContainerWrapper"> 
+      <div style={{marginBottom: mobile ? '0px' : '50px'}} className='textButtonTextContainer'>
+        {
+          text !== '' &&  
+          <div className='textButtonText'  > 
+            { br.map((item,k)=>(<React.Fragment key={k}>{item}<br/></React.Fragment>)) } 
           </div>
-          {(!nobtn && <div className="textButtonContainer">  
-          <Button onClick={() => { dispatch(modalMiniQuestion(true)) }} className="textButton" block type="primary">{textbtn}</Button>  
-          </div> )} 
-        </> 
-      }
+        } 
+      </div>
+      {(!nobtn && <div style={{width: mobile ? 'auto' : '550px'}} className="textButtonContainer">  
+      <Button onClick={() => { dispatch(modalMiniQuestion(true)) }} className="textButton" block type="primary">{textbtn}</Button>  
+      </div> )}  
     </div>
   );
 }

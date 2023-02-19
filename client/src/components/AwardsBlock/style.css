@@ -49,8 +49,7 @@
   width: 80%;
   height: 100%;
   /* background-color: rgb(236, 226, 213); */
-  justify-content: space-evenly;
-  padding: 30px 0px;
+  justify-content: space-evenly; 
   box-sizing: border-box;
 }
 

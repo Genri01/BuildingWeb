@@ -27,29 +27,27 @@ function Footer(props) {
                 <div className='footer_titleTxt'>869 E Schaumburg rd, #321,</div>
                 <div className='footer_titleTxt'>Schaumburg IL  60194</div>
               </>
-            } 
-            <ul className="mobile-header-extras"> 
-                <li>
-                    <div style={{ flexDirection: mobile ? 'row' : 'column', alignItems: mobile ? 'center' : 'flex-start', }} className='mobileContainerLi'>
-                      <div style={{ width: mobile ? '50%' : '100%' }} className='lineInfoContainer'>
-                        <img className="mobile-i-plain" src={phone} alt="phone" />
-                        <div style={{ width: mobile ? '70%' : 'auto', margin: mobile ? '0' : 'auto' }} className="he-text"> 
-                          <span style={{ width: mobile ? '220px' : 'auto' }} className="footer_txt_hover">+1-61-251-602-63</span>
-                        </div>
-                      </div>
-                      <div className='lineInfoContainer'>
-                        <img className="mobile-i-plain" src={email} alt="time" />
-                        <div style={{ width: mobile ? '70%' : 'auto' }} className="he-text"> 
-                            <span className="footer_txt_hover">contact@get-flooring.com</span>
-                        </div>
-                      </div>
-                    </div>
-                </li> 
-            </ul>
+            }  
+            <div style={{ flexDirection: mobile ? 'row' : 'column', alignItems: mobile ? 'center' : 'flex-start', }} className='mobileContainerLi'>
+              <div style={{ width: mobile ? '45%' : '100%',justifyContent: 'flex-start' }} className='lineInfoContainer'>
+                <img className="mobile-i-plain" src={phone} alt="phone" />
+                <div style={{ width: mobile ? 'auto' : 'auto', margin: '0px' }} className="he-text"> 
+                  <span><a style={{ width: mobile ? '220px' : 'auto',margin: mobile ? '0' : '0 36px 18px 0' }} className="footer_txt_hover" href="tel:+1-61-251-602-63">+1-61-251-602-63</a></span>
+                </div>
+              </div>
+              <div style={{ width: mobile ? '55%' : '100%' }} className='lineInfoContainer'>
+                <img className="mobile-i-plain" src={email} alt="time" />
+                <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
+                    <span>
+                      <a style={{ wordBreak: mobile ? 'break-all' : 'break-word',fontSize: mobile ? '12px' : '18px', margin: mobile ? '0' : '0 6px 18px 0' }} className="footer_txt_hover" href="mailto:info@butkovconstruction.com">info@butkovconstruction.com</a>
+                    </span>
+                </div>
+              </div>
+            </div> 
           </div>
           <div style={{ flexDirection: mobile ? 'row' : 'column',alignItems: mobile ? 'center' : 'flex-start', paddingTop: mobile ? '30px' : '40px' }} className="footer_desription_section_center">
             <div className={`${mobile ? 'mobile-footer_txt' : 'footer_titleTxt'}`}>Important Links:</div>
-            <Link to={"/terms"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Terms&condditions</div></Link>
+            {/* <Link to={"/terms"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Terms&condditions</div></Link> */}
             <Link to={"/police"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Privacy Policy</div></Link>
             {/* <Link to={"/police"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>Services</div></Link> */}
             <Link state={{ id: 'faq' }} to={"/moreinfo/faq"}><div className={`${mobile ? 'mobile-footer_txt' : 'footer_txt_hover'}`}>FAQ</div></Link>

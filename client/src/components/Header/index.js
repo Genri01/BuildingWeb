@@ -10,7 +10,7 @@ function Header(props) {
 
   return (
     <div className="headerWrapper"> 
-      <TopLine mobile={mobile} linkTitle='READY TO EARN $250? LEAVE A REFERRAL TODAY!' btnTxt='GET ON ESTEMATE' /> 
+      <TopLine mobile={mobile} linkTitle='READY TO EARN $250? LEAVE A REFERRAL TODAY!' btnTxt='GET AN ESTIMATE' /> 
       <BackgroundVideo page={page} mobile={mobile} pagesArr={pagesArr} clickMenu={clickMenu} />   
     </div>
   );

@@ -1,19 +1,8 @@
-.shop_screen {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 150px;
-}
-
-.mobileShopScreen {
+.commercialBlockscreen {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-top: 300px;
 }
+ 

@@ -38,11 +38,11 @@ export default function TestimonialsSwipe(props) {
 
     return (
       <div className={`${mobile ? 'mobileTestimonialsSwipeWrapper' : 'testimonialsSwipeWrapper'}`}>   
-          <div className='topTestimonialsSwipeContainer'>
+          <div className={`${mobile ? 'mobileTopTestimonialsSwipeContainer' : 'topTestimonialsSwipeContainer'}`}>
             <div className='testimonialsSwipeImgContainer'>
-              <img width={num === 3 ? 200 : 250} src={img} alt="img" />
+              <img width={mobile? (num === 3 ? 100 : 150) : (num === 3 ? 200 : 250)} src={img} alt="img" />
             </div> 
-            <div className='testimonialsSwipeContainerInfo'>
+            <div className={`${mobile ? 'mobileTestimonialsSwipeContainerInfo' : 'testimonialsSwipeContainerInfo'}`}>
               <h2 className='testimonialsSwipeTitle'>{title}</h2>
               <div className='testimonialsSwipeStarWrapper'>
                 { 
@@ -56,7 +56,8 @@ export default function TestimonialsSwipe(props) {
               </div>
             </div>
           </div>
-          <div className='cartContainerItemWraper'> 
+          
+          <div  style={{ flexDirection: mobile ? 'column' : 'row', marginTop: mobile ? '80px' : '0px'}}  className='cartContainerItemWraper'> 
             <Image.PreviewGroup
                 preview={{
                   visible,
@@ -65,7 +66,7 @@ export default function TestimonialsSwipe(props) {
               >
               {
                 imageArray.map((item, i) => (
-                <CommercialCart key={i} img={item.img} title={item.title} /> 
+                <CommercialCart mobile={mobile} key={i} img={item.img} title={item.title} /> 
                 ))
               } 
             </Image.PreviewGroup> 
@@ -82,7 +83,7 @@ export default function TestimonialsSwipe(props) {
             { 
               coments.map((coment,id) => (
                 <SwiperSlide key={id}>   
-                  <TestimonialsSlider items={coment} /> 
+                  <TestimonialsSlider mobile={mobile} items={coment} /> 
                 </SwiperSlide>
               ))
             }  

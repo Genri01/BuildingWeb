@@ -1,6 +1,4 @@
-
-
-.titleWrapper {
+ .titleWrapper {
   display: flex;
   width: 100%;
   height: 100px; 
@@ -11,6 +9,7 @@
 }
  
 .textTitle { 
+  text-align: center;
   display: block; 
   font-family: sans-serif;
   font-weight: 700;

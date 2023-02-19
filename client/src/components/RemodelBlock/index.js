@@ -14,24 +14,20 @@ export default function RemodelBlock(props) {
   const { mobile, titleText, amentities, titlecart, textone, texttwo, cartsItem, wedoblock } = props;
  
   return (
-    <div className={`${mobile ? 'mobileRemodalWrapper' : "remodalWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :
-        <>  
-          <TextButtonContainer
-            text = { titleText }
-            textbtn = "Scedule your free consultat"
-          />
-          {( wedoblock && <WeDoBlock /> )}
-          <CartContainer
-            text={titlecart}
-            carts={cartsItem} />
-          {( amentities && <Amentities /> )} 
-          <TwoBtnContainer textone={textone} texttwo={texttwo} />
-        </>
-      }
+    <div className={`${mobile ? 'mobileRemodalWrapper' : "remodalWrapper"}`}> 
+      <TextButtonContainer
+        mobile = { mobile }
+        text = { titleText }
+        textbtn = "Scedule your free consultat"
+      />
+      {( wedoblock && <WeDoBlock mobile = { mobile } /> )}
+      <CartContainer
+        text={ titlecart }
+        carts={ cartsItem } 
+        mobile = { mobile }
+      />
+      {( amentities && <Amentities mobile = { mobile } /> )} 
+      <TwoBtnContainer mobile = { mobile } textone={textone} texttwo={texttwo} />  
     </div>
   );
 }

@@ -29,39 +29,32 @@ export default function Amentities(props) {
     ], 
   ]
   return (
-    <div className={`${mobile ? 'mobileTextButtonWrapper' : "amentitiesWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :  
-        <> 
-          <div className='amentitiesTopContainer'>
-            <Title text="Bathroom Amentities" />
-            <div className='amentitiesTextContainer'>
-              <div className='amentitiesTextSubTitle'>
-                There are many factors to consider when designing and remodeling your bathroom. Below are some amenities that we have completed for our clients:
-              </div> 
-            </div> 
+    <div className={`${mobile ? 'mobileAmentitiesWrapper' : "amentitiesWrapper"}`}> 
+      <div className='amentitiesTopContainer'>
+        <Title text="Bathroom Amentities" />
+        <div className='amentitiesTextContainer'>
+          <div className='amentitiesTextSubTitle'>
+            There are many factors to consider when designing and remodeling your bathroom. Below are some amenities that we have completed for our clients:
           </div> 
-          <div className='amentitiesBottomContainer'>
-            {
-              antitiesArr.map((i,k) => {  
-                return (
-                  <div key={k} className='amentitiesColumn'>
-                    <ul>
-                      {
-                        i.map((item,key) => {
-                          return (<li type="square" className='amentitiesLi' key={key}>{item}</li>)
-                        })
-                      }
-                    </ul>
-                  </div>  
-                )
-              }) 
-            }
-          </div>  
-        </> 
-      }
+        </div> 
+      </div> 
+      <div className={mobile ? 'mobileAmentitiesBottomContainer' : 'amentitiesBottomContainer'}>
+        {
+          antitiesArr.map((i,k) => {  
+            return (
+              <div key={k} className={mobile ? 'mobileAmentitiesColumn' : 'amentitiesColumn'}>
+                <ul>
+                  {
+                    i.map((item,key) => {
+                      return (<li type="square" className='amentitiesLi' key={key}>{item}</li>)
+                    })
+                  }
+                </ul>
+              </div>  
+            )
+          }) 
+        }
+      </div>   
     </div>
   );
 }

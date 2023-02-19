@@ -50,12 +50,7 @@ export default function FinanceOptionBlock(props) {
       ]
     },
   ]
-  
-  
-  
-  
-  
-  
+   
   const plans = [
     {
       title: 'Plan 600',
@@ -84,45 +79,38 @@ export default function FinanceOptionBlock(props) {
   ]
 
   return (
-    <div id={id} className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :
-        <>   
-          <Title text="Financing options" />
-          <div className='subCenterText'>
-            From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
-          </div>
-          <div className='textFinance'>
-            <div className="Forty"> 
-              <img src={sinchrony} alt="Synchrony banking logo" width="100%" /> 
-            </div>
-            <h2 className='titleFinance'>Promotional financing options<sup>1</sup> to complete your dream project.</h2>
-            <p style={{ textIndent: '30px' }}>You don't have to let a small budget keep you from getting what you really want or need. That's why Damyans Electric offers promotional financing options when your purchase is made with a Visa, MasterCard, Amex, and Discover credit card issued by Synchrony Bank.</p><br/>
-            <p style={{ textIndent: '30px' }}>Synchrony Bank is one of the premier consumer financial services companies in the United States with over 80 years of retail heritage, and today is the largest provider of private label credit cards in the United States<sup>2</sup>.</p><br/>
-            <p style={{ textIndent: '30px' }}>Synchrony banking logo Synchrony Bank can provide you with promotional financing options for major purchases, offering you a budget-friendly way to help you get what you really want or need. Expand your purchasing power and convenience with:</p><br/>
-            <ul style={{ marginLeft: '40px', marginBottom: '20px' }} >
-              <li>A simple application process, and fast credit decisions</li>
-              <li>Unsecured, revolving credit lines</li>
-              <li>Open credit line for future purchases</li>
-              <li>Promotional financing options1</li>
-              <li>Convenient monthly payment options</li>
-              <li>On-line account management</li>  
-            </ul> 
-            <div>To learn more about promotional financing options from Synchrony Financial, please contact Damyans Electric at 952-500-8732 or butkov@mail.ru</div><br/>
-            <div className="subText"><sup>1 </sup><div style={{ fontSize: '18px', paddingLeft: '3px' }}> Subject to credit approval. Minimum monthly payments required. See store for details.</div></div>
-            <div className="subText"><sup>2 </sup><div style={{ fontSize: '18px', paddingLeft: '3px' }}> Based on purchase volume and receivables.</div></div><br/>
-            <div>For all promotions: Qualifying purchase must be made with your Visa, MasterCard, Amex, or Discover credit card issued by Synchrony Bank and a $29 account activation fee will apply and be charged at the time first purchase posts to account. For new accounts: Purchase APR is 26.99%; Minimum Monthly Interest Charge is $2. Existing cardholders should see their credit card agreement for their applicable terms. Subject to credit approval.</div><br/>
-            <div>If your application is approved, or, if you are an existing cardholder, the below promotional financing options may be available.</div>
-          </div>
-          <div className='planContainer'>
-            { 
-              plans.map((item,key)=>(<PlanCard key={key} title={item.title} subtitle={item.subTitle} twoCol={item.twoCol} oneCol={item.oneCol} />))
-            } 
-          </div> 
-        </>
-      }
+    <div id={id} className={`${mobile ? 'mobileFinanceOptionWrapper' : "financeOptionWrapper"}`}> 
+      <Title text="Financing options" />
+      <div style={{ marginTop: mobile ? '10px' : '0px' }} className='subCenterText'>
+        From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
+      </div>
+      <div className='textFinance'>
+        <div className="Forty"> 
+          <img src={sinchrony} alt="Synchrony banking logo" width="100%" /> 
+        </div>
+        <h2 className='titleFinance'>Promotional financing options<sup>1</sup> to complete your dream project.</h2>
+        <p style={{ textIndent: '30px' }}>You don't have to let a small budget keep you from getting what you really want or need. That's why Damyans Electric offers promotional financing options when your purchase is made with a Visa, MasterCard, Amex, and Discover credit card issued by Synchrony Bank.</p><br/>
+        <p style={{ textIndent: '30px' }}>Synchrony Bank is one of the premier consumer financial services companies in the United States with over 80 years of retail heritage, and today is the largest provider of private label credit cards in the United States<sup>2</sup>.</p><br/>
+        <p style={{ textIndent: '30px' }}>Synchrony banking logo Synchrony Bank can provide you with promotional financing options for major purchases, offering you a budget-friendly way to help you get what you really want or need. Expand your purchasing power and convenience with:</p><br/>
+        <ul style={{ marginLeft: '40px', marginBottom: '20px' }} >
+          <li>A simple application process, and fast credit decisions</li>
+          <li>Unsecured, revolving credit lines</li>
+          <li>Open credit line for future purchases</li>
+          <li>Promotional financing options1</li>
+          <li>Convenient monthly payment options</li>
+          <li>On-line account management</li>  
+        </ul> 
+        <div>To learn more about promotional financing options from Synchrony Financial, please contact Damyans Electric at 952-500-8732 or butkov@mail.ru</div><br/>
+        <div className="subText"><sup>1 </sup><div style={{ fontSize: '18px', paddingLeft: '3px' }}> Subject to credit approval. Minimum monthly payments required. See store for details.</div></div>
+        <div className="subText"><sup>2 </sup><div style={{ fontSize: '18px', paddingLeft: '3px' }}> Based on purchase volume and receivables.</div></div><br/>
+        <div>For all promotions: Qualifying purchase must be made with your Visa, MasterCard, Amex, or Discover credit card issued by Synchrony Bank and a $29 account activation fee will apply and be charged at the time first purchase posts to account. For new accounts: Purchase APR is 26.99%; Minimum Monthly Interest Charge is $2. Existing cardholders should see their credit card agreement for their applicable terms. Subject to credit approval.</div><br/>
+        <div>If your application is approved, or, if you are an existing cardholder, the below promotional financing options may be available.</div>
+      </div>
+      <div className='planContainer'>
+        { 
+          plans.map((item,key)=>(<PlanCard mobile={mobile} key={key} title={item.title} subtitle={item.subTitle} twoCol={item.twoCol} oneCol={item.oneCol} />))
+        } 
+      </div>  
     </div>
   );
 }

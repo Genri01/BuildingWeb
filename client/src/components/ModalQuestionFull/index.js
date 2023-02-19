@@ -149,6 +149,17 @@ export default function ModalQuestionFull(props) {
       label: 'No',
     }
   ];
+
+  const selectOptionsStatus = [
+    {
+      value: 'Ready to hire',
+      label: 'Ready to hire',
+    },
+    {
+      value: 'Planning & Budgeting',
+      label: 'Planning & Budgeting',
+    }
+  ];
  
   const placeInput = [
     {
@@ -236,7 +247,7 @@ export default function ModalQuestionFull(props) {
             width: 320,
           }}
           onChange={statusChange}
-          options={selectOptions}
+          options={selectOptionsStatus}
         />
         <div className='questionColor'>When would you like us to call you back?</div>
         <TimePicker value={callback.time} style={{ width: 170 }} use12Hours format="h:mm a" onChange={timeCallChange} />

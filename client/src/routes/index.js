@@ -9,6 +9,7 @@ import BlogScreen from '../Screens/BlogScreen/index';
 import ReadyScreen from '../Screens/ReadyScreen/index'; 
 import LoginScreen from '../Screens/LoginScreen/index'; 
 import TestimonialsScreen from '../Screens/TestimonialsScreen/index'; 
+import PoliceScreen from '../Screens/PoliceScreen/index'; 
 
 const Main = (props) => {
  
@@ -26,6 +27,7 @@ const Main = (props) => {
         <Route path='/:moreinfo/:item' element={<MoreInfoScreen mobile={mobile} />}/>  
         <Route path='/readytoearn' element={<ReadyScreen mobile={mobile} />}/>  
         <Route path='/login' element={<LoginScreen mobile={mobile} />}/>  
+        <Route path='/police' element={<PoliceScreen mobile={mobile} />}/>  
       </Routes>
     </main>
   )

@@ -11,7 +11,7 @@ import { app } from '../../redux/selectors';
 
 export default function MoreInfoScreen(props) {
   
-  const mobile = useSelector(app.mobile); 
+  const { mobile } = props; 
   const {state, hash} = useLocation()
   const id = state?.id;
 
@@ -23,13 +23,14 @@ export default function MoreInfoScreen(props) {
   }, [state,hash])
   
   return (
-    <div className={`${mobile ? "mobileCommercialBlockScreen" : "commercialBlockscreen"}`} > 
+    <div> 
       <FAQBlock id={'faq'}/>  
-      <ButkovProcessBlock id={'butkovprocess'} /> 
-      <FinanceOptionBlock id={'financingoptions'} />
+      <ButkovProcessBlock mobile={mobile} id={'butkovprocess'} /> 
+      <FinanceOptionBlock mobile={mobile} id={'financingoptions'} />
       <TextButtonContainer
         text = ''
         textbtn = "Contact us"
+        mobile={mobile}
       /> 
     </div>
   );

@@ -6,8 +6,7 @@ function validateEmail(email) {
   return pattern.test(email);
 }
  
-function changeTelephone(ref,value, mask, phone, setErrTel, dispatch) {
-console.log(mask)
+function changeTelephone(ref,value, mask, phone, setErrTel, dispatch) { 
   ref ? dispatch(setReferalTel(value)) : dispatch(setTel(value));
    
   if ((phone[mask.length-2] !== '_') && (phone[mask.length-2] !== undefined)) {
@@ -18,8 +17,7 @@ console.log(mask)
   return true; 
 }
 
-function changeEmail(ref,email,setErrEmail,dispatch,validateEmail) { 
-
+function changeEmail(ref,email,setErrEmail,dispatch,validateEmail) {  
   ref ? dispatch(setReferalEmail(email)) : dispatch(setEmail(email)); 
 
   if (validateEmail(email)) {

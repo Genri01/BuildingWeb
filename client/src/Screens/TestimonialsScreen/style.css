@@ -40,6 +40,15 @@
   box-sizing: border-box;
 }
 
+.mobileTestimonialsTextContainer {
+  display: flex; 
+  width: 100%;
+  align-items: center;
+  height: 200px;
+  /* padding: 0px 200px; */
+  box-sizing: border-box;
+}
+
 .testimonialsButtonContainer {
   display: flex;
   width: 100%;

@@ -252,7 +252,7 @@ switch (remodal) {
 }
     
     return (
-      <div className={`${mobile ? "mobileCommercialBlockScreen" : "commercialBlockscreen"}`} >
+      <div className="remodelScreen" >
         <RemodelBlock
           mobile={mobile}
           titleText={titleText}

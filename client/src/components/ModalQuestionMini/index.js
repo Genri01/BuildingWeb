@@ -61,7 +61,7 @@ export default function ModalQuestionMini(props) {
           <Form.Item label="*">
             <Input 
               placeholder="Email" 
-              onChange={(e) => {  changeEmail(false,e.target.value,setErrEmail,dispatch,validateEmail) }} 
+              onChange={(e) => { changeEmail(false,e.target.value,setErrEmail,dispatch,validateEmail) }} 
               value={byer_email} 
               className={`${errEmail ? 'error_input' : ''}`} 
               name="email" 
@@ -85,7 +85,7 @@ export default function ModalQuestionMini(props) {
         name = {byer_email}
         email = {byer_email}
         phone = {byer_tel}
-        disabled={{ disabled: submitDisable, style: { backgroundColor: 'rgb(187 28 32)' } }} 
+        disabled={{ disabled: byer_first_name === '' || errTel === true || errEmail === true, style: { backgroundColor: 'rgb(187 28 32)' } }}  
       /> 
     </Modal>
   );

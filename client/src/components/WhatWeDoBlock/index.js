@@ -17,7 +17,7 @@ import './style.css';
 
 export default function WhatWeDoBlock(props) {
 
-  const { customclass } = props;
+  const { customclass, mobile } = props;
  
   const [mySwiper, setMySwiper] = useState('');
 
@@ -70,12 +70,12 @@ export default function WhatWeDoBlock(props) {
  
   return (
     <div className={`whatWeDoWrapper ${customclass === undefined ? '' : customclass}`}>
-      <Title text="What we do" under top="90px" /> 
+      <Title mobile={mobile} text="What we do" under top="90px" /> 
       <div className='sliderContainer'>
         <div className='wrapperArrow' onClick={(e) => moveLeft(mySwiper)}>
           <img src={arrowl} alt="s"  width={40} height={40}/>
         </div>
-        <div className='whatWeDoSwiperContainer'> 
+        <div className={`${mobile ? 'mobileWhatWeDoSwiperContainer' : 'whatWeDoSwiperContainer' }`}> 
           <Swiper
             loop={true}
             centeredSlides={true}
@@ -85,14 +85,14 @@ export default function WhatWeDoBlock(props) {
             }} 
             modules={[Autoplay]}
             className="whatWeDoSwiper" 
-            slidesPerView={3}  
+            slidesPerView={mobile ? 1 : 3}  
             onSwiper={() => {}} 
             spaceBetween={10} 
           >
             { 
               sliderWalk.map((el,id) => (
               <SwiperSlide key={id}>
-                <WhatWeDoCard img={el.img} title={el.title} link={el.link} /> 
+                <WhatWeDoCard mobile={mobile} img={el.img} title={el.title} link={el.link} /> 
               </SwiperSlide>
               ))
             }  

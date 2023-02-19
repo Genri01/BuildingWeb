@@ -11,18 +11,11 @@ export default function TwoBtnContainer(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
-    <div className={`${mobile ? 'mobileTextButtonWrapper' : "twoBtnContainerWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :  
-        <>
-          <div className="twoBtnContainer">  
-            <Button className="texttwoBtn"  onClick={() => {navigate(`/moreinfo/faq`,{ state:{ id:'faq' } }); }} block type="primary">{textone}</Button>  
-            <Button className="texttwoBtn"  onClick={() => { dispatch(modalFullQuestion(true)); }} block type="primary">{texttwo}</Button>  
-          </div>
-        </> 
-      }
+    <div className={mobile ? 'mobileTextButtonWrapper' : "twoBtnContainerWrapper"}> 
+      <div className={mobile ? 'mobileTwoBtnContainer' : "twoBtnContainer"}>  
+        <Button className={mobile ? 'mobileTexttwoBtn' : "texttwoBtn"}  onClick={() => {navigate(`/moreinfo/faq`,{ state:{ id:'faq' } }); }} block type="primary">{textone}</Button>  
+        <Button className={mobile ? 'mobileTexttwoBtn' : "texttwoBtn"}  onClick={() => { dispatch(modalFullQuestion(true)); }} block type="primary">{texttwo}</Button>  
+      </div> 
     </div>
   );
 }

@@ -52,23 +52,16 @@ const dispatch = useDispatch()
     
   ]
   return (
-    <div className={`${mobile ? 'mobileCommercialWrapper' : "commercialWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :
-        <>  
-          <div className='commercialTitleWraper'></div>
-          <div className='commercialItemWraper'>
-            {
-              ordedr_work.map((item, i) => (<CommercialCart owerlay={true} key={i} img={item.img} title={item.title} />))
-            } 
-          </div>
-          <div className="commercialBtnContainer">  
-            <Button  onClick={() => { dispatch(modalFullQuestion(true)); }} className="commercialBotton" block type="primary">Bid Request or Estimate Request</Button>  
-          </div> 
-        </>
-      }
+    <div className={`${mobile ? 'mobileCommercialWrapper' : "commercialWrapper"}`}> 
+      <div className='commercialTitleWraper'></div>
+      <div className='commercialItemWraper'>
+        {
+          ordedr_work.map((item, i) => (<CommercialCart mobile={mobile} owerlay={true} key={i} img={item.img} title={item.title} />))
+        } 
+      </div>
+      <div className={`${mobile ? 'mobileCommercialBtnContainer' : "commercialBtnContainer"}`}>  
+        <Button  onClick={() => { dispatch(modalFullQuestion(true)); }} className="commercialBotton" block type="primary">Bid Request or Estimate Request</Button>  
+      </div>  
     </div>
   );
 }

@@ -8,7 +8,7 @@ import './style.css';
  
 export default function WhatPeopleSay(props) {
 
-  const { customclass } = props;
+  const { customclass, mobile } = props;
  
   const [mySwiper, setMySwiper] = useState(''); 
 
@@ -40,8 +40,8 @@ SwiperCore.use([EffectFade, Autoplay]);
 
   return (
     <div className={`whatPeopleSayWrapper ${customclass === undefined ? '' : customclass}`}>
-      <Title text="What people say about us" under top="90px"  />
-      <div className='whatPeopleSayFeedbackContainer'> 
+      <Title mobile={mobile} center={mobile ? true : undefined} text="What people say about us" under top="90px"  />
+      <div style={{ height: mobile ? '60%' : '100%'}} className='whatPeopleSayFeedbackContainer'> 
         <div className='whatPeopleSaySwiperContainer'>  
           <Swiper 
                 autoplay={{
@@ -53,7 +53,7 @@ SwiperCore.use([EffectFade, Autoplay]);
             { 
               sliderWalk.map((el,id) => (
               <SwiperSlide key={id}>  
-                <FeedbackItem name={el.title} feed={el.name} cool={5} />
+                <FeedbackItem mobile={mobile} name={el.title} feed={el.name} cool={5} />
               </SwiperSlide>
               ))
             }  

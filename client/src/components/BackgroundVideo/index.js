@@ -60,7 +60,7 @@ function BackgroundVideo(props) {
       getItem('Blog', 'blog'), 
     ],), 
     getItem('Contact', 'contact', mobile ? <img width={27} height={30} src={contact} alt="img" /> : <></>),
-    getItem('Welcome', 'welcome', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>,[ 
+    getItem('Login', 'welcome', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>,[ 
       getItem('Login', 'login'),
       getItem('Sign up', 'registration') 
     ],)
@@ -93,7 +93,8 @@ function BackgroundVideo(props) {
             navigate('/');
             window.location.reload();
           }}> 
-          <img src={Logo_black} alt="profile" width="380" height="93" />
+          <div className={`${mobile ? "mobilelogoB" : 'logoB'}`}>B</div>
+          <img src={Logo_black} className="logoImg" alt="profile" />
         </div> 
         <div className={`${mobile ? "mobileBackgroundCatigories" : "backgroundCatigories"}`}> 
           <Menu
@@ -104,7 +105,7 @@ function BackgroundVideo(props) {
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']} 
           theme={`${mobile ? "dark" : 'light'}`} 
-          inlineCollapsed={`${mobile ? collapsed : false}`} 
+          inlineCollapsed={collapsed} 
           />
         </div> 
       </div> 

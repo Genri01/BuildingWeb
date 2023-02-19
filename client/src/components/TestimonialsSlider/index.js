@@ -7,8 +7,8 @@ function TestimonialsSlider(props) {
  
     return (
       <div className={`${mobile ? 'mobileTestimonialsSliderWrapper' : 'testimonialsSliderWrapper'}`}> 
-        <div className='testimonialsSliderNameWrapper'>
-          <div className='testimonialsSliderSubName'>{coment}</div>
+        <div className={mobile?'mobileTestimonialsSliderNameWrapper':'testimonialsSliderNameWrapper'}>
+          <div className={`${mobile ? 'mobileTestimonialsSliderSubName' : 'testimonialsSliderSubName'}`}>{coment}</div> 
         </div> 
         <div className='testimonialsSliderName'>{name}</div>  
       </div>

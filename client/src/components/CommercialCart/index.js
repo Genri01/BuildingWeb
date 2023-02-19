@@ -8,8 +8,7 @@ export default function CommercialCart(props) {
   const { img, title, mobile, owerlay } = props;
  
   return (
-    <div className={`${mobile ? 'mobileWorkOrderItem' : 'commercialItem'}`}>
-      
+    <div className={`${mobile ? 'mobileCommercialItem' : 'commercialItem'}`}> 
       <div className='commercialItemImg'><Image src={img} /></div>
       {(owerlay && <><div className='commercialTitleContainer'>
         <div className='commercialItemTitle'>

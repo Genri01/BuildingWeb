@@ -18,7 +18,7 @@ const initialState = {
   materials: 'yes',   
   owner: 'yes',   
   financing: 'yes',   
-  status: 'yes',   
+  status: 'Ready to hire',   
   callback: '',   
   getcontact: '',   
 };

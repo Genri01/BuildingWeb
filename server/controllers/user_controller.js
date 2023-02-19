@@ -16,15 +16,15 @@ const UserController = {
         port: 25,
         secure: false,
         auth: {
-          user: 'infoimperial01@yandex.ru',
-          pass: '9186120232dfy',
+          user: 'vladyslavbutkov@yandex.ru',
+          pass: 'Sj1071411998.',
         },
       })
 
       let result = await transporter.sendMail({
-        from: `infoimperial01@yandex.ru`,
-        to: `webdev170291@yandex.ru`,
-        // to: `infoimperial01@gmail.com`,
+        from: 'vladyslavbutkov@yandex.ru',
+        // to: `webdev170291@yandex.ru`,
+        to: `info@butkovconstruction.com`,
         subject: `!! Запрос на обратную связь !!`,
         html: `Пользователь ${name.bold()} запрашивает обратную связь по номеру телефона: ${phone.bold()}. Email для обратной связи ${email.bold()} Дитали проекта: " ${coment.bold()} "`,
       })
@@ -72,15 +72,15 @@ const UserController = {
         port: 25,
         secure: false,
         auth: {
-        user: 'infoimperial01@yandex.ru',
-        pass: '9186120232dfy',
-        }
-      }) 
+          user: 'vladyslavbutkov@yandex.ru',
+          pass: 'Sj1071411998.',
+        },
+      })
       
       let result = await transporter.sendMail({
-        from: `infoimperial01@yandex.ru`,
-        // to: `infoimperial01@gmail.com`,
-        to: `webdev170291@yandex.ru`,
+        from: 'vladyslavbutkov@yandex.ru',
+        to: `info@butkovconstruction.com`,
+        // to: `webdev170291@yandex.ru`,
         subject: `!! Информация о заказе !!`,
         html: `
         Покупатель: ${byer_first_name.bold()} ${byer_last_name.bold()} с номером телефона: ${byer_tel.bold()} и email(почтой): ${byer_email.bold()}
@@ -132,14 +132,14 @@ const UserController = {
         port: 25,
         secure: false,
         auth: {
-        user: 'infoimperial01@yandex.ru',
-        pass: '9186120232dfy',
+        user: 'vladyslavbutkov@yandex.ru',
+        pass: 'Sj1071411998.',
         }
       }) 
 
       let result = await transporter.sendMail({
-        from: `infoimperial01@yandex.ru`,
-        to: `infoimperial01@gmail.com`,
+        from: `vladyslavbutkov@yandex.ru`,
+        to: `info@butkovconstruction.com`,
         // to: `webdev170291@yandex.ru`,
         subject: `!! Информация о заказе !!`,
         html: `

@@ -1,16 +1,13 @@
- .butkovProcessWrapper {
+ .financeOptionWrapper {
    display: flex;
    width: 100%;
-   height: 100%;
-   /* align-items: center; */
-   /* justify-content: center; */
-   box-sizing: border-box;
-   padding: 50px;
+   height: 100%; 
+   box-sizing: border-box; 
    background-color: white;
    flex-direction: column;
  }
 
- .mobileButkovProcessWrapper {
+ .mobileFinanceOptionWrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -38,18 +35,17 @@
     align-items: center;
     justify-content: center;
  }
-
+/* 
  .processCardWrapper {
     display: flex;
     flex-direction: column;
     width: 20%;
-    padding: 30px 50px;
-    /* min-height: 320px; */
+    padding: 30px 50px; 
     height: auto;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
- }
+ } */
 
  .processCardTitle {
     text-align: center;

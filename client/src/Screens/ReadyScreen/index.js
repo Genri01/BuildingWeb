@@ -160,13 +160,20 @@ function ReadyScreen(props) {
     },
   ];
  
-  const imgAnty = [ant_0, ant_1, ant_2, ant_3, ant_4, ant_5, ant_6]
+  const imgAnty = [
+    ant_0, 
+    ant_1, 
+    ant_2, 
+    ant_3, 
+    ant_4, 
+    ant_5, 
+    // ant_6
+  ]
  
   const typeProjectChange = (checkedValues) => { 
     dispatch(setTypeProject(checkedValues));
   };
-
-   
+ 
   useEffect(() => {
     fetch('https://api.sypexgeo.net/json')
     .then(response => response.json())
@@ -178,16 +185,16 @@ function ReadyScreen(props) {
   },[]);
 
     return (
-      <div className="ready_screen" > 
-        <Title text={'READY TO EARN $250?'} />
-        <div className="amentitiesTextContainer">
-          <div className="amentitiesTextSubTitle">Do you know anyone that is in need of a new roof or looking to improve their home? Send them to A to Z Construction Inc. and earn $250!</div>
+      <div className="ready_screen"> 
+        <Title margin={'30px 0px 30px 0px'} mobile={mobile} text={'READY TO EARN $250?'} />
+        <div className={mobile ? "mobile_amentitiesTextContainer" : "amentitiesTextContainer"}>
+          <div style={{width: mobile ? '80%' : '100%' }} className="amentitiesTextSubTitle">Do you know anyone that is in need of a new roof or looking to improve their home? Send them to A to Z Construction Inc. and earn $250!</div>
         </div>
-        <Space className='inputsContainerSpace' direction="vertical" size={'middle'}>
+        <Space style={{ padding: mobile ? '0px 0px 0px 20px ': '50px'  }} className='inputsContainerSpace' direction="vertical" size={'middle'}>
           {
             placeInputs.map((item, key) => ( 
-              <div key={key} className='inputContainerItem'>
-                <div className='questionItem'>
+              <div key={key} style={{ padding: mobile ? '0px': '50px', width: mobile ? '90%': '100%' }} className='inputContainerItem'>
+                <div style={{ width: mobile ? '100%': '60%' }} className='questionItem'>
                   <div className='question'>{item.question}</div>
                   <span style={{ color: 'red', marginLeft: '5px',marginBottom: '9px'}}>*</span>
                 </div> 
@@ -228,14 +235,14 @@ function ReadyScreen(props) {
             ))
           }
         </Space> 
-        <div className='checkBoxContainer'>
-          <div className='checkBoxContainerTitle'>What Type of Project?</div>
+        <div className={mobile ? "mobile_checkBoxContainer" : "checkBoxContainer"}>
+          <div  style={{width: mobile ? 'auto' : '100%' }}className='checkBoxContainerTitle'>What Type of Project?</div>
             <div className='checkboxContainer'>
               <Checkbox.Group style={{ flexWrap: 'wrap' }} value={type_project} options={plainOptions} onChange={typeProjectChange} /> 
             </div>  
         </div>
-        <div className='textExample'>*Credits and payments will be made on referrals once the project is completed. Project must exceed $5,000 to qualify. To be eligible for the bonus, the person you refer must not already be a customer of A to Z Construction Inc.</div>
-        <div className='readyButtonContainer'>
+        <div className={mobile ? "mobile_textExample" : "textExample"}>*Credits and payments will be made on referrals once the project is completed. Project must exceed $5,000 to qualify. To be eligible for the bonus, the person you refer must not already be a customer of A to Z Construction Inc.</div>
+        <div className={mobile ? "mobile_readyButtonContainer" : "readyButtonContainer"}>
           <Button 
             onClick={async() => { 
               const result = await sendRegistrServer({ 
@@ -257,7 +264,7 @@ function ReadyScreen(props) {
             disabled={referal_first_name !== '' && referal_email !== '' && referal_tel !== '' && referal_addres_city !== '' && byer_first_name !== '' && byer_tel !== '' && errTel !== true && errTelRef !== true && errEmailRef !== true && errEmail !== true ? false : true} 
           >Send Form</Button>  
         </div>
-        <div className='readyAntitiesContainer'>
+        <div className={mobile ? "mobile_readyAntitiesContainer" : "readyAntitiesContainer"}>
           {
             imgAnty.map((item, key) => (
               <div key={key} className='readyImgContainer'>

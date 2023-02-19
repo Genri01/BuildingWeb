@@ -52,35 +52,27 @@ export default function ButkovProcessBlock(props) {
     },
   ]
 
-
+ 
   return (
-    <div id={id} className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}>
-      {
-        mobile ?
-        <> 
-        </> :
-        <>  
-          <Title text="Butkov's five step process" />
-          <div className='subCenterText'>
-            From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
-          </div>
-          <div className='processContainerCarts'>
-            {
-              itemsCard.map((item,key) => (
-                <div style={{ borderLeft: `${(key != '3') && (key != '0') ? '1px solid black' : 'none'}` }} key={key} className='processCardWrapper'>
-                  <h4 className='processCardTitle'>{`${key+1}. ${item.title}`}</h4>
-                    <ul className='processCardList'>
-                    {
-                      item.li.map((i,k) => (<li key={k} className='processCardListItem'>{i}</li>))
-                    }  
-                    </ul>   
-                </div>
-              ))
-
-            }
-          </div> 
-        </>
-      }
+    <div id={id} className={`${mobile ? 'mobileButkovProcessWrapper' : "butkovProcessWrapper"}`}> 
+      <Title height mobile={mobile} margin={mobile ? '30px 0px' : '0'} text="Butkov's five step process" />
+      <div className='subCenterText'>
+        From concept to completion, we will provide you with the home improvement guidance needed to navigate your way through our design/ build process.
+      </div>
+      <div className='processContainerCarts'>
+        {
+          itemsCard.map((item,key) => (
+            <div style={{ borderLeft: `${mobile ? 'none': (key != '3') && (key != '0') ? '1px solid black' : 'none'}`, width:`${mobile ? '100%' : '20%'}`, marginTop:`${mobile ? '0' : '50px'}`}} key={key} className='processCardWrapper'>
+              <h4 className='processCardTitle'>{`${key+1}. ${item.title}`}</h4>
+                <ul className='processCardList'>
+                {
+                  item.li.map((i,k) => (<li key={k} className='processCardListItem'>{i}</li>))
+                }  
+                </ul>   
+            </div>
+          )) 
+        }
+      </div>  
     </div>
   );
 }

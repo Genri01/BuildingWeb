@@ -15,9 +15,10 @@ export default function ContactUsForm(props) {
     email,
     phone 
   } = props;
-  // backgroundColor: disabled.style.backgroundColor, color: 'white'
+ 
   const dispatch = useDispatch();  
-  const coment = useSelector(questions.coment); 
+  const coment = useSelector(questions.coment);
+  console.log(disabled)
   return (
     <div className="contactUsFormWrapper"> 
       <div className='titleContactUsFormContainer'>
@@ -27,12 +28,13 @@ export default function ContactUsForm(props) {
         <textarea value={coment} onChange={(e) => { dispatch(setComent(e.target.value))}} className='comments' placeholder="" />
       </div>
       <Button 
+        disabled={disabled.disabled}
         onClick={async() => {  
           const result = await sendMiniServer({ name, email, phone, coment },dispatch);
           message.success(result);
           dispatch(modalMiniQuestion(false)) 
         }}
-        style={{ width: '240px', height: '40px', backgroundColor: `#a50f12`, color: `#fff`  }} 
+        style={{ width: '240px', height: '40px', backgroundColor: disabled.disabled ? 'rgba(0, 0, 0, 0.04)' : `#a50f12`, color: disabled.disabled ? 'rgba(0, 0, 0, 0.25)' : `#fff` }} 
         type="primary"
       >Submit</Button>
     </div>

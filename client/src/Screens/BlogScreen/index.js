@@ -9,7 +9,7 @@ import './style.css';
 
 export default function BlogScreen(props) {
   
-  const mobile = useSelector(app.mobile); 
+  const { mobile } = props;
 
   const { 
     roofing_1,
@@ -53,9 +53,9 @@ export default function BlogScreen(props) {
     {img: bathroom_1, title: 'A STRESS-FREE GUIDE TO WHOLE HOME REMODELING'}
   ]
     return (
-      <div className={`${mobile ? "mobileCommercialBlockScreen" : "commercialBlockscreen"}`} >
-        <Title text="DESIGN TIPS AND TRENDS" />
-        <div className='BlogContainer'>
+      <div className={`${mobile ? "mobileBlogScreen" : "blogScreen"}`} >
+        <Title margin={mobile ? '50px 0px 0px 0px' : 0} size={mobile ? 30 : 40} text="DESIGN TIPS AND TRENDS" />
+        <div className='blogScreen'>
           {
             card.map((item,k) => (<BlogCard key={k} card={item} />))  
           }  

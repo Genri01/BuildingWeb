@@ -1,5 +1,5 @@
 
-    .CardsItemWrapper {
+    .cardsItemWrapper {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -12,7 +12,20 @@
       padding: 4px;
     }
 
-    .CardsItemTop {
+    .mobileCardsItemWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 90%;
+      height: 90%;
+      border: 1px solid #807b7b;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 4px;
+    }
+
+    .cardsItemTop {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,7 +36,7 @@
       border-radius: 5px;
     }
 
-    .CardsItemTop img {
+    .cardsItemTop img {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
@@ -48,7 +61,7 @@
     }
 
     .owerlay:hover {  
-      background-color: #33333394; 
+      background-color: #33333394 !important; 
     } 
 
     .owerlay:hover .owerlay_txt{  
@@ -62,9 +75,10 @@
       opacity: 1;
       transition-property: opacity;
       transition-duration: .2s;
+      text-align: center;
     }
 
-    .CardsItemBottom {
+    .cardsItemBottom {
       display: flex;
       justify-content: center;
       align-items: center;

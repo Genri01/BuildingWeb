@@ -4,7 +4,7 @@ import { Modal, Input, Form, Button, Spin, Result } from 'antd';
 import ContactUsForm from '../ContactUsForm';
 import { questions } from '../../redux/selectors'; 
 import { modalLogin, modalRegistration } from '../../redux/actions/app'; 
-import { setFirstName } from '../../redux/actions/questions'; 
+import { setEmail } from '../../redux/actions/questions'; 
 import { validateEmail, changeEmail } from '../../helpers/index';  
 import './style.css'; 
 
@@ -53,7 +53,7 @@ export default function ModalRegistration(props) {
         changeName('')
         changePassword('')
         changePasswordRpeate('')
-        changeEmail('',setErrEmail,dispatch,validateEmail)
+        setEmail('')
         dispatch(modalRegistration(false))
       }}
     > 
@@ -69,7 +69,7 @@ export default function ModalRegistration(props) {
             <Form.Item label="Email">
               <Input 
                 placeholder="Email" 
-                onChange={(e) => { changeEmail(e.target.value,setErrEmail,dispatch,validateEmail) }} 
+                onChange={(e) => { changeEmail(false,e.target.value,setErrEmail,dispatch,validateEmail) }} 
                 value={byer_email} 
                 className={`${errEmail ? 'error_input' : ''}`} 
                 name="password" 
@@ -96,9 +96,9 @@ export default function ModalRegistration(props) {
                 type="text" 
               />
             </Form.Item> 
-            <Form.Item label="Password Repeate">
+            <Form.Item label="Password confirm">
               <Input 
-                placeholder="Password"  
+                placeholder="Password confirm"  
                 onChange={(e) => { changePasswordRpeate(e.target.value) }} 
                 value={passwordRpeate} 
                 className={`${password === passwordRpeate ? '' : 'error_input'}`} 

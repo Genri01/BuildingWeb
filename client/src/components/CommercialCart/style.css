@@ -12,6 +12,20 @@
   overflow: hidden;
   cursor: pointer;
 }
+.mobileCommercialItem {
+  display: flex;
+  width: 100%;
+  min-height: 300px;
+  background: #F2EFE9;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  margin-top: 16px; 
+  box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
 .commercialItem:hover img {
   height: 150%;
   transition: linear 2.1s;

@@ -271,14 +271,14 @@ function TestimonialsScreen(props) {
 
     return (
       <div className="testimonials_screen" > 
-        <Title text="FROM AROUND THE WEB" /> 
+        <Title margin={'50px 0px 0px 0px'} size={29} mobile={mobile} text="FROM AROUND THE WEB" /> 
         {
-          testimonItems.map((item,key) => (
-            <TestimonialsSwipe key={key} testimonItems={item} num={key} /> 
+          testimonItems.map((item,key) => ( 
+            <TestimonialsSwipe mobile={mobile} key={key} testimonItems={item} num={key} /> 
           ))
         } 
-        <Title text="READY TO START YOUR REMODEL JOURNEY?" />
-        <div className="testimonialsTextContainer">
+        <Title size={25} mobile={mobile} text="READY TO START YOUR REMODEL JOURNEY?" />
+        <div className={mobile ? "mobileTestimonialsTextContainer" : "testimonialsTextContainer"}>
           <div className="testimonialsTextSubTitle">Are you ready to create a unique and customized basement for your home? FBC Remodel can bring that dream to life with our specialized design-build process. Give us a call today to schedule your own complimentary, in-home design consultation.</div>
         </div>
         <div className="testimonialsButtonContainer">

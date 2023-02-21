@@ -160,8 +160,8 @@ export async function sendMiniServer(body,dispatch) {
       },
       body
     };  
-    const response = await api.main_api.post('/sendmini',requestOptions)
-    if(response.status === 200) {  
+    const response = await api.main_api.post('/sendmini',requestOptions) 
+    if(response.status === 200) {   
       return response.data.msg 
     }  
   } catch (error) {

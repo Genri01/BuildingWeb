@@ -17,8 +17,7 @@ export default function ContactUsForm(props) {
   } = props;
  
   const dispatch = useDispatch();  
-  const coment = useSelector(questions.coment);
-  console.log(disabled)
+  const coment = useSelector(questions.coment); 
   return (
     <div className="contactUsFormWrapper"> 
       <div className='titleContactUsFormContainer'>
@@ -30,7 +29,8 @@ export default function ContactUsForm(props) {
       <Button 
         disabled={disabled.disabled}
         onClick={async() => {  
-          const result = await sendMiniServer({ name, email, phone, coment },dispatch);
+          const result = await sendMiniServer({ name, email, phone, coment },dispatch); 
+          console.log(result)
           message.success(result);
           dispatch(modalMiniQuestion(false)) 
         }}

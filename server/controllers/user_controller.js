@@ -1,50 +1,52 @@
 
-const nodemailer = require('nodemailer'); 
-
+const nodemailer = require('nodemailer');  
+ 
 const UserController = {
   sendMini:(req,res) => {
     const { body } = req.body
     const { 
       name, email, phone, coment
-     } = body;
+     } = body; 
+    
 
-    if(name !== '') { 
+    // if(name !== '') { 
       (async () => {
 
       let transporter = nodemailer.createTransport({
-        host: 'smtp.yandex.ru',
+        host: 'smtp.timeweb.ru',
         port: 25,
         secure: false,
         auth: {
-          user: 'vladyslavbutkov@yandex.ru',
+          user: 'info@butkovconstruction.com',
           pass: 'Sj1071411998.',
         },
       })
 
-      let result = await transporter.sendMail({
-        from: 'vladyslavbutkov@yandex.ru',
-        // to: `webdev170291@yandex.ru`,
-        to: `info@butkovconstruction.com`,
-        subject: `!! Запрос на обратную связь !!`,
-        html: `Пользователь ${name.bold()} запрашивает обратную связь по номеру телефона: ${phone.bold()}. Email для обратной связи ${email.bold()} Дитали проекта: " ${coment.bold()} "`,
-      })
+    //   let result = await transporter.sendMail({
+    //     from: 'info@butkovconstruction.com',
+    //     // to: `webdev170291@yandex.ru`,
+    //     to: `info@butkovconstruction.com`,
+    //     subject: `!! Запрос на обратную связь !!`,
+    //     html: `Пользователь ${name.bold()} запрашивает обратную связь по номеру телефона: ${phone.bold()}. Email для обратной связи ${email.bold()} Дитали проекта: " ${coment.bold()} "`,
+    //   })
 
       transporter.verify(function (error, success) {
         try {
-          res.status(200).send({msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты"})
+          console.log('verify',success,error)
+          return true;
+          // return res.status(200).send({msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты"})
         } catch (error) {
-          res.status(200).send({msg: `Произошла ошибка: ${error}`})
-        }
-        if (error) {
-          console.log(error);
-        } else {
-          console.log("Server is ready to take our messages");
-        }
-        }); 
+          console.log('NOverify',error)
+          return false;
+          // return res.status(200).send({msg: `Произошла ошибка: ${error}`})
+        } 
+      }); 
       })(); 
-    } else {
-      res.status(200).send({msg: "Проверьте правильность заполненых данных :("})
-    }
+    // } else {
+    //   return res.status(200).send({msg: "Проверьте правильность заполненых данных :("})
+    // }
+
+    // return res.status(200).send({ msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты" }); 
   },
   sendFull:(req,res) => {
   const {   

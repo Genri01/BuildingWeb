@@ -77,10 +77,10 @@ function App() {
       />
       <Main mobile={mobile} />
       <Footer mobile={mobile} />  
-      <ModalQuestionFull show={app_modal_question_full_show} />
-      <ModalQuestionMini show={app_modal_question_mini_show} />
-      <ModalLogin show={app_modal_login_show} />
-      <ModalRegistration show={app_modal_register_show} />
+      <ModalQuestionFull mobile={mobile} show={app_modal_question_full_show} />
+      <ModalQuestionMini mobile={mobile} show={app_modal_question_mini_show} />
+      <ModalLogin mobile={mobile} show={app_modal_login_show} />
+      <ModalRegistration mobile={mobile} show={app_modal_register_show} />
     </div>
   );
 }

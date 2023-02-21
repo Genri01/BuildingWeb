@@ -205,7 +205,7 @@ export default function ModalQuestionFull(props) {
         <Select
           value={materials}
           style={{
-            width: 320,
+            width: mobile ? 200 : 320,
           }}
           onChange={materialChange}
           options={selectOptions}
@@ -220,7 +220,7 @@ export default function ModalQuestionFull(props) {
         <Select
           value={owner}
           style={{
-            width: 320,
+            width: mobile ? 200 : 320,
           }}
           onChange={ownerChange}
           options={selectOptions}
@@ -229,7 +229,7 @@ export default function ModalQuestionFull(props) {
         <Select
           value={financing}
           style={{
-            width: 320,
+            width: mobile ? 200 : 320,
           }}
           onChange={financingChange}
           options={selectOptions}
@@ -244,7 +244,7 @@ export default function ModalQuestionFull(props) {
         <Select
           value={status}
           style={{
-            width: 320,
+            width: mobile ? 200 : 320,
           }}
           onChange={statusChange}
           options={selectOptionsStatus}
@@ -255,7 +255,7 @@ export default function ModalQuestionFull(props) {
         <TextArea
           value={coment}
           style={{
-            width: 400,
+            width: mobile ? 200 : 400,
             marginBottom: '20px'
           }} 
           autoSize={{
@@ -302,7 +302,7 @@ export default function ModalQuestionFull(props) {
           <Input 
             value={addres_street}
             onChange={(e) => { dispatch(setAddres(e.target.value)) } } 
-            style={{ width: 400 }} 
+            style={{ width: mobile ? 200 : 400 }} 
             placeholder="Street Address" 
             className={ `locationInput ${addres_street.length < 6 ? 'error_input' : ''}` }
           />

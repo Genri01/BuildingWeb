@@ -19,20 +19,20 @@ export default function WhatPeopleSay(props) {
   
   const sliderWalk = [
     {
-      name: 'They were so easy to work with! Incredibly prompt, efficient and hard working. The detail and quality of work exceeded my expectations. They completed the design exactly as I asked. Elina was a great partner making sure there was clear communication and that I knew exactly what I needed for supplies based on my design interests. We plan to hire them again for another project.',
-      title: 'Heather richer'
+      name: 'Absolutely stunning craftsmanship! Definitely recommend to use for bathroom remodels! Thank you for being extremely meticulous on details, really appreciate your time flexibility as well!',
+      title: 'Lacey O.'
     },  
     {
-      name: 'Amazing quality of their service just impresses me! From the first call to the end,Very professional and reliable people!',
-      title: 'robert brown'
+      name: 'Throughout my project with them, they have exhibited professionalism and was so please with their work. They have lots of integrity and provided quality work. Will definitely use them again ',
+      title: 'Rebecca A.'
     },  
     {
-      name: 'Excellent service and quality!  Our flooring professional was timely, polite and clean.  We are very happy with our results!',
-      title: 'sara slack'
+      name: 'My shower re-tile project turned out great. There was excellent communication throughout and they were flexible working with me on materials and the tile pattern. Installers were prompt, respectful of my space, and did a great job.',
+      title: 'Andy L.'
     },  
     {
-      name: 'Wonderful work!  Very pleased with how quick and well the job was done!  I will definitely be recommending and using them again.',
-      title: 'shelly devenport'
+      name: `Great company with great people! I couldn't be happier with the work they did on my home. Would highly recommend them.`,
+      title: 'Elina B.'
     },  
 ]
    

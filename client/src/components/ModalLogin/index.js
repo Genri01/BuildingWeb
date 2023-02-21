@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
-import { Modal, Input, Form, Button } from 'antd';     
+import { Modal, Input, Form, Button, Checkbox } from 'antd';   
 import { questions } from '../../redux/selectors'; 
 import { modalLogin } from '../../redux/actions/app'; 
+import { useNavigate } from 'react-router-dom'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons';
 import { setFirstName } from '../../redux/actions/questions'; 
 import { validateEmail, changeEmail } from '../../helpers/index';  
+import { modalRegistration } from '../../redux/actions/app';
 import './style.css'; 
 
 export default function ModalLogin(props) {
@@ -13,7 +15,7 @@ export default function ModalLogin(props) {
   const { mobile, show } = props;
 
   const [form] = Form.useForm(); 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();  
  
   const byer_email = useSelector(questions.byer_email);  
   const byer_first_name = useSelector(questions.byer_first_name); 
@@ -39,7 +41,7 @@ export default function ModalLogin(props) {
     > 
       <div className='modalLoginContainer'>  
         <Form form={form}> 
-          <Form.Item label="Login">
+          <Form.Item label="Email address">
             <Input 
               placeholder="Login"  
               onChange={(e) => { changeName(e.target.value); changeErrorText(false); }} 
@@ -61,9 +63,18 @@ export default function ModalLogin(props) {
       </div> 
       {
        errorText ? <div className='errorText'>Email not confirmed</div> : <></>
-      } 
+      }  
+      <div>
+        <Checkbox onChange={()=>{}}>Remember Me</Checkbox>
+      </div>
       <div className='btnContainerLogin'>
         <Button onClick={() => { changeErrorText(true) }} disabled={( name !== ''  && password !== '') ? false : true} style={{ width: '300px' }} className="textButton" type='primary' >LogIn</Button>
+      </div>
+      <div className='btnContainerLogin'>
+        <Button onClick={() => {
+             dispatch(modalLogin(false));
+          dispatch(modalRegistration(true));
+        }} style={{ width: '300px' }} className="textButton" type='primary' >Create Account</Button>
       </div>
     </Modal>
   );

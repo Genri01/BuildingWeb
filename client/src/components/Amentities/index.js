@@ -31,7 +31,7 @@ export default function Amentities(props) {
   return (
     <div className={`${mobile ? 'mobileAmentitiesWrapper' : "amentitiesWrapper"}`}> 
       <div className='amentitiesTopContainer'>
-        <Title text="Bathroom Amentities" />
+        <Title text="Bathroom Amentities" /> 
         <div className='amentitiesTextContainer'>
           <div className='amentitiesTextSubTitle'>
             There are many factors to consider when designing and remodeling your bathroom. Below are some amenities that we have completed for our clients:

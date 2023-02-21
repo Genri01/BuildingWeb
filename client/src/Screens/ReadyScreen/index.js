@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { Input, Space, Checkbox, Button, message } from 'antd';  
 import Title from '../../components/Title';
+import { Link, useNavigate, useLocation } from 'react-router-dom'; 
 import images from '../../assets/images';   
 import { questions } from '../../redux/selectors';   
 import { useDispatch, useSelector  } from 'react-redux'; 
@@ -32,7 +33,9 @@ import './style.css';
 function ReadyScreen(props) {
  
   const { mobile } = props;
-  const { ant_0, ant_1, ant_2, ant_3, ant_4, ant_5, ant_6 } = images;
+  const {state, hash} = useLocation()
+  const id = state?.id;
+  const { toprated, elite, ant_2, ant_3 } = images;
  
   const [quality, setQuality] = useState(maskTelephone);
 
@@ -122,7 +125,7 @@ function ReadyScreen(props) {
     'Siding Installation & Repair',
     'Tile Installation',
     'Shower Remodeling',
-    'GuHers', 
+    'Other', 
   ]
    
   const plainOptions = [
@@ -161,13 +164,10 @@ function ReadyScreen(props) {
   ];
  
   const imgAnty = [
-    ant_0, 
-    ant_1, 
+    elite, 
+    toprated, 
     ant_2, 
-    ant_3, 
-    ant_4, 
-    ant_5, 
-    // ant_6
+    ant_3,  
   ]
  
   const typeProjectChange = (checkedValues) => { 
@@ -184,11 +184,18 @@ function ReadyScreen(props) {
     });
   },[]);
 
+  useEffect(()=>{  
+    if(id){ 
+        const targetElement = document.getElementById(id) 
+        targetElement?.scrollIntoView({behavior: 'smooth'})
+      }
+  }, [state,hash])
+
     return (
-      <div className="ready_screen"> 
+      <div id={'ready'} className="ready_screen"> 
         <Title margin={'30px 0px 30px 0px'} mobile={mobile} text={'READY TO EARN $250?'} />
         <div className={mobile ? "mobile_amentitiesTextContainer" : "amentitiesTextContainer"}>
-          <div style={{width: mobile ? '80%' : '100%' }} className="amentitiesTextSubTitle">Do you know anyone that is in need of a new roof or looking to improve their home? Send them to A to Z Construction Inc. and earn $250!</div>
+          <div style={{width: mobile ? '80%' : '100%' }} className="amentitiesTextSubTitle">Do you know anyone that is in need of a new roof or looking to improve their home? Send them to Butkov and earn $250!</div>
         </div>
         <Space style={{ padding: mobile ? '0px 0px 0px 20px ': '50px'  }} className='inputsContainerSpace' direction="vertical" size={'middle'}>
           {
@@ -241,7 +248,7 @@ function ReadyScreen(props) {
               <Checkbox.Group style={{ flexWrap: 'wrap' }} value={type_project} options={plainOptions} onChange={typeProjectChange} /> 
             </div>  
         </div>
-        <div className={mobile ? "mobile_textExample" : "textExample"}>*Credits and payments will be made on referrals once the project is completed. Project must exceed $5,000 to qualify. To be eligible for the bonus, the person you refer must not already be a customer of A to Z Construction Inc.</div>
+        <div className={mobile ? "mobile_textExample" : "textExample"}>*Credits and payments will be made on referrals once the project is completed. Project must exceed $5,000 to qualify. To be eligible for the bonus, the person you refer must not already be a customer of Butkov.</div>
         <div className={mobile ? "mobile_readyButtonContainer" : "readyButtonContainer"}>
           <Button 
             onClick={async() => { 

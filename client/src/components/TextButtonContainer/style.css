@@ -46,17 +46,22 @@
  }
    
 .textButton { 
-  background-color: #640e0f;
-  color: #FFFFFF;
+  background-color: #d2b46e;
+  color: #232323;
+  /* background-color: #640e0f;
+  color: #FFFFFF; */
   border-radius: 0px; 
   height: 50px;
   padding: 4px 45px;
 }
 
 .textButton:hover {
-    color: #d52024 !important;
+    color: #d2b46e !important;
     background-color: rgb(0 0 0 / 4%) !important;
-    border: 2px solid #640e0f;
+    border: 2px solid #d2b46e;
+    /* color: #d52024 !important;
+    background-color: rgb(0 0 0 / 4%) !important;
+    border: 2px solid #640e0f; */
     font-weight: 600;
     padding: 4px 41px;
 }

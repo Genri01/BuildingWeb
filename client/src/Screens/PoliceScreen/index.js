@@ -2,7 +2,8 @@ import React, { useEffect, useState, Fragment } from 'react';
 import { Input, Space, Checkbox, Button, message } from 'antd';  
 import Title from '../../components/Title';
 import images from '../../assets/images';   
-import { questions } from '../../redux/selectors';   
+import { questions } from '../../redux/selectors';  
+import { Link, useNavigate, useLocation } from 'react-router-dom';  
 import { useDispatch, useSelector  } from 'react-redux'; 
 import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
@@ -32,7 +33,7 @@ import './style.css';
 function PoliceScreen(props) {
  
   const { mobile } = props;
-  const { ant_0, ant_1, ant_2, ant_3, ant_4, ant_5, ant_6 } = images;
+  const { toprated, elite, ant_2, ant_3 } = images;
  
   const [quality, setQuality] = useState(maskTelephone);
 
@@ -160,12 +161,21 @@ function PoliceScreen(props) {
     },
   ];
  
-  const imgAnty = [ant_0, ant_1, ant_2, ant_3, ant_4, ant_5, ant_6]
+  const imgAnty = [toprated, elite, ant_2, ant_3]
  
   const typeProjectChange = (checkedValues) => { 
     dispatch(setTypeProject(checkedValues));
   };
+  const {state, hash} = useLocation()
+  const id = state?.id;
 
+  useEffect(()=>{ 
+    console.log(id)
+    if(id){ 
+        const targetElement = document.getElementById(id) 
+        targetElement?.scrollIntoView({behavior: 'smooth'})
+      }
+  }, [state,hash])
    
   useEffect(() => {
     fetch('https://api.sypexgeo.net/json')
@@ -178,12 +188,12 @@ function PoliceScreen(props) {
   },[]);
 
     return (
-      <div className="policy_screen"> 
+      <div id={'police'}  className="policy_screen"> 
         <Title text={'PRIVACY POLICY'} />
         <div className="policyWrapperTxt">
-          <b>Effective date: September 22, 2019</b><br/>
+          <b>Effective date: August 29, 2022</b><br/>
           <ul>
-            <li type="disc">A to Z Construction, Inc. (“us”, “we”, or “our”) operates the https://atozcontracting.net website (the “Service”).</li>
+            <li type="disc">Butkov LLC (“us”, “we”, or “our”) operates the https://butkovconstruction.com/ website (the “Service”).</li>
             <li type="disc">This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</li>
             <li type="disc">We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.</li>
           </ul>
@@ -231,7 +241,7 @@ function PoliceScreen(props) {
                 <br/> 
               <li type="A"><b>Use of Data</b></li><br/>
               <ul style={{ paddingLeft: '20px' }}>
-              <li type="circle">A to Z Construction, Inc. uses the collected data for various purposes:</li><br/>
+              <li type="circle">Butkov LLC uses the collected data for various purposes:</li><br/>
                   <ul style={{ paddingLeft: '20px' }}>
                     <li type="square">To provide and maintain the Service</li><br/>
                     <li type="square">To notify you about changes to our Service</li><br/>
@@ -247,16 +257,16 @@ function PoliceScreen(props) {
                 <li type="disc">Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</li><br/>
                 <li type="disc">If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.</li><br/>
                 <li type="disc">Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</li><br/>
-                <li type="disc">A to Z Construction, Inc. will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</li><br/>
+                <li type="disc">Butkov LLC will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</li><br/>
               </ul>
               <li type="A"><b>Disclosure of Data</b></li><br/>
               <ul style={{ paddingLeft: '20px' }}>
                 Legal Requirements
                 <ul style={{ paddingLeft: '20px' }}> 
-                <li type="circle">A to Z Construction, Inc. may disclose your Personal Data in the good faith belief that such action is necessary to:</li><br/>
+                <li type="circle">Butkov LLC may disclose your Personal Data in the good faith belief that such action is necessary to:</li><br/>
                     <ul style={{ paddingLeft: '20px' }}> 
                       <li type="square">To comply with a legal obligation</li><br/>
-                      <li type="square">To protect and defend the rights or property of A to Z Construction, Inc.</li><br/>
+                      <li type="square">To protect and defend the rights or property of Butkov LLC</li><br/>
                       <li type="square">To prevent or investigate possible wrongdoing in connection with the Service</li><br/>
                       <li type="square">To protect the personal safety of users of the Service or the public</li><br/>
                       <li type="square">To protect against legal liability</li><br/>
@@ -307,12 +317,12 @@ function PoliceScreen(props) {
                 <li type="disc">If you have any questions about this Privacy Policy, please contact us:</li><br/>
               </ul>
               <ul style={{ paddingLeft: '20px' }}>
-                <li type="circle">Phone: +1-61-251-602-63</li><br/>
+                <li type="circle">Phone: 612-516-02-63</li><br/>
                 <li type="circle">Email: info@butkovconstruction.com</li><br/>
-                <li type="circle">Visit Our Location:</li><br/> 
+                {/* <li type="circle">Visit Our Location:</li><br/> 
                   <ul style={{ paddingLeft: '20px' }}> 
                     <li type="square">Osseo, MN 55316 </li><br/>
-                  </ul>
+                  </ul> */}
               </ul>
               </ol>
         </div>

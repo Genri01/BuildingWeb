@@ -6,7 +6,7 @@ function Title(props) {
     return ( 
       <div className='titleWrapper' style={{ 
         width: mobile ? '70%' : '100%',
-        height: mobile ? 'auto' : '100%',
+        height: mobile ? 'auto' : '50%',
         paddingTop: top === undefined ? '0px' : top,
         backgroundColor: background === undefined ? 'transparent' : background,
        }}>

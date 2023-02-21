@@ -15,14 +15,18 @@
   border-color: #d5202440;
 }
 
-.ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #25b92a;
-    border-color: #25b92a;
+.ant-checkbox-checked .ant-checkbox-inner { 
+    background-color: #d2b46e;
+    border-color: #d2b46e; 
+  /* background-color: #25b92a;
+    border-color: #25b92a; */
 }
 
 .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
-  background-color: #25b92a;
-    border-color: #25b92a;
+  background-color: #d2b46e;
+    border-color: #d2b46e; 
+  /* background-color: #25b92a;
+    border-color: #25b92a; */
 }
 
 .questionColor {

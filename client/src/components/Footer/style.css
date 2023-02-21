@@ -11,8 +11,11 @@
     display:flex;flex-direction:row;width:100%;background-color:#363636;padding:10px 0px;align-items:center;justify-content:space-evenly;z-index:1
   }
   .visa_container img{
-    margin-left: 10px; 
+    margin-left: 10px;
+    height: 50px;
+    width: 270px;
   }
+  
   .coperait_txt{
     user-select:none;color:#999;padding:20px 0
   }

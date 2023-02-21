@@ -52,9 +52,17 @@
   align-items: center;
   max-width: 100%;
   height: 25px;
-  color: rgb(139 3 8);
+  color: #232323;
   font-size: 16px;
   padding-right: 0px;
+}
+
+.modalLoginContainer .anticon svg {
+  color: #d2b46e;
+}
+
+.modalLoginContainer .ant-result .ant-result-subtitle {
+  color: #232323;
 }
 
 .modalLoginContainer [class^="ant-form"] [class^="ant-form"], [class*=" ant-form"] {

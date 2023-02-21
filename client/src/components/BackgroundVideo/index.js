@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Menu, Button } from 'antd';
 import { useDispatch } from "react-redux";  
 import images from '../../assets/images';
+
 import { change_page, modalMiniQuestion, } from '../../redux/actions/app';
 import './style.css';
  
@@ -44,10 +45,10 @@ function BackgroundVideo(props) {
   };
  
   const items = [
-    getItem('Residentional', 'residentional', mobile ? <img width={27} height={30} src={residentional} alt="img" /> : <></>, [ 
+    getItem('Residential', 'residentional', mobile ? <img width={27} height={30} src={residentional} alt="img" /> : <></>, [ 
       getItem('Bathroom remodel', 'bathroom'),
       getItem('Kitchen remodel', 'kitchen'),
-      getItem('Basment remodel', 'basment'),
+      getItem('Basement remodel', 'basment'),
       getItem('Roofing', 'roofing'),
       getItem('Tile installation', 'tile')
     ],),
@@ -61,16 +62,22 @@ function BackgroundVideo(props) {
     ],), 
     getItem('Contact', 'contact', mobile ? <img width={27} height={30} src={contact} alt="img" /> : <></>),
     getItem('Login', 'welcome', mobile ? <img width={27} height={30} src={login} alt="img" /> : <></>,[ 
-      getItem('Login', 'login'),
-      getItem('Sign up', 'registration') 
+      getItem('Client Login', 'login'),
+      // getItem('Sign up', 'registration') 
     ],)
   ];
  
   return (
     <div className='backgroundWrapper'>  
-      <video autoPlay loop muted className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>
-        <source src={`https://static.videezy.com/system/resources/previews/000/${pagesArr[page]?.videolink}`}  type="video/mp4" />
+      <video autoPlay loop muted className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>  
+      {
+       pagesArr[page]?.costomlink === false ?  <source src={`https://static.videezy.com/system/resources/previews/000/${pagesArr[page]?.videolink}`}  type="video/mp4" /> :
+       <source src={pagesArr[page]?.videolink}  type="video/mp4" /> 
+      }
+       
       </video>  
+      <div className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>  
+      </div>  
       <div className={`${mobile ? "mobileBackgroundTopContainer" : "backgroundTopContainer"}`}>
       {
         mobile && (<Button

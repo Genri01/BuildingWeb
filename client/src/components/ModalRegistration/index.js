@@ -45,7 +45,7 @@ export default function ModalRegistration(props) {
   return (
     <Modal
       className='modalMini'
-      title="Registration"
+      title="Create account"
       centered
       open={show} 
       onCancel={() => {
@@ -62,8 +62,8 @@ export default function ModalRegistration(props) {
          good ?
           <Result
             status="success"
-            title="Successfully Registration"
-            subTitle="An email has been sent to your email address to confirm registration." 
+            // title="Successfully Registration"
+            subTitle="An email confirmation has been sent to your email address, please confirm your registration" 
           />
          : <Form form={form}> 
             <Form.Item label="Email">
@@ -96,9 +96,9 @@ export default function ModalRegistration(props) {
                 type="text" 
               />
             </Form.Item> 
-            <Form.Item label="Password confirm">
+            <Form.Item label="Confirm password">
               <Input 
-                placeholder="Password confirm"  
+                placeholder="Confirm password"  
                 onChange={(e) => { changePasswordRpeate(e.target.value) }} 
                 value={passwordRpeate} 
                 className={`${password === passwordRpeate ? '' : 'error_input'}`} 
@@ -115,7 +115,7 @@ export default function ModalRegistration(props) {
           <Spin tip="Loading" size="small">
             <div className="content" />
           </Spin> : 
-          good ?  <></>  : <Button disabled={(errEmail !== true && name !== '' && password === passwordRpeate && password !== '') ? false : true} onClick={()=>{ changeLoading(true) }} style={{ width: '300px' }} className="textButton" type='primary' >Registration</Button>
+          good ?  <></>  : <Button disabled={(errEmail !== true && name !== '' && password === passwordRpeate && password !== '') ? false : true} onClick={()=>{ changeLoading(true) }} style={{ width: '300px' }} className="textButton" type='primary' >Submit</Button>
         }
       </div>
     </Modal>

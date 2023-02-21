@@ -18,7 +18,7 @@ export default function RemodelBlock(props) {
       <TextButtonContainer
         mobile = { mobile }
         text = { titleText }
-        textbtn = "Scedule your free consultat"
+        textbtn = "Scedule your free consultation"
       />
       {( wedoblock && <WeDoBlock mobile = { mobile } /> )}
       <CartContainer

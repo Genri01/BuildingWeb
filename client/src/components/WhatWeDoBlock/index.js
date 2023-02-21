@@ -25,6 +25,16 @@ export default function WhatWeDoBlock(props) {
     setMySwiper(document.querySelector(`.whatWeDoSwiper`).swiper); 
   },[mySwiper])
 
+  // useEffect(() => {
+
+  //   document.getElementsByClassName('.swiper-container')[0].on('mouseenter', function (e) {
+  //     mySwiper.autoplay.stop();
+  // })
+  // document.getElementsByClassName('.swiper-container')[0].on('mouseleave', function (e) {
+  //   mySwiper.autoplay.start();
+  // }) 
+  // },[mySwiper])
+
  
   function moveLeft(mySwiper) {
     mySwiper.slidePrev();
@@ -38,36 +48,52 @@ export default function WhatWeDoBlock(props) {
     view_1, 
     arrowr,
     arrowl,
+    arrowlb,
+    bathroom_1,
+    kitchen_1,
+    basement_1,
+    roofing_1,
+    tile_1
   } = images;
  
   const sliderWalk = [
     {
-      img: 'https://get-flooring.com/wp-content/uploads/2020/09/carpet2.jpg',
+      // img: 'https://get-flooring.com/wp-content/uploads/2020/09/carpet2.jpg',
+      img: bathroom_1,
       title: 'Bathroom remodel', 
       link: 'bathroom'
     }, 
     {
-      img: 'https://get-flooring.com/wp-content/uploads/2020/09/fireplace.jpg',
+      img: kitchen_1,
+      // img: 'https://get-flooring.com/wp-content/uploads/2020/09/fireplace.jpg',
       title: 'Kitchens somodel', 
       link: 'kitchen'
     }, 
     {
-      img: 'https://get-flooring.com/wp-content/uploads/2020/09/refinishing-hardwood.jpg',
-      title: 'Basment remodel', 
+      img: basement_1,
+      // img: 'https://get-flooring.com/wp-content/uploads/2020/09/refinishing-hardwood.jpg',
+      title: 'Basement remodel', 
       link: 'basment'
     }, 
     {
-      img: 'https://get-flooring.com/wp-content/uploads/2020/09/backspash.jpg',
+      img: roofing_1,
+      // img: 'https://get-flooring.com/wp-content/uploads/2020/09/backspash.jpg',
       title: 'Roofing', 
       link: 'roofing'
     }, 
     {
-      img: 'https://get-flooring.com/wp-content/uploads/2020/08/tile-1.jpg',
+      img: tile_1,
+      // img: 'https://get-flooring.com/wp-content/uploads/2020/08/tile-1.jpg',
       title: 'Tile instalation', 
       link: 'tile'
     }, 
 ]
  
+
+// когда наводишь мышку свайпер останавливаеться
+
+
+
   return (
     <div className={`whatWeDoWrapper ${customclass === undefined ? '' : customclass}`}>
       <Title mobile={mobile} text="What we do" under top="90px" /> 

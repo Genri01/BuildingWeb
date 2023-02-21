@@ -36,7 +36,8 @@
   width: auto;
   height: 122px;
   margin: 0px 10px;
-  background-color: rgb(100 13 15);
+  background-color: #222222;
+  /* background-color: rgb(100 13 15); */
   cursor: pointer;
 }
 

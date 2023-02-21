@@ -1,6 +1,6 @@
 .ready_screen {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,7 +137,8 @@
   height: 200px;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #363636cc;
+  background-color: #f1f1f1cc;
+  /* background-color: #363636cc; */
 }
 
 .mobile_readyAntitiesContainer {

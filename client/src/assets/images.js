@@ -5,6 +5,7 @@ import phone from './images/phone.png';
 import cross from './images/cross.svg';
  
 import arrowl from './images/arrowl.png';
+import arrowlb from './images/arrowlb.svg';
 import arrowr from './images/arrowr.png';
 import starfill from './images/starfill.png';
 import star from './images/star.png';
@@ -23,34 +24,34 @@ import awards from './images/awards.jpeg';
 
 import building from './images/building.jpeg';  
 import flooring from './images/flooring.jpeg';  
-import concrete from './images/concrete.jpeg';  
+import concrete from './images/concrete.png';  
 import door from './images/door.jpeg';  
-import roofing from './images/roofing.jpeg';  
-import steel from './images/steel.jpeg';  
+import roofing from './images/roofing.png';  
+import steel from './images/steel.png';  
 import structural from './images/structural.jpeg';  
 import electrical from './images/elecrical.jpeg';  
 import ofice from './images/ofice.jpeg';  
 
-import roofing_1 from './images/roofing_1.jpeg'
-import roofing_2 from './images/roofing_2.jpeg'
-import roofing_3 from './images/roofing_3.jpeg'
-import roofing_4 from './images/roofing_4.jpeg'
-import roofing_5 from './images/roofing_5.jpeg'
-import roofing_6 from './images/roofing_6.jpeg'
+import roofing_1 from './images/roofing_1.jpg'
+import roofing_2 from './images/roofing_2.jpg'
+import roofing_3 from './images/roofing_3.jpg'
+import roofing_4 from './images/roofing_4.jpg'
+import roofing_5 from './images/roofing_5.jpg'
+import roofing_6 from './images/roofing_6.jpg'
 import bathroom_1 from './images/bathroom_1.jpeg'
 import bathroom_2 from './images/bathroom_2.jpeg'
 import bathroom_3 from './images/bathroom_3.jpeg'
 import bathroom_4 from './images/bathroom_4.jpeg'
 import bathroom_5 from './images/bathroom_5.jpeg'
 import bathroom_6 from './images/bathroom_6.jpeg'
-import tile_1 from './images/tile_1.jpeg'
-import tile_2 from './images/tile_2.jpeg'
-import tile_3 from './images/tile_3.jpeg'
-import tile_4 from './images/tile_4.jpeg'
-import tile_5 from './images/tile_5.jpeg'
-import tile_6 from './images/tile_6.jpeg'
-import kitchen_1 from './images/kitchen_1.jpeg'
-import kitchen_2 from './images/kitchen_2.jpeg'
+import tile_1 from './images/tile_1.png'
+import tile_2 from './images/tile_2.png'
+import tile_3 from './images/tile_3.png'
+import tile_4 from './images/tile_4.png'
+import tile_5 from './images/tile_5.png'
+import tile_6 from './images/tile_6.png'
+import kitchen_1 from './images/kitchen_1.png'
+import kitchen_2 from './images/kitchen_2.png'
 import kitchen_3 from './images/kitchen_3.jpeg'
 import kitchen_4 from './images/kitchen_4.jpeg'
 import kitchen_5 from './images/kitchen_5.jpeg'
@@ -118,6 +119,9 @@ import comercial from './images/comercial.svg'
 import residentional from './images/residentional.svg'
 import contact from './images/contact.svg'
 import moreinfo from './images/moreinfo.svg'
+import toprated from './images/toprated.png'
+import elite from './images/elite.png'
+import payments from './images/payments.png'
 
 export default { 
   cart,
@@ -228,4 +232,8 @@ export default {
   q_3,
   q_4,
   q_5,
+  toprated,
+  elite,
+  arrowlb,
+  payments
 }

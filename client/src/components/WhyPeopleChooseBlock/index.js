@@ -19,12 +19,12 @@ function WhyPeopleChooseBlock(props) {
         </div> 
         <div className={`${mobile ? "mobileWhyPeopleChooseBottomContainer" : 'whyPeopleChooseBottomContainer'}`}>
           <div className="whyPeopleChooseInfoContainer">
-            <WhyPeopleChooseItem customclass="reverse" icon={price} title='The Best Price' text='Get more than expected Provide quote of our competitors and we will give you a better deal'/>
-            <WhyPeopleChooseItem iconsize="iconsize" customclass="reverse"  icon={service} title='Great Customer Service' text='24/7 customer support Personal approach for each customer Free design service'/>
+            <WhyPeopleChooseItem style={{ paddingLeft: '67px' }} customclass="reverse" icon={price} title='The Best Price' text='Get more than expected<br/> Provide quote of our competitors and we will give you<br/>a better deal'/>
+            <WhyPeopleChooseItem style={{ paddingLeft: '176px' }} iconsize="iconsize" customclass="reverse"  icon={service} title='Great Customer Service' text='24/7 customer support<br/>Personal approach for each customer<br/>Free design service'/>
           </div> 
           <div className="whyPeopleChooseInfoContainer">
-            <WhyPeopleChooseItem icon={quality} title='Excellent Quality' text='Experienced and Certified PROs Innovative technology & equipment'/>
-            <WhyPeopleChooseItem icon={reliable} title='Reliable Company' text='Up to two years warranty 99% only high rated reviews Licensed, Bonded, Insured Prescreened & Trusted PROs 11 years in business'/>
+            <WhyPeopleChooseItem icon={quality} title='Excellent Quality' text='Experienced and Certified PROs<br/>Innovative technology & equipment'/>
+            <WhyPeopleChooseItem icon={reliable} title='Reliable Company' text='Up to two years warranty<br/>99% only high rated reviews<br/>Licensed, Bonded,<br/>Insured Prescreened & Trusted<br/>PROs 11 years in business'/>
           </div> 
         </div> 
       </div>

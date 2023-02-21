@@ -16,38 +16,35 @@ export default function ButkovProcessBlock(props) {
 
   const itemsCard = [
     {
-      title: 'Initial Consultation & Assessment',
+      title: 'Initial contact',
       li: [
-        'Schedule a phone, virtual, or in-home consultation. Schedule your consult online, click “Connect” or “Schedule Now”, select your meeting type and time!',
-        'At this meeting we will determine the feasibility of your project.'
+        'As soon as you leave a request, we will contact you shortly to get more details about your project and set up an estimate with the day and time that is most convenient for you.',
+        // 'At this meeting we will determine the feasibility of your project.'
       ]
     },
     {
-      title: 'Initial Consultation & Assessment',
+      title: 'Estimate/Proposal',
       li: [
-        'Schedule a phone, virtual, or in-home consultation. Schedule your consult online, click “Connect” or “Schedule Now”, select your meeting type and time!',
-        'At this meeting we will determine the feasibility of your project.'
+        'As soon as we schedule an estimate, you will receive a notification with the date, time, and the expert’s name. You’ll receive a notification about an estimate within one hour of arrival.', 
+        'You can receive and discuss the proposal with an expert right at the project, set up start day, discuss all terms. Sometimes it may take up to 24 hours to provide you with a proposal including all information.'
       ]
     },
     {
-      title: 'Initial Consultation & Assessment',
+      title: 'Discussion all terms and conditions',
       li: [
-        'Schedule a phone, virtual, or in-home consultation. Schedule your consult online, click “Connect” or “Schedule Now”, select your meeting type and time!',
-        'At this meeting we will determine the feasibility of your project.'
+        'After you received the proposal, feel free to contact us to discuss all terms, set a start date and time, make changes.', 
       ]
     },
     {
-      title: 'Initial Consultation & Assessment',
+      title: 'Certificate of completion/Final payment',
       li: [
-        'Schedule a phone, virtual, or in-home consultation. Schedule your consult online, click “Connect” or “Schedule Now”, select your meeting type and time!',
-        'At this meeting we will determine the feasibility of your project.'
+        'Before the end of the project, you will receive the final invoice. Please make sure everything is correct. If you have questions, please contact us. After completing services and all check-ins, you can make a payment online or call the office and go ahead with your payment.', 
       ]
     },
     {
-      title: 'Initial Consultation & Assessment',
+      title: 'You are a satisfied customer',
       li: [
-        'Schedule a phone, virtual, or in-home consultation. Schedule your consult online, click “Connect” or “Schedule Now”, select your meeting type and time!',
-        'At this meeting we will determine the feasibility of your project.'
+        'For us feedback is very important, we would like to know about your experience with Butkov, please fill out quick survey and give us opportunity to improve our service and your experience with us for next time.', 
       ]
     },
   ]

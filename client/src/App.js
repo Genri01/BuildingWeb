@@ -69,7 +69,10 @@ function App() {
           } else {
             navigate(`${e.key}`)
           }
-          dispatch(change_page(e.key));
+          if( e.key !== 'login') {
+            dispatch(change_page(e.key));
+          }
+          
           if(e.key !== 'registration' && e.key !== 'login') {
             window.location.reload();
           }

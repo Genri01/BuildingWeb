@@ -105,7 +105,7 @@ ContactBlock(props) {
       </div>
       <div className={mobile?"mobileContactRightWraper":"contactRightWraper"}> 
         <Title text="Service area" />
-        <YMaps>
+        <YMaps key={'en_US'} query={{lang: 'en_US'}}>
           <Map  className={`${mobile ? 'mobile-iframe' : 'iframe'}`} defaultState={{ center: [46.14462034221224, -94.58679115253476], zoom: 5 }}>
             <Polygon options={{ fill: true, fillColor:'#640d0f' ,opacity: 0.3, strokeColor: '#640d0f' }}  geometry={[ 
               [

@@ -24,7 +24,7 @@ function WhyPeopleChooseBlock(props) {
           </div> 
           <div className="whyPeopleChooseInfoContainer">
             <WhyPeopleChooseItem icon={quality} title='Excellent Quality' text='Experienced and Certified PROs<br/>Innovative technology & equipment'/>
-            <WhyPeopleChooseItem icon={reliable} title='Reliable Company' text='Up to two years warranty<br/>99% only high rated reviews<br/>Licensed, Bonded,<br/>Insured Prescreened & Trusted<br/>PROs 11 years in business'/>
+            <WhyPeopleChooseItem icon={reliable} title='Reliable Company' text='Up to two years warranty<br/>99% only high rated reviews<br/>Licensed, Bonded,<br/>Insured Prescreened & Trusted PROs '/>
           </div> 
         </div> 
       </div>

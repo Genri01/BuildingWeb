@@ -317,7 +317,7 @@ function PoliceScreen(props) {
                 <li type="disc">If you have any questions about this Privacy Policy, please contact us:</li><br/>
               </ul>
               <ul style={{ paddingLeft: '20px' }}>
-                <li type="circle">Phone: 612-516-02-63</li><br/>
+                <li type="circle">Phone: 612-516-0263</li><br/>
                 <li type="circle">Email: info@butkovconstruction.com</li><br/>
                 {/* <li type="circle">Visit Our Location:</li><br/> 
                   <ul style={{ paddingLeft: '20px' }}> 

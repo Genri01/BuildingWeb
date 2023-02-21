@@ -211,6 +211,14 @@
   top: 0px;
   left: -51px;
 }
+
+.license { 
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
  
 .bottomHeaderTitle {
   color: #FFFFFF;

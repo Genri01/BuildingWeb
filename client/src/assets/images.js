@@ -25,7 +25,7 @@ import awards from './images/awards.jpeg';
 import building from './images/building.jpeg';  
 import flooring from './images/flooring.jpeg';  
 import concrete from './images/concrete.png';  
-import door from './images/door.jpeg';  
+import door from './images/door.png';  
 import roofing from './images/roofing.png';  
 import steel from './images/steel.png';  
 import structural from './images/structural.jpeg';  
@@ -71,7 +71,7 @@ import ant_2 from './images/ant_2.png'
 import ant_3 from './images/ant_3.png' 
 import ant_1 from './images/ant_1.png'
 
-import test_0 from './images/test_0.webp'
+import test_0 from './images/test.png'
 import test_1 from './images/test_1.webp'
 import test_2 from './images/test_2.webp'
 import test_3 from './images/test_3.webp' 
@@ -113,6 +113,8 @@ import q_4 from './images/q_4.jpeg'
 import q_5 from './images/q_5.jpeg' 
 
 import sinchrony from './images/sinchrony.jpeg' 
+import angi from './images/angi.png' 
+import lic from './images/lic.png' 
 
 import login from './images/login.svg'
 import comercial from './images/comercial.svg'
@@ -235,5 +237,7 @@ export default {
   toprated,
   elite,
   arrowlb,
-  payments
+  payments,
+  angi,
+  lic
 }

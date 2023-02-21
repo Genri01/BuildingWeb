@@ -5,9 +5,10 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { app } from '../../redux/selectors';
 import images from '../../assets/images';
+import { Link, useNavigate, useLocation } from 'react-router-dom';  
 import './style.css';
 
-export default function BlogScreen(props) {
+export default function BlogCardsScreen(props) {
   
   const { mobile } = props;
 
@@ -45,19 +46,19 @@ export default function BlogScreen(props) {
    } = images;
  
    const card = [
-    {img: kitchen_1, title: 'MAKE YOUR HOME WORK FOR YOU – UNIQUE WAYS TO FIND MORE SPACE IN YOUR HOME'},
-    {img: basement_1, title: 'HOLIDAY GIFT GIVING GUIDE – OUR DESIGNERS TOP PICKS'},
-    {img: tile_1, title: 'AXE THROWING ROOM IN A BASEMENT SPEAKEASY'},
-    {img: bathroom_6, title: 'FALL MUST HAVES FOR YOUR HOME'},
-    {img: roofing_5, title: 'TOP 2022 KITCHEN DESIGN TRENDS'},
-    {img: bathroom_1, title: 'A STRESS-FREE GUIDE TO WHOLE HOME REMODELING'}
+    {img: kitchen_1, title: 'Five Reasons to Consider a Kitchen Renovation'},
+    {img: basement_1, title: '5 reasons to hire a professional contractor'}, 
+    // {img: tile_1, title: 'AXE THROWING ROOM IN A BASEMENT SPEAKEASY'},
+    // {img: bathroom_6, title: 'FALL MUST HAVES FOR YOUR HOME'},
+    // {img: roofing_5, title: 'TOP 2022 KITCHEN DESIGN TRENDS'},
+    // {img: bathroom_1, title: 'A STRESS-FREE GUIDE TO WHOLE HOME REMODELING'}
   ]
     return (
       <div className={`${mobile ? "mobileBlogScreen" : "blogScreen"}`} >
         <Title margin={mobile ? '50px 0px 0px 0px' : 0} size={mobile ? 30 : 40} text="DESIGN TIPS AND TRENDS" />
         <div className='blogScreen'>
           {
-            card.map((item,k) => (<BlogCard key={k} card={item} />))  
+            card.map((item,k) => ( <Link style={{textDecoration: 'none'}} key={k} state={{ id: `page_${k}`, title: item.title, img: item.img}} to={`page${k}`}><BlogCard card={item} /></Link>))  
           }  
         </div>
       </div>

@@ -5,7 +5,7 @@ import images from '../../assets/images';
 import './style.css';
 
 function Footer(props) {
-  const { visa, mastercard, paypal, paypal1, phone, email, payments } = images;
+  const { visa, mastercard, paypal, lic, phone, email, payments } = images;
   const { mobile } = props;
 
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ function Footer(props) {
               <div style={{ width: mobile ? '45%' : '100%',justifyContent: 'flex-start' }} className='lineInfoContainer'>
                 <img className="mobile-i-plain" src={phone} alt="phone" />
                 <div style={{ width: mobile ? 'auto' : 'auto', margin: '0px' }} className="he-text"> 
-                  <span><a style={{ width: mobile ? '220px' : 'auto',margin: mobile ? '0' : '0 36px 18px 0' }} className="footer_txt_hover" href="tel:+1-61-251-602-63">612-516-02-63</a></span>
+                  <span><a style={{ width: mobile ? '220px' : 'auto',margin: mobile ? '0' : '0 36px 18px 0' }} className="footer_txt_hover" href="tel:+1-61-251-602-63">612-516-0263</a></span>
                 </div>
               </div>
               <div style={{ width: mobile ? '55%' : '100%' }} className='lineInfoContainer'>
@@ -40,6 +40,14 @@ function Footer(props) {
                 <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
                     <span>
                       <a style={{ wordBreak: mobile ? 'break-all' : 'break-word',fontSize: mobile ? '12px' : '18px', margin: mobile ? '0' : '0 6px 18px 0' }} className="footer_txt_hover" href="mailto:info@butkovconstruction.com">info@butkovconstruction.com</a>
+                    </span>
+                </div>
+              </div>
+              <div style={{ width: mobile ? '55%' : '100%' }} className='lineInfoContainer'>
+                {/* <img className="mobile-i-plain" src={lic} alt="time" /> */}
+                <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
+                    <span>
+                      <a style={{ wordBreak: mobile ? 'break-all' : 'break-word',fontSize: mobile ? '12px' : '18px', margin: mobile ? '0' : '0 6px 18px 0' }} className="footer_txt_hover" >Lis# BC800584</a>
                     </span>
                 </div>
               </div>

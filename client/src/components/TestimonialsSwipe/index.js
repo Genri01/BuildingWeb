@@ -21,17 +21,17 @@ export default function TestimonialsSwipe(props) {
     useEffect(() => { 
       setMySwiper(document.querySelector(`.mySwiper_${num}`).swiper);   
     },[])
-
-    let starCount = stars < 5 ? Number(stars) : 5;
-    let starArr = [];
-    let stop = 5 - starCount
-
-    for (let ind = 0; ind < stop; ind++) {
-      starArr.push(star);
-    }
-    for (let index = 0; index < starCount; index++) {
-      starArr.push(starfill);
-    } 
+  
+      let starCount = stars < 5 ? Number(stars) : 5;
+      let starArr = [];
+      let stop = 5 - starCount
+  
+      for (let ind = 0; ind < stop; ind++) {
+        starArr.push(star);
+      }
+      for (let index = 0; index < starCount; index++) {
+        starArr.push(starfill);
+      }  
  
     SwiperCore.use([EffectFade, Autoplay]); 
    
@@ -50,9 +50,9 @@ export default function TestimonialsSwipe(props) {
                 }
               </div> 
               <div className='testimonialsSwipeReviews'>
-                <div className='textStars'>{`${stars} STARS`}</div>
-                <div className='textStarsDelimeter'/> 
-                <div className='textReviews'>{`${reviews} REVIEWS`}</div>
+                <div className='textStars'>{`${num == 4 ? 4.9 :stars} STARS`}</div>
+                {/* <div className='textStarsDelimeter'/> 
+                <div className='textReviews'>{`${reviews} REVIEWS`}</div> */}
               </div>
             </div>
           </div>

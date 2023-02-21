@@ -1,6 +1,7 @@
 import ActionTypes from '../constants';
 import kitchen from '../../assets/kitchen.mp4';
 import basment from '../../assets/basment.mp4';
+import blog from '../../assets/blog.mp4';
 const initialState = {
   page: '/',  
   pagesArr: {
@@ -15,7 +16,7 @@ const initialState = {
     butkovprocess: { pagetitle: 'More Info', subtitle: 'Butkov\'s process', videolink: `018/914/original/ICON-VERSION9.mp4`, costomlink: false },
     financingoptions: { pagetitle: 'More Info', subtitle: 'Financing options', videolink: `018/914/original/ICON-VERSION9.mp4`, costomlink: false },
     rewiews: { pagetitle: 'Testimonials', subtitle: 'Get to know us through the experiences of our clients.', videolink: `018/914/original/ICON-VERSION9.mp4`, costomlink: false },
-    blog: { pagetitle: 'Blog', subtitle: '', videolink: `013/979/original/keys_web-blog-social.mp4`, costomlink: false },
+    blog: { pagetitle: 'Blog', subtitle: '', videolink: blog, costomlink: true },
     contact: { pagetitle: 'Contact Us', subtitle: '', videolink: `018/367/original/ICON-VERSION4.mp4`, costomlink: false },
     login: { pagetitle: 'Login', subtitle: '', videolink: `041/086/original/031_07.mp4`, costomlink: false }, 
     registartion: { pagetitle: 'Registartion', subtitle: '', videolink: `041/086/original/031_07.mp4`, costomlink: false }, 

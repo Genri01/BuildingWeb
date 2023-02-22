@@ -4,9 +4,7 @@ import './style.css';
 export default function WhyPeopleChooseItem(props) {
     const { icon, title, text, mobile, iconsize, style, revert } = props;
     const br = text.split('<br/>'); 
-
-
-
+ 
     return (
       <div className={`${mobile ? 'mobileWorkOrderItem' : revert ? 'whyPeopleChooseItemReverse' : 'whyPeopleChooseItem'}`}>
         <div className='whyPeopleChooseItemImg'>

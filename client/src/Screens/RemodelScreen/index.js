@@ -1,11 +1,10 @@
-import React from 'react'; 
+import React, {useEffect} from 'react'; 
 import './style.css';
 import RemodelBlock from '../../components/RemodelBlock';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams,useLocation } from 'react-router-dom';
 import { app } from '../../redux/selectors';
-import images from '../../assets/images';
-
+import images from '../../assets/images'; 
 export default function RemodelScreen(props) {
   
   const mobile = useSelector(app.mobile); 
@@ -252,7 +251,14 @@ We offer full-service tile installation, from simple backsplashes to specialty i
   default:
     break;
 }
-    
+
+  const {state, hash} = useLocation()
+
+  useEffect(()=>{   
+      window.scrollTo(0, 0) 
+  }, [state,hash])
+
+
     return (
       <div className="remodelScreen" >
         <RemodelBlock

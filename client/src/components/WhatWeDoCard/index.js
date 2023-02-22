@@ -10,10 +10,18 @@ export default function WhatWeDoCard(props) {
   const { img, title, link, mobile } = props;  
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+ 
   return (
     <div className={`${mobile ? 'mobileCardsItemWrapper' : 'cardsItemWrapper' }`}>
-      <div onClick={()=>{ navigate(`residentional/${link}`);dispatch(change_page(link))}} className="cardsItemTop">
+      <div onClick={
+        // ()=>{console.log(link); navigate(`residentional/${link}`);dispatch(change_page(link))}
+        () => {  
+          localStorage.setItem('page',link); 
+          navigate(`residentional/${link}`); 
+          dispatch(change_page(link));  
+          window.location.reload(); 
+        }
+      } className="cardsItemTop">
         <div style={{ backgroundColor: mobile ? '#33333369' :  '#3333334a'}} className='owerlay'>
          <div className='owerlay_txt'>{ title }</div>
         </div>

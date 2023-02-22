@@ -12,8 +12,8 @@
   }
   .visa_container img{
     margin-left: 10px;
-    height: 50px;
-    width: 270px;
+    /* height: 50px;
+    width: 270px; */
   }
   
   .coperait_txt{
@@ -80,7 +80,7 @@
   .lineInfoContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: flex-start;
     width: auto;
     height: auto;

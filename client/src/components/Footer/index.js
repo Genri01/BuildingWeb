@@ -28,14 +28,14 @@ function Footer(props) {
                 {/* <div className='footer_titleTxt'>Schaumburg IL  60194</div> */}
               </>
             }  
-            <div style={{ flexDirection: mobile ? 'row' : 'column', alignItems: mobile ? 'center' : 'flex-start', }} className='mobileContainerLi'>
-              <div style={{ width: mobile ? '45%' : '100%',justifyContent: 'flex-start' }} className='lineInfoContainer'>
+            <div style={{ flexDirection: 'column', alignItems: mobile ? 'center' : 'flex-start', }} className='mobileContainerLi'>
+              <div style={{ justifyContent: mobile ? 'center' : 'flex-start' }} className='lineInfoContainer'>
                 <img className="mobile-i-plain" src={phone} alt="phone" />
                 <div style={{ width: mobile ? 'auto' : 'auto', margin: '0px' }} className="he-text"> 
                   <span><a style={{ width: mobile ? '220px' : 'auto',margin: mobile ? '0' : '0 36px 18px 0' }} className="footer_txt_hover" href="tel:+1-61-251-602-63">612-516-0263</a></span>
                 </div>
               </div>
-              <div style={{ width: mobile ? '55%' : '100%' }} className='lineInfoContainer'>
+              <div style={{ justifyContent: mobile ? 'center' : 'flex-start' }}  className='lineInfoContainer'>
                 <img className="mobile-i-plain" src={email} alt="time" />
                 <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
                     <span>
@@ -43,7 +43,7 @@ function Footer(props) {
                     </span>
                 </div>
               </div>
-              <div style={{ width: mobile ? '55%' : '100%' }} className='lineInfoContainer'>
+              <div style={{  justifyContent: mobile ? 'center' : 'flex-start' }}  className='lineInfoContainer'>
                 {/* <img className="mobile-i-plain" src={lic} alt="time" /> */}
                 <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
                     <span>
@@ -84,7 +84,7 @@ function Footer(props) {
             <div className={`${mobile ? 'mobile-coperait_txt' : 'coperait_txt'}`}>© All rights reserved.</div> 
           </div>
           <div className="visa_container">
-            <img src={payments} alt="visa" width="270" height="50" />
+            <img src={payments} alt="visa" width={mobile ? "220" : "270"} height={mobile ? "40" : "50"} />
             {/* <img src={visa} alt="visa" width="49" height="17" />
             <img src={mastercard} alt="mastercard" width="35" height="23" />
             <img src={paypal} alt="mastercaerd" width="40" height="35" />

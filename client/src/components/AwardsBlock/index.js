@@ -28,11 +28,11 @@ export default function AwardsBlock(props) {
         mobile 
         ? 
           <>
-            <Title color="white" text="Awards" under z={2}/>
+            <Title mobile={mobile} margin={'30px 0px 0px 0px'} color="white" text="Awards" under z={2}/>
             {/* <div style={{borderColor:'white',zIndex: 9}} className="underlineTextMonument"></div> */}
             <div style={{zIndex: 9}} className="mobilePlusRightBlock">
               {
-                imgArr.map((item,i) => (<img key={i} style={{margin: "40px 40px"}} src={item} alt={`${i}img`} />))
+                imgArr.map((item,i) => (<img key={i} style={{ margin: mobile ? '10px' : "40px 40px", width: i === 0 ? 'auto' : "100px", height: i === 0 ? '150px' : "100px" }} src={item} alt={`${i}img`} />))
               }
             </div>
           </>
@@ -41,7 +41,7 @@ export default function AwardsBlock(props) {
           <Title color="white" text="Achievements" under z={2} top="50px"/> 
           <div style={{zIndex: 9}} className="awardsRightBlock">
             {
-              imgArr.map((item,i) => (<img key={i} style={{margin: "0px 40px", width: i === '0' ? '180px': '130px', height: i === '0' ? '150px': '100px'}} src={item} alt={`${i}img`} />))
+              imgArr.map((item,i) => (<img key={i} style={{margin: "0px 40px", width: i === 0 ? '140px' : "100px", height: i === 0 ? '140px' : "100px"}} src={item} alt={`${i}img`} />))
             }
           </div>
         </>

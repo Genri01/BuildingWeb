@@ -60,7 +60,7 @@ export default function FAQBlock(props) {
   ];  
   return (
     <div id={id} className={`${mobile ? 'mobileFaqWrapper' : "faqWrapper"}`}> 
-      <Title text="General FAQ" />
+      <Title mobile={mobile} margin={mobile ? '30px 0px 30px 0px' : undefined} text="General FAQ" />
       <div className='listContainer'>
         <Collapse accordion>
           {

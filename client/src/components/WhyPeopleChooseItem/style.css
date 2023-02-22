@@ -7,14 +7,60 @@
   margin: 6px 2px;  
 }
 
-.reverse { 
+.whyPeopleChooseItemReverse { 
+  display: flex;
+  width: 90%; 
+  height: 170px;
+  align-items: center;  
+  margin: 6px 2px;  
   flex-direction: row-reverse !important; 
 }
 
-.reverse .whyPeopleChooseItemTitle, .reverse .whyPeopleChooseItemSubTitle { 
+
+.whyPeopleChooseTextContainer {
+  display: flex; 
+  width: 80%; 
+  flex-direction: column;
+}
+
+.whyPeopleChooseReverseTxt { 
+  display: flex; 
+  width: 80%; 
+  flex-direction: column;
+  align-items: flex-end; 
+  padding-right: 30px;
+}
+
+
+.whyPeopleChooseItemSubTitle {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%; 
+  font-family: sans-serif;
+  line-height: 20px; 
+  padding-left: 30px;
+  color: #303030;
+  word-wrap: break-word;
+}
+
+.whyPeopleChooseItemReverseSubTxt { 
+  display: flex; 
+  width: 100%; 
+  justify-content: end; 
+  color: #303030;  
+}
+
+.whyPeopleChooseSubTxtContainerReverse { 
+  width: 250px;
+  text-align: end;
+  display: flex;
+  align-items: center; 
+}
+
+/* .reverse .whyPeopleChooseItemTitle, .reverse .whyPeopleChooseItemSubTitle { 
   text-align: right;
   padding-right: 30px; 
-}
+} */
   
 .mobileWorkOrderItem {
   display: flex;
@@ -56,11 +102,6 @@
   height: 35px; 
 }
 
-.whyPeopleChooseTextContainer {
-  display: flex; 
-  width: 80%; 
-  flex-direction: column;
-}
 
 .whyPeopleChooseItemTitle { 
   color: #303030;
@@ -73,13 +114,3 @@
   padding-bottom: 0.5em;
 }
 
-.whyPeopleChooseItemSubTitle {
-  display: flex;
-  box-sizing: border-box;
-  width: 100%; 
-  font-family: sans-serif;
-  line-height: 20px; 
-  padding-left: 30px;
-  color: #303030;
-  word-wrap: break-word;
-}

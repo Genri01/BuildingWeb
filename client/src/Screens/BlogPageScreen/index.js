@@ -6,28 +6,10 @@ import { questions } from '../../redux/selectors';
 import { Link, useNavigate, useLocation } from 'react-router-dom';  
 import { useDispatch, useSelector  } from 'react-redux'; 
 import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
-import InputMask from 'react-input-mask';
+import InputMask from 'react-input-mask'; 
 import { 
-  setFirstName,
-  setAddres,
-  setCallback,
-  setCity,
-  setComent, 
-  setFinancing,
-  setGetContact,
-  setIndex,
-  setLastName,
-  setMaterials,
-  setOwner, 
-  setStatus, 
-  setTypeProject,
-  setReferalCity,
-  setReferalComent,
-  setReferalEmail,
-  sendRegistrServer,
-  setReferalFirstName,
-  setReferalTel
-} from '../../redux/actions/questions'; 
+  modalMiniQuestion
+} from '../../redux/actions/app'; 
 import './style.css';
   
 function BlogPageScreen(props) {
@@ -35,16 +17,17 @@ function BlogPageScreen(props) {
   const { mobile } = props;
  
   const {state, hash} = useLocation()
+  const dispatch = useDispatch();
   const id = state?.id;
   const title = state?.title;
   const img = state?.img;
 
-  // useEffect(()=>{  
-  //   if(id){ 
-  //       const targetElement = document.getElementById(id) 
-  //       targetElement?.scrollIntoView({behavior: 'smooth'})
-  //     }
-  // }, [state,hash])
+  useEffect(()=>{ 
+    if(id){ 
+        const targetElement = document.getElementById(id) 
+        targetElement?.scrollIntoView({behavior: 'smooth'})
+      }
+  }, [state,hash])
  
 const blogTxt = [{
   page: 'page_0',
@@ -99,13 +82,13 @@ const blogTxt = [{
 
 
     return (
-      <div className="blogPageScreen"> 
-        <Link style={{textDecoration: 'none'}} to={`/moreinfo/blog`}><div className='back'>{'<--Back'}</div></Link>
-        <div className='mainImgContainer'>
-          <img src={img} alt="" width={'50%'} height={'700px'} />
+      <div id={'startblog'} className="blogPageScreen"> 
+        <Link style={{textDecoration: 'none'}} to={`/moreinfo/blog`}><div style={{ top: mobile ? '5px' : '40px', left: mobile ? '10px' : '50px' }} className='back'>{'<--Back'}</div></Link>
+        <div style={{ padding: mobile ? '0px' : '100px' }} className='mainImgContainer'>
+          <img src={img} alt="" width={mobile ? '100%' : '50%'} height={mobile ? '10%' : '700px'} />
         </div>
-        <Title text={title} /> 
-        <div className='textBlogContainer'>
+        <Title mobile={mobile} margin={mobile ? '70px 0px 0px 0px' : '0px'} text={title} /> 
+        <div className={mobile ? 'mobileTextBlogContainer' : 'textBlogContainer'}>
         <div className='textButtonText'>  
           </div>
           { 
@@ -113,6 +96,9 @@ const blogTxt = [{
               return item.page === id ? item.text.split('<br/>').map((item,k)=>(<React.Fragment key={k}>{item}<br/></React.Fragment>)) : false
             })
           }
+        </div>
+        <div className="cardsItemBottom">  
+          <Button onClick={() => { dispatch(modalMiniQuestion(true)); }} className="bottonTitle" type="primary">Schedule Your Free Consultation</Button>  
         </div>
       </div>
     );

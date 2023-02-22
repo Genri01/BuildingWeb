@@ -19,8 +19,8 @@ function WhyPeopleChooseBlock(props) {
         </div> 
         <div className={`${mobile ? "mobileWhyPeopleChooseBottomContainer" : 'whyPeopleChooseBottomContainer'}`}>
           <div className="whyPeopleChooseInfoContainer">
-            <WhyPeopleChooseItem style={{ paddingLeft: '67px' }} customclass="reverse" icon={price} title='The Best Price' text='Get more than expected<br/> Provide quote of our competitors and we will give you<br/>a better deal'/>
-            <WhyPeopleChooseItem style={{ paddingLeft: '176px' }} iconsize="iconsize" customclass="reverse"  icon={service} title='Great Customer Service' text='24/7 customer support<br/>Personal approach for each customer<br/>Free design service'/>
+            <WhyPeopleChooseItem revert={!mobile} icon={price} title='The Best Price' text='Get more than expected<br/> Provide quote of our competitors and we will give you<br/>a better deal'/>
+            <WhyPeopleChooseItem revert={!mobile} iconsize="iconsize" icon={service} title='Great Customer Service' text='24/7 customer support<br/>Personal approach for each customer<br/>Free design service'/>
           </div> 
           <div className="whyPeopleChooseInfoContainer">
             <WhyPeopleChooseItem icon={quality} title='Excellent Quality' text='Experienced and Certified PROs<br/>Innovative technology & equipment'/>

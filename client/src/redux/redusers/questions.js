@@ -32,7 +32,7 @@ export default function questions(state = initialState, { type, payload }) {
         ...state,
         byer_tel: payload
       }; 
-    case ActionTypes.MODAL_BYER_FIRST_NAME:
+    case ActionTypes.MODAL_BYER_FIRST_NAME: 
       return {
         ...state,
         byer_first_name: payload

@@ -4,15 +4,11 @@ const nodemailer = require('nodemailer');
 const UserController = {
   sendMini:(req,res) => {
     const { body } = req.body
-    const { 
-      name, email, phone, coment
-     } = body; 
-    
+    const { name, email, phone, coment } = body; 
 
-    // if(name !== '') { 
-      (async () => {
+   (async () => {
 
-      let transporter = nodemailer.createTransport({
+     let transporter = nodemailer.createTransport({
         host: 'smtp.timeweb.ru',
         port: 25,
         secure: false,
@@ -22,31 +18,27 @@ const UserController = {
         },
       })
 
-    //   let result = await transporter.sendMail({
-    //     from: 'info@butkovconstruction.com',
-    //     // to: `webdev170291@yandex.ru`,
-    //     to: `info@butkovconstruction.com`,
-    //     subject: `!! Запрос на обратную связь !!`,
-    //     html: `Пользователь ${name.bold()} запрашивает обратную связь по номеру телефона: ${phone.bold()}. Email для обратной связи ${email.bold()} Дитали проекта: " ${coment.bold()} "`,
-    //   })
+      let result = await transporter.sendMail({
+        from: `info@butkovconstruction.com`,
+        //to: `webdev170291@yandex.ru`,
+         to: `info@butkovconstruction.com`,
+        subject: `!! Запрос на обратную связь !!`,
+        html: `Пользователь ${name.bold()} с email: ${email.bold()} запрашивает обратную связь по номеру телефона: ${phone.bold()}. Прислал сообщение с текстом: " ${coment.bold()} "`,
+      })
 
       transporter.verify(function (error, success) {
         try {
-          console.log('verify',success,error)
-          return true;
-          // return res.status(200).send({msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты"})
+          res.status(200).send({msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты"})
         } catch (error) {
-          console.log('NOverify',error)
-          return false;
-          // return res.status(200).send({msg: `Произошла ошибка: ${error}`})
-        } 
-      }); 
+          res.status(200).send({msg: `Произошла ошибка: ${error}`})
+        }
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Server is ready to take our messages");
+        }
+        }); 
       })(); 
-    // } else {
-    //   return res.status(200).send({msg: "Проверьте правильность заполненых данных :("})
-    // }
-
-    // return res.status(200).send({ msg: "Ожидайте в ближайшее время с вами свяжутся наши специалисты" }); 
   },
   sendFull:(req,res) => {
   const {   
@@ -66,25 +58,23 @@ const UserController = {
     type_project,    
     materials,  
   } = req.body.body; 
- 
-
-    (async () => { 
+   (async () => {
       let transporter = nodemailer.createTransport({
-        host: 'smtp.yandex.ru',
+        host: 'smtp.timeweb.ru',
         port: 25,
         secure: false,
         auth: {
-          user: 'vladyslavbutkov@yandex.ru',
+          user: 'info@butkovconstruction.com',
           pass: 'Sj1071411998.',
         },
       })
-      
+
       let result = await transporter.sendMail({
-        from: 'vladyslavbutkov@yandex.ru',
+        from: `info@butkovconstruction.com`,
+        //to: `webdev170291@yandex.ru`,
         to: `info@butkovconstruction.com`,
-        // to: `webdev170291@yandex.ru`,
-        subject: `!! Информация о заказе !!`,
-        html: `
+        subject: `!! Запрос на обратную связь !!`,
+	html: `
         Покупатель: ${byer_first_name.bold()} ${byer_last_name.bold()} с номером телефона: ${byer_tel.bold()} и email(почтой): ${byer_email.bold()}
         Просит помочь с: ${type_project.map((item => item.bold()))}. 
         Наличие материалов: ${materials.bold()}
@@ -112,7 +102,7 @@ const UserController = {
         console.log("Server is ready to take our messages");
       }
       });
-    })(); 
+    })();
   },
   sendReferal:(req,res) => {
   const { 
@@ -130,20 +120,20 @@ const UserController = {
  
     (async () => { 
       let transporter = nodemailer.createTransport({
-        host: 'smtp.yandex.ru',
+        host: 'smtp.timeweb.ru',
         port: 25,
         secure: false,
         auth: {
-        user: 'vladyslavbutkov@yandex.ru',
-        pass: 'Sj1071411998.',
-        }
-      }) 
+          user: 'info@butkovconstruction.com',
+          pass: 'Sj1071411998.',
+        },
+      })
 
       let result = await transporter.sendMail({
-        from: `vladyslavbutkov@yandex.ru`,
+        from: `info@butkovconstruction.com`,
+        //to: `webdev170291@yandex.ru`,
         to: `info@butkovconstruction.com`,
-        // to: `webdev170291@yandex.ru`,
-        subject: `!! Информация о заказе !!`,
+        subject: `!! Запрос на обратную связь !!`,
         html: `
         Покупатель ${byer_first_name.bold()} с номером телефона: ${byer_tel.bold()} и email(почтой): ${byer_email.bold()}
         ,проживайщий по адрессу: ${addres_street.bold()}

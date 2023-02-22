@@ -24,7 +24,7 @@
  
  .listContainer {
     display: block; 
-    height: 400px;
+    height: auto;
  }
 
  .listContainer svg {

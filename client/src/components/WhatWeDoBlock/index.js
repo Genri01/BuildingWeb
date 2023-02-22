@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import images from '../../assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 import { Link, useNavigate } from 'react-router-dom'; 
-
+import {useRef} from "react";
 // import required modules
 import { Autoplay } from "swiper";
 
@@ -91,9 +91,18 @@ export default function WhatWeDoBlock(props) {
  
 
 // когда наводишь мышку свайпер останавливаеться
+ 
+    const swiperRefLocal = useRef()
 
+    const handleMouseEnter = () => {
+        swiperRefLocal.current.swiper.autoplay.stop()
+    };
 
+    const handleMouseLeave = () => {
+        swiperRefLocal.current.swiper.autoplay.start()
+    };
 
+ 
   return (
     <div className={`whatWeDoWrapper ${customclass === undefined ? '' : customclass}`}>
       <Title mobile={mobile} text="What we do" under top="90px" /> 
@@ -101,13 +110,15 @@ export default function WhatWeDoBlock(props) {
         <div className='wrapperArrow' onClick={(e) => moveLeft(mySwiper)}>
           <img src={arrowl} alt="s"  width={40} height={40}/>
         </div>
-        <div className={`${mobile ? 'mobileWhatWeDoSwiperContainer' : 'whatWeDoSwiperContainer' }`}> 
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`${mobile ? 'mobileWhatWeDoSwiperContainer' : 'whatWeDoSwiperContainer' }`}> 
           <Swiper
             loop={true}
+            ref={swiperRefLocal}
             centeredSlides={true}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
+              disableOnInteraction: false, 
+              pauseOnMouseEnter: true,
             }} 
             modules={[Autoplay]}
             className="whatWeDoSwiper" 

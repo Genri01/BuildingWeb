@@ -64,7 +64,7 @@ switch (remodal) {
       Bathroom design ideas that may fits your home:
     `; 
     textone = `FAQ`;
-    texttwo = `Scedule your free consultation`;
+    texttwo = `Schedule Your Free Consultation`;
     cartsItem = [
       {
         title: 'Building improvements & Renovations',
@@ -100,7 +100,7 @@ switch (remodal) {
       Kitchen design ideas that may fits your home:
     `;  
     textone = `FAQ`;
-    texttwo = `Scedule your free consultation`; 
+    texttwo = `Schedule Your Free Consultation`; 
     cartsItem = [
       {
         title: 'Building improvements & Renovations',
@@ -177,7 +177,7 @@ switch (remodal) {
       Basement design that fits your home
     ` 
     textone = `FAQ`;
-    texttwo = `Scedule your free consultation`; 
+    texttwo = `Schedule Your Free Consultation`; 
     cartsItem = [
       {
         title: 'Building improvements & Renovations',

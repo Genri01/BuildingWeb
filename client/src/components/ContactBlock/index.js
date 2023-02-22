@@ -97,8 +97,8 @@ ContactBlock(props) {
           name = {byer_first_name}
           email = {byer_email}
           phone = {byer_tel}
-          errEmail={errEmail}
-          errTel={errTel}
+          errEmail = {errEmail}
+          errTel = {errTel}
           disabled={{ disabled: byer_first_name === '' || errTel === true || errEmail === true, style: { backgroundColor: 'rgb(187 28 32)' } }} 
         />  
         </div> 

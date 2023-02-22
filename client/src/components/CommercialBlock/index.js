@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'; 
 import CommercialCart from '../CommercialCart';
-import { modalFullQuestion } from '../../redux/actions/app'
+import { modalMiniQuestion } from '../../redux/actions/app'
 import images from '../../assets/images';
 import './style.css';
 
@@ -60,7 +60,7 @@ const dispatch = useDispatch()
         } 
       </div>
       <div className={`${mobile ? 'mobileCommercialBtnContainer' : "commercialBtnContainer"}`}>  
-        <Button  onClick={() => { dispatch(modalFullQuestion(true)); }} className="commercialBotton" block type="primary">Bid Request or Estimate Request</Button>  
+        <Button  onClick={() => { dispatch(modalMiniQuestion(true)); }} className="commercialBotton" block type="primary">Bid Request or Estimate Request</Button>  
       </div>  
     </div>
   );

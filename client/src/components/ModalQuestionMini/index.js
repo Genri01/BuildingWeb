@@ -37,7 +37,7 @@ export default function ModalQuestionMini(props) {
       }
     });
   },[]);
- 
+ console.log()
   return (
     <Modal
       className='modalMini'
@@ -82,7 +82,7 @@ export default function ModalQuestionMini(props) {
         </Form> 
       </div> 
       <ContactUsForm 
-        name = {byer_email}
+        name = {byer_first_name}
         email = {byer_email}
         phone = {byer_tel}
         disabled={{ disabled: byer_first_name === '' || errTel === true || errEmail === true, style: { backgroundColor: 'rgb(187 28 32)' } }}  
@@ -90,3 +90,4 @@ export default function ModalQuestionMini(props) {
     </Modal>
   );
 };
+ 

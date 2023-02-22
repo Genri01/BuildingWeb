@@ -102,7 +102,7 @@ function BackgroundVideo(props) {
           }}> 
           <div className={`${mobile ? "mobilelogoB" : 'logoB'}`}>B</div>
           <img src={Logo_black} className="logoImg" alt="profile" />
-          <div className="license">Lis# BC800584</div>
+          <div className={mobile ? "mobile_license" : "license"}>Lis# BC800584</div>
         </div> 
         <div className={`${mobile ? "mobileBackgroundCatigories" : "backgroundCatigories"}`}> 
           <Menu

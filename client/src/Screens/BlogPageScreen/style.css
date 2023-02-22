@@ -26,6 +26,15 @@
     font-size: 23px;
     line-height: 1.5;
 }
+  
+.mobileTextBlogContainer {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 .back {
   display: flex;
@@ -35,4 +44,5 @@
   left: 50px;
   cursor: pointer;
   font-weight: 600;
+  color: #d2b46e
 }

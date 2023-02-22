@@ -24,7 +24,7 @@ export default function MoreInfoScreen(props) {
   
   return (
     <div> 
-      <FAQBlock id={'faq'}/>  
+      <FAQBlock mobile={mobile} id={'faq'}/>  
       <ButkovProcessBlock mobile={mobile} id={'butkovprocess'} /> 
       <FinanceOptionBlock mobile={mobile} id={'financingoptions'} />
       <TextButtonContainer

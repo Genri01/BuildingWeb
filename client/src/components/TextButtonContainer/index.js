@@ -14,7 +14,7 @@ export default function TextButtonContainer(props) {
 
   return (
     <div className="textButtonContainerWrapper"> 
-      <div style={{marginBottom: mobile ? '0px' : '50px'}} className='textButtonTextContainer'>
+      <div style={{ marginBottom: mobile ? '0px' : '50px', padding: mobile ? '20px' : '0px' }} className='textButtonTextContainer'>
         {
           text !== '' &&  
           <div className='textButtonText'  > 

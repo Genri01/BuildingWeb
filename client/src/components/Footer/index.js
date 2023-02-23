@@ -47,7 +47,7 @@ function Footer(props) {
                 {/* <img className="mobile-i-plain" src={lic} alt="time" /> */}
                 <div style={{ width: mobile ? '100%' : 'auto' }} className="he-text"> 
                     <span>
-                      <a style={{ wordBreak: mobile ? 'break-all' : 'break-word',fontSize: mobile ? '12px' : '18px', margin: mobile ? '0' : '0 6px 18px 0' }} className="footer_txt_hover" >Lis# BC800584</a>
+                      <a style={{ wordBreak: mobile ? 'break-all' : 'break-word',fontSize: mobile ? '12px' : '18px', margin: mobile ? '0' : '0 6px 18px 0' }} className="footer_txt_hover" >Lic# BC800584</a>
                     </span>
                 </div>
               </div>

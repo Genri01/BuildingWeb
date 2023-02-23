@@ -66,7 +66,7 @@ export default function WhatWeDoBlock(props) {
     {
       img: kitchen_1,
       // img: 'https://get-flooring.com/wp-content/uploads/2020/09/fireplace.jpg',
-      title: 'Kitchens somodel', 
+      title: 'Kitchens remodel', 
       link: 'kitchen'
     }, 
     {

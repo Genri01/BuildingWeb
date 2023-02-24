@@ -1,9 +1,8 @@
-import React, { useState } from "react"; 
+import React, { useState, useEffect } from "react"; 
 import { useNavigate } from 'react-router-dom'
 import { Menu, Button } from 'antd';
 import { useDispatch } from "react-redux";  
-import images from '../../assets/images';
-
+import images from '../../assets/images'; 
 import { change_page, modalMiniQuestion, } from '../../redux/actions/app';
 import './style.css';
  
@@ -37,7 +36,7 @@ function BackgroundVideo(props) {
  
   const dispatch = useDispatch();
   const navigate = useNavigate(); 
-    
+ 
   const [collapsed, setCollapsed] = useState(true);
  
   const toggleCollapsed = () => {
@@ -67,9 +66,14 @@ function BackgroundVideo(props) {
     ],)
   ];
  
+ 
+  useEffect(() => {   
+    document.getElementById('video').load(); 
+  },[page]);
+ 
   return (
     <div className='backgroundWrapper'>  
-      <video autoPlay loop muted className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>  
+      <video id="video" autoPlay loop muted className={`${mobile ? "mobileBackgroundVideo" : 'backgroundVideo'}`}>  
       {
        pagesArr[page]?.costomlink === false ?  <source src={`https://static.videezy.com/system/resources/previews/000/${pagesArr[page]?.videolink}`}  type="video/mp4" /> :
        <source src={pagesArr[page]?.videolink}  type="video/mp4" /> 
@@ -98,7 +102,7 @@ function BackgroundVideo(props) {
             localStorage.setItem('page','/');
             dispatch(change_page('/')); 
             navigate('/');
-            window.location.reload();
+            // window.location.reload();
           }}> 
           <div className={`${mobile ? "mobilelogoB" : 'logoB'}`}>B</div>
           <img src={Logo_black} className="logoImg" alt="profile" />

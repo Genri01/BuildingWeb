@@ -2,6 +2,7 @@ import ActionTypes from '../constants';
 import kitchen from '../../assets/kitchen.mp4';
 import basment from '../../assets/basment.mp4';
 import blog from '../../assets/blog.mp4';
+
 const initialState = {
   page: '/',  
   pagesArr: {
@@ -28,8 +29,8 @@ export default function pages(state = initialState, { type, payload }) {
     case ActionTypes.APP_PAGES_SCREEN:
       return {
         ...state,
-        page: payload,
-      };  
+        page: payload, 
+      };   
     default:
       return state;
   }

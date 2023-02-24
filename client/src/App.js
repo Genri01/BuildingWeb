@@ -40,8 +40,7 @@ function App() {
     setStatePage(tmpPage); 
     dispatch(change_page(localStorage.getItem('page')));  
   },[page]);
-
-  
+ 
   return (
     <div className="App">
       <Header 
@@ -71,11 +70,7 @@ function App() {
           }
           if( e.key !== 'login') {
             dispatch(change_page(e.key));
-          }
-          
-          if(e.key !== 'registration' && e.key !== 'login') {
-            window.location.reload();
-          }
+          } 
         }} 
       />
       <Main mobile={mobile} />

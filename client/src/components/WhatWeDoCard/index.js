@@ -13,13 +13,12 @@ export default function WhatWeDoCard(props) {
  
   return (
     <div className={`${mobile ? 'mobileCardsItemWrapper' : 'cardsItemWrapper' }`}>
-      <div onClick={
-        // ()=>{console.log(link); navigate(`residentional/${link}`);dispatch(change_page(link))}
+      <div onClick={ 
         () => {  
           localStorage.setItem('page',link); 
           navigate(`residentional/${link}`); 
           dispatch(change_page(link));  
-          window.location.reload(); 
+          // window.location.reload(); 
         }
       } className="cardsItemTop">
         <div style={{ backgroundColor: mobile ? '#33333369' :  '#3333334a'}} className='owerlay'>

@@ -17,15 +17,16 @@ export default function MoreInfoScreen(props) {
 
   useEffect(()=>{ 
     if(id){ 
-      if(id === 'financingoptions') { 
-        window.scrollTo({
-          top: 2750,
-          behavior: 'smooth',
-        }) 
-      } else {
+      // if(id === 'financingoptions' && mobile) { 
+      //   console.log('mobile smooth')
+      //   window.scrollTo({
+      //     top: 2750,
+      //     behavior: 'smooth',
+      //   }) 
+      // } else {
         const targetElement = document.getElementById(id) 
         targetElement?.scrollIntoView({behavior: 'smooth'})
-      }
+      // }
     }
   }, [state,hash])
   

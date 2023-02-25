@@ -7,17 +7,13 @@ import ContactUsForm from '../ContactUsForm';
 import Title from '../Title';
 
 import { questions } from '../../redux/selectors';  
-import { setFirstName } from '../../redux/actions/questions'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+import { setFirstName,setTel } from '../../redux/actions/questions'; 
+import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 
 import './style.css';
-
  
 export default function 
-
-
-
-
+ 
 ContactBlock(props) {
   const { mobile } = props;
   const [form] = Form.useForm(); 
@@ -41,9 +37,12 @@ ContactBlock(props) {
       if(data.country!= null) {
         setMask(quality[data.country.iso]);
       }
-    });
-  
+    }); 
   },[]);
+
+  useEffect(() => {
+    validateTelephone(mask,byer_tel,setErrTel) 
+  },[byer_tel]);
   
   return (
     <div className={mobile ? 'mobileContactWrapper' : "contactWrapper"}> 
@@ -86,8 +85,10 @@ ContactBlock(props) {
                   name="telephone" 
                   mask={`${mask}`} 
                   maskChar={'_'} 
-                  value={byer_tel} 
-                  onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                  value = {byer_tel} 
+                  onChange={(e) => { 
+                    dispatch(setTel(e.target.value)) 
+                  }} 
                 />
               </Form.Item> 
             </Form>

@@ -19,7 +19,7 @@ import {
   setTypeProject,
   sendFullServer
 } from '../../redux/actions/questions'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
 import './style.css'; 
 
@@ -180,7 +180,7 @@ export default function ModalQuestionFull(props) {
     {
       value: byer_tel,
       placeholder: 'Phone Number', 
-      fun: (e) => { changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) } 
+      fun: (e) => { validateTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) } 
     }, 
   ];
  
@@ -278,7 +278,7 @@ export default function ModalQuestionFull(props) {
                   mask={`${mask}`} 
                   maskChar={'_'} 
                   value={byer_tel} 
-                  onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                  onChange={(e)=>{ validateTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
                 /> : 
                 <Input   
                   value={item.value}

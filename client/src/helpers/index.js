@@ -6,14 +6,13 @@ function validateEmail(email) {
   return pattern.test(email);
 }
  
-function changeTelephone(ref,value, mask, phone, setErrTel, dispatch) { 
-  ref ? dispatch(setReferalTel(value)) : dispatch(setTel(value));
-   
-  if ((phone[mask.length-2] !== '_') && (phone[mask.length-2] !== undefined)) {
+function validateTelephone(mask, phone, setErrTel) {   
+  if((phone[mask.length-1] !== '_') && (phone[mask.length-1] !== undefined)) {
+    console.log('false')
     setErrTel(false);
   } else {
     setErrTel(true);
-  }
+  } 
   return true; 
 }
 
@@ -350,7 +349,7 @@ function useWindowDimensions() {
 
 export { 
   validateEmail,
-  changeTelephone,
+  validateTelephone,
   changeEmail,
   useWindowDimensions,
   maskTelephone

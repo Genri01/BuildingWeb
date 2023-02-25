@@ -4,8 +4,8 @@ import { Modal, Input, Form } from 'antd';
 import ContactUsForm from '../ContactUsForm';
 import { questions } from '../../redux/selectors'; 
 import { modalMiniQuestion } from '../../redux/actions/app'; 
-import { setFirstName } from '../../redux/actions/questions'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+import { setFirstName,setTel } from '../../redux/actions/questions'; 
+import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
 import './style.css'; 
 
@@ -37,7 +37,11 @@ export default function ModalQuestionMini(props) {
       }
     });
   },[]);
- console.log()
+  
+  useEffect(() => {
+    validateTelephone(mask,byer_tel,setErrTel) 
+  },[byer_tel]);
+ 
   return (
     <Modal
       className='modalMini'
@@ -76,7 +80,9 @@ export default function ModalQuestionMini(props) {
               mask={`${mask}`} 
               maskChar={'_'} 
               value={byer_tel} 
-              onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+              onChange={(e)=>{ 
+                dispatch(setTel(e.target.value)) 
+              }} 
             />
           </Form.Item> 
         </Form> 

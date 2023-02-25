@@ -5,7 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import images from '../../assets/images';   
 import { questions } from '../../redux/selectors';   
 import { useDispatch, useSelector  } from 'react-redux'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
 import { 
   setFirstName,
@@ -101,7 +101,7 @@ function ReadyScreen(props) {
       question:'Your Phone Number',
       value: byer_tel,
       placeholder: 'Phone',
-      fun: (e) => { changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) } 
+      fun: (e) => { validateTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) } 
     },
     {
       question:'Your Street, City, State, Zip Code',
@@ -213,7 +213,7 @@ function ReadyScreen(props) {
                     mask={`${mask}`} 
                     maskChar={'_'} 
                     value={referal_tel} 
-                    onChange={(e)=>{ changeTelephone(true,e.target.value,mask,referal_tel,setErrTelRef,dispatch) }} 
+                    onChange={(e)=>{ validateTelephone(true,e.target.value,mask,referal_tel,setErrTelRef,dispatch) }} 
                   /> : 
                   key === 6 ? <InputMask   
                     placeholder={ item.placeholder } 
@@ -222,7 +222,7 @@ function ReadyScreen(props) {
                     mask={`${mask}`} 
                     maskChar={'_'} 
                     value={byer_tel} 
-                    onChange={(e)=>{ changeTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+                    onChange={(e)=>{ validateTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
                   /> : 
                   <Input   
                     value={item.value}

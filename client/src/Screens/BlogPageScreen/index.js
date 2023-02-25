@@ -5,7 +5,7 @@ import images from '../../assets/images';
 import { questions } from '../../redux/selectors';  
 import { Link, useNavigate, useLocation } from 'react-router-dom';  
 import { useDispatch, useSelector  } from 'react-redux'; 
-import { validateEmail, changeTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
+import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask'; 
 import { 
   modalMiniQuestion

@@ -4,6 +4,7 @@ import { useDispatch, useSelector  } from 'react-redux';
 import { questions, app } from '../../redux/selectors';  
 import { modalFullQuestion } from '../../redux/actions/app'; 
 import { 
+  setTel,
   setFirstName,
   setAddres,
   setCallback,
@@ -18,7 +19,8 @@ import {
   setStatus, 
   setTypeProject,
   sendFullServer
-} from '../../redux/actions/questions'; 
+} from '../../redux/actions/questions';
+
 import { validateEmail, validateTelephone, changeEmail, maskTelephone } from '../../helpers/index'; 
 import InputMask from 'react-input-mask';
 import './style.css'; 
@@ -278,7 +280,12 @@ export default function ModalQuestionFull(props) {
                   mask={`${mask}`} 
                   maskChar={'_'} 
                   value={byer_tel} 
-                  onChange={(e)=>{ validateTelephone(false,e.target.value,mask,byer_tel,setErrTel,dispatch) }} 
+
+                  onChange={(e) => { 
+                    dispatch(setTel(e.target.value)) 
+                  }} 
+
+                  // onChange={(e)=>{ validateTelephone(mask, e.target.value,setErrTel, dispatch) }} 
                 /> : 
                 <Input   
                   value={item.value}
@@ -346,6 +353,10 @@ export default function ModalQuestionFull(props) {
     });
   },[]);
   
+  useEffect(() => {
+    validateTelephone(mask,byer_tel,setErrTel) 
+  },[byer_tel]);
+
   return (
     <Modal
       title="Please follow a few steps"

@@ -158,8 +158,8 @@ function ReadyScreen(props) {
       value: 'Shower Remodeling',
     },
     {
-      label: 'GuHers',
-      value: 'GuHers',
+      label: 'Gutters',
+      value: 'Gutters',
     },
   ];
  

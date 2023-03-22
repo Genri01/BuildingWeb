@@ -60,7 +60,7 @@ switch (remodal) {
       `; 
     amentities = true;
     titlecart = `
-      Bathroom design ideas that may fits your home:
+      Bathroom design ideas that may fit your home:
     `; 
     textone = `FAQ`;
     texttwo = `Schedule Your Free Consultation`;
@@ -96,7 +96,7 @@ switch (remodal) {
       Your kitchen is the heart of your home. It provides you and your family a space to bond over shared food and your culture. Your kitchen should be a reflection of your family’s pride and a chance to build on your togetherness. When you remodel your kitchen you’re not only enhancing the design but also providing your family with a beautiful and functional space to enjoy! Butkov ’s  team has the knowledge and expertise to work with you and achieve the kitchen of your dreams. Our design and construction teams will carefully listen to your needs to ensure the living space we design and create for you is exactly what you want it to be. Contact our team to find out more about what our team can do for you and get a jump on building joy in your home!
     `; 
     titlecart = `
-      Kitchen design ideas that may fits your home:
+      Kitchen design ideas that may fit your home:
     `;  
     textone = `FAQ`;
     texttwo = `Schedule Your Free Consultation`; 
@@ -215,7 +215,7 @@ Tile Installation & Repair Services in the Twin Cities
 We offer full-service tile installation, from simple backsplashes to specialty installations—like steam showers, radiant heated floors, and everything in between. We also install a wide range of materials including listellos, glass mosaic tile, all-natural stone tile, porcelain, ceramic tile and more. Our estimates are always free and accompanied by a consultation surrounding your specific project.
 `; 
     titlecart = `
-    Design ideas that may fits your home:
+    Design ideas that may fit your home:
     ` 
     wedoblock = true;
     textone = `FAQ`;

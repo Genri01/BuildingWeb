@@ -123,7 +123,7 @@ function PoliceScreen(props) {
     'Siding Installation & Repair',
     'Tile Installation',
     'Shower Remodeling',
-    'GuHers', 
+    'Gutters', 
   ]
    
   const plainOptions = [
@@ -156,8 +156,8 @@ function PoliceScreen(props) {
       value: 'Shower Remodeling',
     },
     {
-      label: 'GuHers',
-      value: 'GuHers',
+      label: 'Gutters',
+      value: 'Gutters',
     },
   ];
  

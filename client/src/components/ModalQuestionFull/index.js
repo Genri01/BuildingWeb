@@ -121,8 +121,8 @@ export default function ModalQuestionFull(props) {
       value: 'Tile work',
     },
     {
-      label: 'Comercial',
-      value: 'Comercial',
+      label: 'Commercial',
+      value: 'Commercial',
     },
   ];
 
@@ -203,7 +203,7 @@ export default function ModalQuestionFull(props) {
       <>
         <div className='questionColor'>How can we help you?</div> 
           <Checkbox.Group value={type_project} options={plainOptions} onChange={typeProjectChange} />  
-        <div className='questionColor'>Have you already purchesed the matirials for this project?</div>
+        <div className='questionColor'>Have you already purchesed the materials for this project?</div>
         <Select
           value={materials}
           style={{
@@ -227,7 +227,7 @@ export default function ModalQuestionFull(props) {
           onChange={ownerChange}
           options={selectOptions}
         />
-        <div className='questionColor'>Are you interestedd in financing?</div>
+        <div className='questionColor'>Are you interested in financing?</div>
         <Select
           value={financing}
           style={{
